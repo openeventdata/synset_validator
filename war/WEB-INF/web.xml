@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  
+  <servlet>
+    <servlet-name>ValidatorServlet</servlet-name>
+    <servlet-class>edu.utd.cs.bdma.synset.validator.server.ValidatorServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ValidatorServlet</servlet-name>
+    <url-pattern>/synset_validator/validate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>CameoServlet</servlet-name>
+    <servlet-class>edu.utd.cs.bdma.synset.validator.server.CameoServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>CameoServlet</servlet-name>
+    <url-pattern>/synset_validator/cameo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>UserInfoServlet</servlet-name>
+    <servlet-class>edu.utd.cs.bdma.synset.validator.server.UserInfoServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>UserInfoServlet</servlet-name>
+    <url-pattern>/synset_validator/userinfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>HistoryServlet</servlet-name>
+    <servlet-class>edu.utd.cs.bdma.synset.validator.server.HistoryServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>HistoryServlet</servlet-name>
+    <url-pattern>/synset_validator/history</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>WordServlet</servlet-name>
+    <servlet-class>edu.utd.cs.bdma.synset.validator.server.WordServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>WordServlet</servlet-name>
+    <url-pattern>/synset_validator/word</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>SubmissionServlet</servlet-name>
+    <servlet-class>edu.utd.cs.bdma.synset.validator.server.SubmissionServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>SubmissionServlet</servlet-name>
+    <url-pattern>/synset_validator/submit</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+    <filter-name>ObjectifyFilter</filter-name>
+    <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>ObjectifyFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+  <filter>
+  <filter-name>AuthenticationFilter</filter-name>
+  <filter-class>edu.utd.cs.bdma.synset.validator.server.filters.AuthenticationFilter</filter-class>
+  <init-param>
+      <param-name>excluded-urls</param-name>
+      <param-value>/user</param-value>
+  </init-param>
+  </filter>
+  <filter-mapping>
+      <filter-name>AuthenticationFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+  </filter-mapping>
+   
+  <servlet>
+    <servlet-name>DataLoadRequesterServlet</servlet-name>
+    <servlet-class>edu.utd.cs.bdma.synset.validator.server.DataLoadRequesterServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+   <servlet>
+    <servlet-name>DataLoaderServlet</servlet-name>
+    <servlet-class>edu.utd.cs.bdma.synset.validator.server.DataLoader</servlet-class>
+   </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>DataLoaderServlet</servlet-name>
+    <url-pattern>/synset_validator/loaddata</url-pattern>
+    
+  </servlet-mapping>
+
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Synset_Validator.html</welcome-file>
+  </welcome-file-list>
+  
+  <security-constraint>
+      <web-resource-collection>
+          <web-resource-name>
+              all
+          </web-resource-name>
+          <url-pattern>/*</url-pattern>
+      </web-resource-collection>
+      <user-data-constraint>
+          <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+      </user-data-constraint>
+  </security-constraint>
+
+</web-app>

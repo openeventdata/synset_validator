@@ -1,0 +1,2 @@
+serviceClass: edu.utd.cs.bdma.synset.validator.client.HistoryService
+path: 51675EBB4B6646739CEC51FA7C2F953D.gwt.rpc

@@ -1,0 +1,2 @@
+serviceClass: edu.utd.cs.bdma.synset.validator.client.SubmissionService
+path: 4A8D47AF36FD10853117073BD76DD199.gwt.rpc

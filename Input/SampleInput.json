@@ -1,0 +1,118 @@
+{
+	"obj1":{
+		"Synsets":{
+			"obj_Syn":{
+				"Spanish":[
+					
+				],
+				"Gloss":"  pull away from the body; \"this muscle abducts\"  ",
+				"English":[
+					"abduct"
+				]
+			},
+			"Concept":"abduct"
+		}
+	},
+	"obj2":{
+		"Synsets":{
+			"obj_Syn":{
+				"Spanish":[
+					"abducir",
+					"coger",
+					"pescar",
+					"raptar",
+					"secuestrar"
+				],
+				"Gloss":"  take away to an undisclosed location against their will and usually in order to extract a ransom; \"The industrialist's son was kidnapped\"  ",
+				"English":[
+					"abduct",
+					"kidnap",
+					"nobble",
+					"snatch"
+				]
+			},
+			"Concept":"abduct"
+		}
+	},
+	"obj3":{
+		"Synsets":{
+			"obj_Syn":{
+				"Spanish":[
+					"abandonar",
+					"renunciar"
+				],
+				"Gloss":"  stop maintaining or insisting on; of ideas or claims; \"He abandoned the thought of asking for her hand in marriage\"; \"Both sides have to give up some claims in these negotiations\"  ",
+				"English":[
+					"abandon",
+					"give up"
+				]
+			},
+			"Concept":"abandon"
+		}
+	},
+	"obj4":{
+		"Synsets":{
+			"obj_Syn":{
+				"Spanish":[
+					"abandonar",
+					"dejar",
+					"desamparar",
+					"desasistir"
+				],
+				"Gloss":"  leave someone who needs or counts on you; leave in the lurch; \"The mother deserted her children\"  ",
+				"English":[
+					"abandon",
+					"desert",
+					"desolate",
+					"forsake"
+				]
+			},
+			"Concept":"abandon"
+		}
+	},
+	"obj5":{
+		"Synsets":{
+			"obj_Syn":{
+				"Spanish":[
+					"abandonar"
+				],
+				"Gloss":"  leave behind empty; move out of; \"You must vacate your office by tonight\"  ",
+				"English":[
+					"abandon",
+					"empty",
+					"vacate"
+				]
+			},
+			"Concept":"abandon"
+		}
+	},
+	"obj6":{
+		"Synsets":{
+			"obj_Syn":{
+				"Spanish":[
+					"abandonar"
+				],
+				"Gloss":"  give up with the intent of never claiming again; \"Abandon your life to God\"; \"She gave up her children to her ex-husband when she moved to Tahiti\"; \"We gave the drowning victim up for dead\"  ",
+				"English":[
+					"abandon",
+					"give up"
+				]
+			},
+			"Concept":"abandon"
+		}
+	},
+	"obj7":{
+		"Synsets":{
+			"obj_Syn":{
+				"Spanish":[
+					"abandonar"
+				],
+				"Gloss":"  forsake, leave behind; \"We abandoned the old car in the empty parking lot\"  ",
+				"English":[
+					"abandon"
+				]
+			},
+			"Concept":"abandon"
+		}
+	}
+}

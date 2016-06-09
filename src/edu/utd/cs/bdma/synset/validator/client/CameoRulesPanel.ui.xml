@@ -1,0 +1,16 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
+	<ui:style>
+	.important {
+		font-weight: bold;
+	}
+	</ui:style>
+	<g:VerticalPanel>
+	    <b:Heading ui:field="sectionHeader" size="4" visible="false">Cameo Rules:</b:Heading>
+	    <g:FlexTable ui:field="rulesTable">
+	    </g:FlexTable>
+	    
+	</g:VerticalPanel>
+</ui:UiBinder> 

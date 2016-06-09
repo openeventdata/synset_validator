@@ -1,0 +1,35 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:b="urn:import:com.github.gwtbootstrap.client.ui" xmlns:v="urn:import:edu.utd.cs.bdma.synset.validator.client">
+	<ui:style>
+	.important {
+		font-weight: bold;
+	}
+	
+	.test{
+	 float: right;
+
+	}
+	
+	th, td {
+    padding: 5px;
+    text-align: left;
+    }
+    
+    
+	</ui:style>
+	<g:VerticalPanel ui:field="mainPanel">
+	<g:HorizontalPanel>
+	<v:LoadingPanel message="Loading Synsets..." ui:field="lPanel"></v:LoadingPanel>
+	<b:Heading size="4" ui:field="synsetHeader">Synset Entries</b:Heading>
+	<b:Button type="LINK" styleName="{style.test}" ui:field="newEntryButton">New Entry</b:Button>
+	</g:HorizontalPanel>
+	    
+		<g:FlexTable ui:field="synsetTable">
+		
+		</g:FlexTable>
+		
+		
+	</g:VerticalPanel>
+</ui:UiBinder> 

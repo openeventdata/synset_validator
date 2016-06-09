@@ -1,0 +1,2 @@
+serviceClass: edu.utd.cs.bdma.synset.validator.client.UserInfoService
+path: C9711D44EA2F44667351595FEE9D5FB6.gwt.rpc

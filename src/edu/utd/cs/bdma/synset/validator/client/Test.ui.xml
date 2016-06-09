@@ -1,0 +1,30 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
+	<ui:style>
+	.important {
+		font-weight: bold;
+	}
+	.regulartext{
+		font-size: 16px;
+		
+	}
+	.regulartext-bold {
+		font-size: 16px;
+		font-weight: bold;
+	}
+	</ui:style>
+	
+		<g:VerticalPanel>
+		<b:Heading size="2" ui:field="conceptHeader"></b:Heading>
+			
+			<g:HorizontalPanel>
+				<g:Label styleName="regulartext-bold">Context</g:Label>
+				<g:HTML ui:field="meaningLabel" styleName="regulartext"></g:HTML>
+			</g:HorizontalPanel>
+            <g:Label styleName="regulartext-bold">Related English Words:</g:Label>
+            <g:Label ui:field="engWordsLabel" styleName="regulartext"></g:Label> 
+		</g:VerticalPanel>
+	
+</ui:UiBinder> 

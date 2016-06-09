@@ -1,0 +1,105 @@
+/** Add css rules here for your application. */
+
+
+/** Example rules used by the template application (remove for your app) */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 70px;
+  text-align: center;
+}
+
+.sendButton {
+  display: block;
+  font-size: 14pt;
+  background-color: #339900;
+  color: white;
+  border: none;
+}
+
+.gwt-Button-paddedLeft{
+	padding-left: 10px;
+}
+
+.gwt-PopupPanel {
+    border: medium;
+    background: #E0E0E0 ;
+ }
+ 
+.listSelectedItem{
+	background-color: #0066CC;
+	color: white;
+} 
+
+
+.paddedLeft{
+	padding-left: 10px;
+}
+
+.paddedHorizontalPanel {
+        padding-left: 20px;
+    }
+
+.sendButton:hover{
+	background-color: #33CC00;
+	cursor: pointer;
+}
+
+/** Most GWT widgets already have a style name defined */
+.gwt-DialogBox {
+  width: 400px;
+}
+
+.dialogVPanel {
+  margin: 5px;
+}
+
+.rightAlign{
+	position: absolute;
+    right: 10px;
+    padding: 10px;
+}
+.infoTable{
+	border-collapse: collapse;
+	font-size: 16px;
+	padding-bottom:5x;
+	padding-top:5px;
+	padding-left:10px;
+	word-wrap: break-word;
+
+}
+.serverResponseLabelError {
+  color: red;
+}
+/* tr:nth-child(even){background-color: #f2f2f2}
+ */
+tr{
+	padding: 5px;
+}
+
+td{
+	padding-right: 30px;
+	padding-bottom: 10px
+}
+
+
+.regulartext{
+	font-size: 16px
+}
+
+.regulartext-bold{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/** Set ids using widget.getElement().setId("idOfElement") */
+#closeButton {
+  margin: 15px 6px 6px;
+}
+
+.mainWord {
+	font-size: 24px;
+	font-family: sans-serif;
+	font-weight: bold;
+}

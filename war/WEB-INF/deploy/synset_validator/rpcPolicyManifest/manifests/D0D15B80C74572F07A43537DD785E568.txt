@@ -1,0 +1,2 @@
+serviceClass: edu.utd.cs.bdma.synset.validator.client.WordService
+path: 6825E1E0C1593B00F647900C97355E45.gwt.rpc

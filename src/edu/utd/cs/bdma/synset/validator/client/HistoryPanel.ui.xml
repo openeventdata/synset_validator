@@ -1,0 +1,22 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+		xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
+	<ui:style>
+	.important {
+		font-weight: bold;
+	}
+
+	</ui:style>
+	<g:PopupPanel>
+	<g:VerticalPanel>
+	   <b:TextBox placeholder="Search for cameo code" width="100%" ui:field="searchTextBox"></b:TextBox>
+	   <g:ScrollPanel height="300px" width="300px">
+	   <g:FlexTable ui:field="historyTable">
+	   </g:FlexTable>
+	   </g:ScrollPanel>
+	   <b:Button ui:field="hideButton" type="PRIMARY" block="true"> Hide </b:Button>
+	</g:VerticalPanel>
+		</g:PopupPanel>
+		
+</ui:UiBinder> 

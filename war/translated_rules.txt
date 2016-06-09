@@ -1,0 +1,11585 @@
+$ * (AS &NEGOTIATOR) (IN TALK) (WITH +)
+
+$ * ^ &OPPOSITION TO +
+
+$ AGREE * + INSPECT
+
+$ TROOP * (TOWARD RETREAT)
+
+$ TROOP * TOWARD +
+
+% &AIRCRAFT *
+
+&AIRCRAFT *	aircraft crash
+	accidente aéreo
+&AIRCRAFT *	aircraft patrol
+	patrulla de aviones
+&AIRCRAFT *	aircraft overflew
+	sobrevolaron aviones
+&AIRCRAFT *	aircraft drop
+	caída de aviones
+&AIRCRAFT * &WEAPON	aircraft fire weapon
+	arma de fuego de los aviones
+&AIRCRAFT * (IN SKIES)	aircraft back (in skies)
+	aviones de vuelta (en el cielo)
+&AIRCRAFT * +
+
+&AIRCRAFT * ATTACK	aircraft launch attack
+	ataque de lanzamiento de aviones
+&AIRCRAFT * ATTACKS	aircraft stage attacks
+	ataques etapa aviones
+&AIRCRAFT * FIRE	aircraft open fire
+	aviones fuego abierto
+&AIRCRAFT * LOW	aircraft sweep low
+	barrido de los aviones de baja
+&AIRCRAFT * OPERATION	aircraft launch operation
+	operación de lanzamiento de aviones
+&AIRCRAFT * RAID	aircraft stage raid
+	allanamiento etapa de aviones
+&AIRCRAFT * RAIDS	aircraft stage raids
+	incursiones etapa aviones
+&AIRCRAFT * {MOCK ATTACKS}	aircraft stage {mock attacks}
+	etapa aviones {} simulacros de ataque
+&AIRCRAFT FIRING &WEAPON *	aircraft firing weapon attack
+	avión de ataque de arma de fuego
+&ASYLUM *	asylum arrive
+	asilo llegar
+&CAR *	car crash
+	accidente de coche
+&FIGHT *	struggle erupt
+	luchar en erupción
+&FIGHT * CONCERN	struggle spark concern
+	preocupación lucha chispa
+&FOOD *	food reach
+	alcance de alimentos
+&FOOD *	food arrive
+	alimentos llegan
+&INFORMATION *	information avert
+	AVERT información
+&INVESTIGATION *	investigation blast
+	explosión de investigación
+&MILITARY *
+
+&MILITARY *
+
+&MILITARY *
+
+&MILITARY *
+
+&MILITARY *
+
+&MILITARY *
+
+&MILITARY * &TOWN
+
+&MILITARY * (BY FORCE)
+
+&MILITARY * (INTO)
+
+&MILITARY * (TO +) &STRONGHOLD (IN $)
+
+&MILITARY * EXERCISES
+
+&MILITARY * HEADQUARTERS
+
+&MILITARY * HOME
+
+&MILITARY * STRIKE
+
+&MILITARY * TO
+
+&MILITARY * WORRIES
+
+&MILITARY * {TEAR GAS}
+
+&MILITARY ON_THE *
+
+&PEOPLE * (IN SKIRMISH)
+
+&PKO *	peacekeeping arrive
+	mantenimiento de la paz llega
+&REFUGEE *	refugee stream
+	flujo de refugiados
+&REFUGEE *	refugee flee
+	refugiados huyen
+&REFUGEE *	refugee return
+	retorno de los refugiados
+&REFUGEE *	refugee arrive
+	refugiados llegan
+&REFUGEE * (INTO)	refugee cross (into)
+	cruz de refugiado (a)
+&REFUGEE * HOME	refugee head home
+	casa la cabeza de refugiados
+&REFUGEE * HOME	refugee return home
+	casa retorno de los refugiados
+&REFUGEE FROM + * IN $
+
+&SECURITY *	security exercise
+	ejercicio de seguridad
+&SOLUTION * TALK	solution trigger talk
+	charla solución gatillo
+&WEAPON *	weapon explode
+	arma explote
+&WEAPON *	weapon fell
+	arma cayó
+&WEAPON *	weapon battle
+	arma de combate
+&WEAPON *	weapon slam , slam
+	Slam arma, golpe
+&WEAPON *	weapon exchange
+	el intercambio de armas
+&WEAPON * (FROM $) (TOWARD +)
+
+&WEAPON * CELEBRATE	weapon fire celebrate
+	arma de fuego celebrar
+*	dock
+	muelle
+*  &DEFENSE	boost  defense
+	impulsar la defensa
+*  &SOLUTION	veto  solution
+	solución de veto
+*  DEMOCRACY	decree  democracy
+	la democracia decreto
+*  RESENTFUL	found  resentful
+	encontrado resentida
+*  RIGHTS	order  rights
+	los derechos de orden
+* &AIRCRAFT	fight , fight aircraft
+	luchar, luchar contra los aviones
+* &AIRCRAFT	offer aircraft
+	oferta de aviones
+* &AIRCRAFT	supply aircraft
+	aviones de suministro
+* &AIRCRAFT	buy aircraft
+	comprar aviones
+* &AIRCRAFT	deliver aircraft
+	entregar las aeronaves
+* &AIRCRAFT	allow aircraft
+	permitir que los aviones
+* &AIRCRAFT	recover aircraft
+	recuperar los aviones
+* &AIRCRAFT	remove aircraft
+	eliminar los aviones
+* &AIRCRAFT	use aircraft
+	uso en los aviones
+* &AIRCRAFT	send aircraft
+	enviar aviones
+* &AIRCRAFT	receive aircraft
+	recibir aviones
+* &AIRCRAFT (TO)	send aircraft (to)
+	enviar aviones (a)
+* &ASYLUM	seek asylum
+	buscar asilo
+* &ASYLUM	ask asylum
+	pedir asilo
+* &ASYLUM	offer asylum
+	la oferta de asilo
+* &ASYLUM	grant , give asylum
+	conceder, dar asilo
+* &ASYLUM	demand asylum
+	la demanda de asilo
+* &ASYLUM	take asylum
+	asilarse
+* &CAR	offer car
+	oferta de vehículo
+* &CAR	destroy car
+	destruir coche
+* &CAR	hijack car
+	secuestrar coche
+* &CAR	explode car
+	explotar un coche
+* &CAR	ambush car
+	coche emboscada
+* &CEASEFIRE	seek truce
+	buscar la tregua
+* &CEASEFIRE	arrange truce
+	organizar tregua
+* &CEASEFIRE	broker truce
+	tregua agente
+* &CEASEFIRE	monitor truce
+	monitor de tregua
+* &CEASEFIRE	extend truce
+	extender la tregua
+* &CEASEFIRE	declare truce
+	declarar la tregua
+* &CEASEFIRE	sign truce
+	tregua signo
+* &CEASEFIRE	order truce
+	para tregua
+* &CEASEFIRE	refuse truce
+	negarse tregua
+* &CEASEFIRE	called_off truce
+	tregua called_off
+* &CRIME	combat crime
+	lucha contra la delincuencia
+* &CRIME	protest crime
+	crimen protesta
+* &CRIME	slam crime
+	crimen Slam
+* &CRIME	commit crime
+	cometer crimen
+* &CURRENCY	request money
+	pedir dinero
+* &CURRENCY	offer money
+	ofrecer dinero
+* &CURRENCY	pay money
+	pagar dinero
+* &CURRENCY	extend money
+	extender dinero
+* &CURRENCY	receive money
+	recibir dinero
+* &CURRENCY (FOR &INFORMATION)
+
+* &CURRENCY (FOR {PEACEKEEPING OPERATION})	cut money (for {peacekeeping operation})
+	cortar el dinero (para la operación de paz {})
+* &CURRENCY (FROM {&SECURITY PACKAGE})	slash money (from {&security package})
+	recortar el dinero (de {y} paquete de seguridad)
+* &CURRENCY (FROM)	obtain money (from)
+	obtener dinero (de)
+* &CURRENCY (IN)	spend money (in)
+	gastar dinero (en)
+* &CURRENCY (UNDER AUSPICES)	raise money (under auspices)
+	recaudar dinero (bajo los auspicios)
+* &DEFENSE	urge defense
+	instar a la defensa
+* &DEFENSE	propose defense
+	proponer defensa
+* &DETENTION	denounce detention
+	denunciar la detención
+* &DETENTION	protest detention
+	la detención de protesta
+* &DETENTION	reduce detention
+	reducir la detención
+* &DETENTION	extend detention
+	ampliar la detención
+* &DETENTION	receive detention
+	recibir detención
+* &DISPUTE	expect dispute
+	esperar controversia
+* &DISPUTE	iron_out dispute
+	controversia iron_out
+* &DISPUTE	resolve dispute
+	determinación de diferencias
+* &DISPUTE	resolve dispute
+	determinación de diferencias
+* &DISPUTE	spark dispute
+	controversia chispa
+* &DISPUTE	suggest dispute
+	sugerir controversia
+* &DISPUTE +
+
+* &EVIDENCE	need evidence
+	necesitamos pruebas
+* &EVIDENCE	share evidence
+	evidencia comparten
+* &EVIDENCE	found evidence
+	evidencias encontradas
+* &EVIDENCE	publish evidence
+	públicamente las pruebas,
+* &EVIDENCE	submit evidence
+	presentar pruebas
+* &EVIDENCE (AGAINST)	give evidence (against)
+	declarar (en contra)
+* &FIGHT	defend struggle
+	defender la lucha
+* &FIGHT	report struggle
+	lucha informe
+* &FIGHT	join struggle
+	unirse a la lucha
+* &FIGHT	fund struggle
+	lucha de fondo
+* &FIGHT	end , end struggle
+	final, la lucha final
+* &FIGHT	condemn struggle
+	condenar la lucha
+* &FIGHT	plan struggle
+	plan de lucha
+* &FIGHT	step_up , stepped_up , stepped_up struggle
+	step_up, stepped_up, lucha stepped_up
+* &FIGHT	protest struggle
+	lucha de protesta
+* &FIGHT	unleash struggle
+	lucha desatar
+* &FIGHT	face struggle
+	lucha de la cara
+* &FIGHT (AGAINST)	support struggle (against)
+	lucha de soporte (en contra)
+* &FIGHT_CRIM
+
+* &FIGHT_GAMES IN +
+
+* &FOOD	pledge food
+	alimentos promesa
+* &FOOD	rush food
+	alimentos fiebre
+* &FOOD (TO)	get food (to)
+	conseguir comida (a)
+* &HOSTAGE	pardon hostage
+	rehenes perdón
+* &HOSTAGE	accuse hostage
+	acusar a los rehenes
+* &HOSTAGE	identify hostage
+	identificar los rehenes
+* &HOSTAGE	abuse hostage
+	abuso de rehenes
+* &INFORMATION	give information
+	dar información
+* &INFORMATION	ask information
+	pedir información
+* &INFORMATION	release information
+	divulgar información
+* &INFORMATION	check information
+	comprobar la información
+* &INFORMATION	blast information
+	información de explosión
+* &INVESTIGATION	request investigation
+	solicitud de investigación
+* &INVESTIGATION	save investigation
+	salvar a la investigación
+* &INVESTIGATION	drop investigation
+	investigación gota
+* &INVESTIGATION	set investigation
+	de investigación fijado
+* &INVESTIGATION	launch investigation
+	investigación de lanzamiento
+* &INVESTIGATION	order investigation
+	para la investigación
+* &INVESTIGATION (FOR {&FIGHT &CRIME})
+
+* &INVESTIGATION (INTO &FIGHT)
+
+* &INVESTIGATION (ON {HUMAN RIGHTS})	open investigation (on {human rights})
+	investigación abierta (sobre los derechos humanos {})
+* &INVESTIGATION INTO INVASION	seek investigation into invasion
+	buscar la investigación sobre la invasión
+* &MEDIATION
+
+* &MEDIATION
+
+* &MEDIATION
+
+* &MEDIATION
+
+* &MEDIATION BETWEEN
+
+* &MILITARY
+
+* &MILITARY
+
+* &MILITARY
+
+* &MILITARY
+
+* &MILITARY
+
+* &MILITARY
+
+* &MILITARY
+
+* &MILITARY
+
+* &MILITARY
+
+* &MILITARY
+
+* &MILITARY
+
+* &MILITARY
+
+* &MILITARY (INTO +)
+
+* &MILITARY (OF OBSERVERS)
+
+* &MILITARY (ON BORDER)
+
+* &MILITARY (OUT) (OF EXERCISE)
+
+* &MILITARY VICTORY
+
+* &NEGOTIATION	expect negotiation
+	esperar que la negociación
+* &NEGOTIATION	enter negotiation
+	entrar en la negociación
+* &NEGOTIATION	initiate negotiation
+	iniciar la negociación
+* &NEGOTIATION	start negotiation
+	iniciar la negociación
+* &NEGOTIATION	open negotiation
+	negociación abierta
+* &NEGOTIATION	resume negotiation
+	la negociación del curriculum vitae
+* &NEGOTIATION	reject negotiation
+	rechazar la negociación
+* &NEGOTIATION	postpone negotiation
+	aplazar la negociación
+* &NEGOTIATION	sever negotiation
+	romper la negociación
+* &NEGOTIATOR	appoint negotiator
+	nombrar negociador
+* &OPPOSITION	reaffirm opposition
+	reafirmar la oposición
+* &OPPOSITION	voice opposition
+	oposición de voz
+* &OPPOSITION	vow opposition
+	oposición voto
+* &PEOPLE
+
+* &PEOPLE (AGAINST TRAVELING)
+
+* &PKO	ask peacekeeping
+	preguntar mantenimiento de la paz
+* &PKO	send peacekeeping
+	enviar mantenimiento de la paz
+* &PKO	deploy peacekeeping
+	desplegar mantenimiento de la paz
+* &PKO	join peacekeeping
+	unirse mantenimiento de la paz
+* &PKO	scrap peacekeeping
+	mantenimiento de la paz de chatarra
+* &PKO (TO REMAIN)	order peacekeeping (to remain)
+	Para mantenimiento de la paz (permanecer)
+* &PKO {GREEN LIGHT}	give peacekeeping {green light}
+	dar mantenimiento de la paz {} luz verde
+* &PROGRAM	launch program
+	programa de lanzamiento
+* &PROGRAM	offer program
+	programa de oferta
+* &PROGRAM	broadcast program
+	programa de radiodifusión
+* &PROGRAM	launch program
+	programa de lanzamiento
+* &PROGRAM	back program
+	programa de copia
+* &PROGRAM	present program
+	programa actual
+* &PROGRAM	demonstrate program
+	demostrar programa
+* &PROGRAM	blast program
+	programa de explosión
+* &PROPOSAL	review proposal
+	propuesta de revisión
+* &PROPOSAL	present proposal
+	presente propuesta
+* &PROPOSAL	put proposal
+	poner propuesta
+* &PROPOSAL	approve proposal
+	aprobar la propuesta
+* &PROPOSAL	accept proposal
+	aceptar la propuesta
+* &PROPOSAL	submit proposal
+	presentar la propuesta
+* &PROPOSAL	approve proposal
+	aprobar la propuesta
+* &PROPOSAL	support proposal
+	propuesta de apoyo
+* &PROPOSAL	attack proposal
+	propuesta de ataque
+* &PROPOSAL	dismiss proposal
+	desestimar la propuesta
+* &PROPOSAL	defeat proposal
+	propuesta de la derrota
+* &PROPOSAL (FOR INCURSION) (AGAINST)	draft proposal (for incursion) (against)
+	proyecto de propuesta (por incursión) (en contra)
+* &REFUGEE	accept refugee
+	aceptar refugiados
+* &REFUGEE	evacuate refugee
+	evacuar a los refugiados
+* &REFUGEE	repatriate refugee
+	repatriar a los refugiados
+* &REFUGEE	interview refugee
+	refugiados entrevista
+* &REFUGEE	force refugee
+	refugiados vigor
+* &REFUGEE	intercept refugee
+	refugiados de intercepción
+* &REFUGEE (TO SAFETY)	move refugee (to safety)
+	mover los refugiados (de seguridad)
+* &SECURITY	urge security
+	instar a la seguridad
+* &SECURITY	ask security
+	pedir a la seguridad
+* &SECURITY	ensure security
+	garantizar la seguridad
+* &SECURITY	provide security
+	proveer seguridad
+* &SECURITY	boost security
+	la seguridad impulso
+* &SECURITY	tighten security
+	reforzar la seguridad
+* &SECURITY (AT EMBASSY)	strengthen security (at embassy)
+	fortalecer la seguridad (en la embajada)
+* &SECURITY (OVER {&WEAPON ATTACK})	alert security (over {&weapon attack})
+	alerta de seguridad (más de {y} arma de ataque)
+* &SOLUTION	verify solution
+	verificar la solución
+* &SOLUTION	consider solution
+	considerar la solución
+* &SOLUTION	introduce solution
+	introducir una solución
+* &SOLUTION	seek solution
+	buscar una solución
+* &SOLUTION	find solution
+	encontrar solución
+* &SOLUTION	adopt solution
+	adoptar la solución
+* &SOLUTION	yield solution
+	solución de rendimiento
+* &SOLUTION	lift solution
+	solución de ascensor
+* &SOLUTION	demand solution
+	solución de la demanda
+* &SOLUTION	blast solution
+	solución de explosión
+* &SOLUTION	oppose solution
+	oponerse a la solución
+* &SOLUTION	reject solution
+	rechazar la solución
+* &SOLUTION	reject solution
+	rechazar la solución
+* &SOLUTION	violate solution
+	solución violaría
+* &SOLUTION	veto solution
+	solución de veto
+* &SOLUTION	respect solution
+	solución respecto
+* &SOLUTION	extend solution
+	extender la solución
+* &SOLUTION	impose solution
+	imponer una solución
+* &SOLUTION	order solution
+	solución orden
+* &SOLUTION (OF AIRPORT)	order solution (of airport)
+	Para la solución (del aeropuerto)
+* &SOLUTION (OF OFFICES)	order solution (of offices)
+	Para la solución (de oficinas)
+* &SOLUTION OF + TRADE OFFICE
+
+* &STRONGHOLD	abandon stronghold
+	abandonar la fortaleza
+* &STRONGHOLD	besiege stronghold
+	sitiar la fortaleza
+* &STRONGHOLD	seize stronghold
+	tomar el bastión
+* &SUSPECT	extradite suspect
+	extraditar a sospechosos
+* &SUSPECT	attack suspect
+	ataque sospechoso
+* &SUSPECT	name suspect
+	nombre del sospechoso
+* &SUSPECT	seek suspect
+	buscar sospechoso
+* &SUSPECT	accuse suspect
+	acusar a sospechosos
+* &TOWN	urge town
+	instar a la ciudad
+* &TOWN	dismantle town
+	desmantelar la ciudad
+* &TOWN	defend town
+	la defensa de la ciudad
+* &TOWN	town
+	pueblo
+* &TOWN	clear town
+	ciudad clara
+* &TOWN	seize town
+	apoderarse de la ciudad
+* &TOWN (IN CRACKDOWN)	sweep town (in crackdown)
+	barrer la ciudad (en la represión)
+* &TREATY	expect , expect treaty
+	esperar, esperar tratado
+* &TREATY	draft treaty
+	proyecto de tratado
+* &TREATY	urge treaty
+	instar a los tratados
+* &TREATY	accept treaty
+	aceptar tratado
+* &TREATY	reestablish treaty
+	restablecer tratado
+* &TREATY	approve treaty
+	aprobar los tratados
+* &TREATY	reach treaty
+	tratado alcance
+* &TREATY	reach treaty
+	tratado alcance
+* &TREATY	clinch treaty
+	hacerse con los tratados
+* &TREATY	ratify treaty
+	ratificar los tratados
+* &TREATY	enter treaty
+	introducir tratado
+* &TREATY	attack treaty
+	tratado ataque
+* &TREATY	reject treaty
+	rechazar el tratado
+* &TREATY	reject treaty
+	rechazar el tratado
+* &TREATY	cancel treaty
+	cancelar tratado
+* &TREATY	delay treaty
+	tratado de retardo
+* &TREATY (IN ^) (WITH)	sign treaty (in ^) (with)
+	tratado signo (en ^) (con)
+* &TREATY (ON &DEFENSE)
+
+* &TREATY (WITH COALITION)	reach treaty (with coalition)
+	tratado de alcance (con la coalición)
+* &WEAPON	defuse weapon
+	distender arma
+* &WEAPON	request weapon
+	solicitud de arma
+* &WEAPON	sell weapon
+	arma de venta
+* &WEAPON	export weapon
+	arma de exportación
+* &WEAPON	stop weapon
+	dejar de arma
+* &WEAPON	surrender weapon
+	arma rendición
+* &WEAPON	pullback weapon
+	arma retroceso
+* &WEAPON	import weapon
+	arma de importación
+* &WEAPON	move weapon
+	movimiento arma
+* &WEAPON	intercept weapon
+	arma de intercepción
+* &WEAPON	destroy weapon
+	destruir el arma
+* &WEAPON	use weapon
+	uso de armas
+* &WEAPON	hurl weapon
+	arma hurl
+* &WEAPON	aim weapon
+	apuntar arma
+* &WEAPON	rush weapon
+	fiebre del arma
+* &WEAPON	trade weapon
+	comercio de armas
+* &WEAPON	slam weapon
+	arma Slam
+* &WEAPON (AT {TRAINING RANGE})	drop weapon (at {training range})
+	deje caer el arma (en {} gama de entrenamiento)
+* &WEAPON (FROM ^)	launch weapon (from ^)
+	arma de lanzamiento (de ^)
+* &WEAPON (ON ALERT)	replace weapon (on alert)
+	reemplazar arma (en estado de alerta)
+* &WEAPON (ON EXERCISE)	fire weapon (on exercise)
+	arma de fuego (en ejercicio)
+* &WEAPON (TO +)
+
+* &WEAPON OUT	take weapon out
+	llevar a cabo el arma
+* (ABOUT &DISPUTE)
+
+* (ABOUT DECISION)	complain (about decision)
+	quejarse (de decisión)
+* (ABOUT HELP)	approach (about help)
+	enfoque (alrededor de ayuda)
+* (ABOUT PAIN)	complain (about pain)
+	quejarse (de dolor)
+* (ABOUT PLOT)	warn (about plot)
+	advertir (alrededor de parcela)
+* (AFTER &CEASEFIRE)
+
+* (AFTER ASSAULT)	die (after assault)
+	morir (después de asalto)
+* (AFTER CLASH)	die (after clash)
+	morir (después de choque)
+* (AFTER PROTEST)	arrest (after protest)
+	arrestar (después de la protesta)
+* (AGAINST &DETENTION)
+
+* (AGAINST ACCUSATION)	defend (against accusation)
+	defenderse (contra la acusación)
+* (AGAINST ATTENDING)	decide (against attending)
+	decidir (no asistir)
+* (AGAINST BANNING)	rule (against banning)
+	regla (contra de la prohibición)
+* (AGAINST CRITICISM)	defend (against criticism)
+	defender (las críticas)
+* (AGAINST DEPLOYING)	decide (against deploying)
+	decidir (en contra de despliegue)
+* (AGAINST DISCRIMINATION)	protest (against discrimination)
+	protestar (contra la discriminación)
+* (AGAINST EASING)	argue (against easing)
+	argumentar (contra la flexibilización)
+* (AGAINST GOVERNMENT)	chant (against government)
+	cantar (contra el gobierno)
+* (AGAINST HOPE)	warn (against hope)
+	advertir (contra toda esperanza)
+* (AGAINST INDEPENDENCE)	warn (against independence)
+	advertir (contra la independencia)
+* (AGAINST MOVE)	protest (against move)
+	protestar (contra el movimiento)
+* (AGAINST OCCUPY)	warn (against occupy)
+	advertir (contra ocupar)
+* (AGAINST PLAN)	attack (against plan)
+	ataque (contra el plan)
+* (AGAINST PROVOCATION)	warn (against provocation)
+	advertir (contra la provocación)
+* (AGAINST PULLOUT)	warn (against pullout)
+	advertir (contra la retirada)
+* (AGAINST RELIGION)	rule (against religion)
+	regla (contra la religión)
+* (AGAINST SANCTIONS)	demonstrate (against sanctions)
+	demostrar (en contra de las sanciones)
+* (AGAINST SENTENCE)	protest (against sentence)
+	protestar (de la pena)
+* (AGAINST STRIKE)	warn (against strike)
+	advertir (contra la huelga)
+* (AGAINST TRAVEL)	advise (against travel)
+	asesorar (no viajar)
+* (AGAINST VIOLENCE)	rally (against violence)
+	de rally (contra la violencia)
+* (AGAINST {AIR_STRIKE})	warn (against {air_strike})
+	advertir (contra air_strike {})
+* (AGAINST)	vote (against)
+	voto (en contra)
+* (AGAINST)	request (against)
+	solicitud (en contra)
+* (AGAINST)	decide (against)
+	decidir en contra de)
+* (AGAINST)	march (against)
+	marcha (en contra)
+* (AMID PROTEST)	defend (amid protest)
+	defender (en la protesta)
+* (AS &CRIME)
+
+* (AS &NEGOTIATOR)
+
+* (AS &NEGOTIATOR) +
+
+* (AS CURSING)	quote (as cursing)
+	presupuesto (como maldición)
+* (AS DISASTER)	describe (as disaster)
+	describir (como desastres)
+* (AS FABRICATION)	dismiss (as fabrication)
+	Rechazar (como la fabricación)
+* (AS FARCICAL)	blast (as farcical)
+	explosión (como farsa)
+* (AS LAWLESS)	describe (as lawless)
+	describir (como sin ley)
+* (AS MEMBER)	admit (as member)
+	admitir (como miembro)
+* (AS MINISTER)	appoint (as minister)
+	designar (como ministro)
+* (AS MISTAKE)	describe (as mistake)
+	describir (como error)
+* (AS PARTNER)	embrace (as partner)
+	abrazar (como socio)
+* (AS PERFIDIOUS)	describe (as perfidious)
+	describir (como pérfida)
+* (AS PROVOCATIVE)	slam (as provocative)
+	Slam (como una provocación)
+* (AS TERRORISM)	denounce (as terrorism)
+	denunciar (como el terrorismo)
+* (AS TERRORIST)	view (as terrorist)
+	vista (como terrorista)
+* (AS TRADE)	admit (as trade)
+	admitir (como el comercio)
+* (AS UNACCEPTABLE)	slam (as unacceptable)
+	Slam (inaceptable)
+* (AS UNFAIR)	dismiss (as unfair)
+	Rechazar (injusto)
+* (AS {HUMAN SHIELD})	use (as {human shield})
+	utilizar (como {} escudo humano)
+* (ASIDE ENMITY)	set (aside enmity)
+	set (aparte enemistad)
+* (ASIDE RIFT)	set (aside rift)
+	conjunto (aparte del Rift)
+* (AT &TOWN) (OF &DISPUTE)
+
+* (AT CONVOY)	fire (at convoy)
+	fuego (en caravana)
+* (AT DEMONSTRATION)	chant (at demonstration)
+	canto (en la demostración)
+* (AT FIGHTER-BOMBERS)	fire (at fighter-bombers)
+	fuego (al cazabombarderos)
+* (AT GUNPOINT)	abduct (at gunpoint)
+	secuestrar (a punta de pistola)
+* (AT HEARING)	appear (at hearing)
+	aparecerá (en la audiencia)
+* (AT MEETING)	clash (at meeting)
+	choque (en la reunión)
+* (AT ODDS)	remain (at odds)
+	siendo (en desacuerdo)
+* (AT RALLY)	demand (at rally)
+	la demanda (en la reunión)
+* (AT RESIDENCE)	receive (at residence)
+	recibir (en la residencia)
+* (AT SIDE) (OF &FIGHT)
+
+* (AT {NEW SANCTIONS})	look (at {new sanctions})
+	buscar (en {} nuevas sanciones)
+* (AT)	meet (at)
+	se encuentran (a)
+* (BEFORE COURT)	appear (before court)
+	aparecerá (antes del corte)
+* (BEFORE)	summon (before)
+	convocar (antes)
+* (BEHIND &WEAPON)
+
+* (BEHIND KIDNAPPING)	identify (behind kidnapping)
+	identificar (detrás de secuestro)
+* (BETWEEN)	mediate (between)
+	mediar en (entre)
+* (BETWEEN)	talk (between)
+	hablar (entre)
+* (BETWEEN)	clash (between)
+	choque (entre)
+* (BY &AIRCRAFT)
+
+* (BY &AIRCRAFT)
+
+* (BY &MILITARY)
+
+* (BY &MILITARY)
+
+* (BY &MILITARY)
+
+* (BY )	airlift (by )
+	transporte aéreo (por)
+* (BY ATTACK)	disturb (by attack)
+	molestar (por el ataque)
+* (BY BULLET)	hit (by bullet)
+	golpeado (por la bala)
+* (BY NATO)	destroy (by nato)
+	destruir (por la OTAN)
+* (BY PROGRESS)	encourage (by progress)
+	alentar (por curso)
+* (BY RESIGNATION)	weaken (by resignation)
+	debilitar (por renuncia)
+* (BY SENTENCE)	appeal (by sentence)
+	apelar (por frase)
+* (BY SHOTS)	kill (by shots)
+	matar (por golpes)
+* (BY TANKS)	back (by tanks)
+	espalda (por tanques)
+* (BY TELEPHONE)	discuss (by telephone)
+	discutir (por teléfono)
+* (BY {ARMOURED CARS})	back (by {armoured cars})
+	espalda (por {} carros blindados)
+* (BY {BROKEN PROMISES})	disappoint (by {broken promises})
+	defraudar (por {} promesas rotas)
+* (BY)	host (by)
+	Anfitrión (por)
+* (BY)	stand (by)
+	colocarse)
+* (BY)	exonerate (by)
+	exonera (por)
+* (BY/WITH &WEAPON)
+
+* (BY/WITH GRENADE)	hit (by/with grenade)
+	golpe (por / con la granada)
+* (BY/WITH PROTESTS)	confront (by/with protests)
+	enfrentar (por / con protestas)
+* (BY/WITH SANCTIONS)	hit (by/with sanctions)
+	golpe (por / con sanciones)
+* (DURING ARREST)	kill (during arrest)
+	matar (durante la detención)
+* (DURING DEMONSTRATIONS)	arrest (during demonstrations)
+	la detención (durante las manifestaciones)
+* (DURING ELECTION)	reinforce (during election)
+	reforzar (durante la elección)
+* (DURING OPERATION)	die (during operation)
+	morir (durante la operación)
+* (DURING PROTEST)	arrest (during protest)
+	la detención (durante la protesta)
+* (DURING SHELLING)	die (during shelling)
+	morir (durante los bombardeos)
+* (DURING {AIR RAID})	kill (during {air raid})
+	matar (durante la incursión aérea {})
+* (DURING {AIR RAID})	die (during {air raid})
+	morir (durante la incursión aérea {})
+* (FOR &ASYLUM)
+
+* (FOR &CEASEFIRE)
+
+* (FOR &CRIME)
+
+* (FOR &CURRENCY)
+
+* (FOR &FIGHT)
+
+* (FOR &FIGHT)
+
+* (FOR &FOOD)
+
+* (FOR &INFORMATION)
+
+* (FOR &INFORMATION)
+
+* (FOR &INVESTIGATION)
+
+* (FOR &INVESTIGATION)
+
+* (FOR &NEGOTIATION)
+
+* (FOR &NEGOTIATION)
+
+* (FOR &NEGOTIATION)
+
+* (FOR &PKO)
+
+* (FOR &SECURITY)
+
+* (FOR &SOLUTION)
+
+* (FOR &SOLUTION)
+
+* (FOR &SOLUTION) (OF &INVESTIGATION)
+
+* (FOR &TOWN)
+
+* (FOR &TREATY)
+
+* (FOR ACCESS)	ask (for access)
+	preguntar (para el acceso)
+* (FOR ACCESS)	push (for access)
+	empujar (para el acceso)
+* (FOR ACCESS)	struggle (for access)
+	lucha (para el acceso)
+* (FOR ACTION) (AGAINST)	call (for action) (against)
+	llamar (por acción) (en contra)
+* (FOR AID)	appeal (for aid)
+	apelación (de ayuda)
+* (FOR AIRLIFTS)	appeal (for airlifts)
+	apelación (por transporte aéreo)
+* (FOR ARMS)	search (for arms)
+	de búsqueda (por los brazos)
+* (FOR ASSEMBLY)	convene (for assembly)
+	convocar (para el ensamblaje)
+* (FOR ATTACK)	blame (for attack)
+	culpa (de ataque)
+* (FOR ATTACK)	blame (for attack)
+	culpa (de ataque)
+* (FOR ATTACK)	poise (for attack)
+	poise (de ataque)
+* (FOR ATTACK)	head (for attack)
+	la cabeza (de ataque)
+* (FOR BLAMING)	blast (for blaming)
+	explosión (por culpar)
+* (FOR BREAKTHROUGH)	hope (for breakthrough)
+	la esperanza (para detección)
+* (FOR BUSINESS)	negotiate (for business)
+	negociar (para los negocios)
+* (FOR CEASEFIRE)	push (for ceasefire)
+	pulsación (para el alto el fuego)
+* (FOR CESSATION)	call (for cessation)
+	llamar al (a la paralización)
+* (FOR CLEMENCY)	appeal (for clemency)
+	apelación (clemencia)
+* (FOR CLIMAX)	head (for climax)
+	la cabeza (por clímax)
+* (FOR COMPROMISE)	press (for compromise)
+	de prensa (de compromiso)
+* (FOR CONCESSION)	call (for concession)
+	llamar (por concesión)
+* (FOR CONFRONTATION)	head (for confrontation)
+	la cabeza (la confrontación)
+* (FOR CONSTITUTION)	push (for constitution)
+	empujar (para su constitución)
+* (FOR CONSULTATIONS)	went_to (for consultations)
+	went_to (para consultas)
+* (FOR CONTROL)	battle (for control)
+	batalla (para el control)
+* (FOR COOPERATING)	expel (for cooperating)
+	expulsar (por cooperar)
+* (FOR CRACKDOWN)	call (for crackdown)
+	llamar (por represión)
+* (FOR CRISIS)	head (for crisis)
+	la cabeza (de la crisis)
+* (FOR DE-ESCALATION)	call (for de-escalation)
+	llamada (por desescalada)
+* (FOR DEADLINE)	call (for deadline)
+	llamar (por fecha)
+* (FOR DEADLOCK)	head (for deadlock)
+	la cabeza (por estancamiento)
+* (FOR DEATH)	blame (for death)
+	culpa (de la muerte)
+* (FOR DENYING)	blast (for denying)
+	explosión (por negar)
+* (FOR DEPLOYMENT)	call (for deployment)
+	llamar (para el despliegue)
+* (FOR DISSOLUTION) (OF PARTY)	open (for dissolution) (of party)
+	abierta (para la disolución) (de la parte)
+* (FOR ELECTIONS)	call (for elections)
+	llamar (para las elecciones)
+* (FOR END)	appeal (for end)
+	apelación (por fin)
+* (FOR END)	call (for end)
+	llamar (por fin)
+* (FOR END) (TO OPERATION)	call (for end) (to operation)
+	llamar (por fin) (a la operación)
+* (FOR ENTENTE)	call (for entente)
+	llamar (por entente)
+* (FOR FAILING)	attack (for failing)
+	ataque (por no)
+* (FOR FORGIVENESS)	appeal (for forgiveness)
+	apelación (perdón)
+* (FOR FUND)	appeal (for fund)
+	apelación (para el fondo)
+* (FOR HALT)	call (for halt)
+	llamar (para detener)
+* (FOR HALT)	call (for halt)
+	llamar (para detener)
+* (FOR HELP)	look (for help)
+	mirar (ayuda)
+* (FOR HELP)	appeal (for help)
+	llamada de socorro)
+* (FOR HELP) (IN &SECURITY)
+
+* (FOR HOME)	head (for home)
+	la cabeza (para el hogar)
+* (FOR HOSTING)	blast (for hosting)
+	explosión (para su alojamiento)
+* (FOR IMPOSING)	blast (for imposing)
+	explosión (por imposición)
+* (FOR INCREASE)	call (for increase)
+	llamar (por aumento)
+* (FOR INDEPENDENCE)	call (for independence)
+	llamar (por la independencia)
+* (FOR INTERVENTION)	plead (for intervention)
+	declararse (de intervención)
+* (FOR LEADERSHIP)	challenge (for leadership)
+	desafío (de liderazgo)
+* (FOR LINK)	look (for link)
+	mirar (para el enlace)
+* (FOR MEETING)	join (for meeting)
+	combinación (por reunión)
+* (FOR MEETING)	convene (for meeting)
+	convocar (por reunión)
+* (FOR MEN)	search (for men)
+	Búsqueda (para los hombres)
+* (FOR MILLION)	appeal (for million)
+	apelar (por millón)
+* (FOR MINES)	sweep (for mines)
+	barrer (para las minas)
+* (FOR MURDER)	behead (for murder)
+	decapitar (por asesinato)
+* (FOR PEACE)	hope (for peace)
+	la esperanza (para la paz)
+* (FOR PEACE)	appeal (for peace)
+	apelar (para la paz)
+* (FOR PEACE) +
+
+* (FOR PRESENCE)	appeal (for presence)
+	apelación (la presencia)
+* (FOR PRESSURE)	appeal (for pressure)
+	apelación (por presión)
+* (FOR PROSECUTION)	appeal (for prosecution)
+	apelación (para su enjuiciamiento)
+* (FOR PROTECTION)	call (for protection)
+	llamar (para protección)
+* (FOR PULL-OUT)	call (for pull-out)
+	llamar (por pull-out)
+* (FOR RAPPROCHEMENT)	appeal (for rapprochement)
+	apelación (de acercamiento)
+* (FOR REGISTRATION)	apply (for registration)
+	aplicar (para el registro)
+* (FOR REINFORCEMENTS)	appeal (for reinforcements)
+	apelación (refuerzos)
+* (FOR RELEASE)	appeal (for release)
+	apelación (la liberación)
+* (FOR RELEASE)	demonstrate (for release)
+	demostrar (para la liberación)
+* (FOR RENEWAL)	call (for renewal)
+	llamar (de renovación)
+* (FOR RESIGNATION)	call (for resignation)
+	llamar (la renuncia)
+* (FOR RESPITE)	appeal (for respite)
+	apelación (para el descanso)
+* (FOR RESTRAINT)	plead (for restraint)
+	declararse (moderación)
+* (FOR RESUMPTION)	call (for resumption)
+	llamar (para la reanudación)
+* (FOR RETRIAL)	ask (for retrial)
+	preguntar (para un nuevo juicio)
+* (FOR SACKING)	call (for sacking)
+	llamar (por despido)
+* (FOR SANCTIONS)	call (for sanctions)
+	llamar (sanciones)
+* (FOR SECLUSION)	head (for seclusion)
+	la cabeza (para el retiro)
+* (FOR SERVICE)	gather (for service)
+	recoger (por servicio)
+* (FOR STATEHOOD)	fight (for statehood)
+	luchar (por la estadidad)
+* (FOR SUMMIT)	call (for summit)
+	llamar (para la cumbre)
+* (FOR SUMMIT)	gather (for summit)
+	recopilar (para la cumbre)
+* (FOR SUSPENSION)	call (for suspension)
+	llamar (para la suspensión)
+* (FOR SUSPENSION)	call (for suspension)
+	llamar (para la suspensión)
+* (FOR TALK)	gather (for talk)
+	recopilar (para hablar)
+* (FOR TALKS)	call (for talks)
+	llamar (para las conversaciones)
+* (FOR TALKS)	meet (for talks)
+	se encuentran (para las conversaciones)
+* (FOR TALKS)	receive (for talks)
+	recibir (para las conversaciones)
+* (FOR TALKS)	arrive (for talks)
+	llegar (para las conversaciones)
+* (FOR TIES)	call (for ties)
+	llamar (por lazos)
+* (FOR TIES)	call (for ties)
+	llamar (por lazos)
+* (FOR TORTURE)	blame (for torture)
+	culpa (por la tortura)
+* (FOR TREATMENT)	fly (for treatment)
+	volar (por tratamiento)
+* (FOR TROOP)	call (for troop)
+	llamar (por tropas)
+* (FOR TRYING)	blast (for trying)
+	explosión (por tratar)
+* (FOR VICTORY)	head (for victory)
+	la cabeza (por la victoria)
+* (FOR VIOLATING)	censure (for violating)
+	censura (viola)
+* (FOR VISA)	apply (for visa)
+	aplicar (para la visa)
+* (FOR VISIT)	arrive (for visit)
+	llegar (por visita)
+* (FOR WAY)	look (for way)
+	buscar (por cierto)
+* (FOR WITHDRAWAL)	call (for withdrawal)
+	llamar (para la retirada)
+* (FOR {&CURRENCY HELP})	appeal (for {&currency help})
+	apelación (por {y} moneda ayuda)
+* (FOR {&FIGHT GAMES})	arrive (for {&fight games})
+	llegar (por {y} luchar juegos)
+* (FOR {&FOOD AND &CURRENCY})
+
+* (FOR {&MILITARY EXERCISES})	arrive (for {&military exercises})
+	llegar (por {y} ejercicios militares)
+* (FOR {&MILITARY INCURSION})	condemn (for {&military incursion})
+	condenar (por {y} incursión militar)
+* (FOR {&MILITARY RESPONSE})	support (for {&military response})
+	apoyo (para {} Y la respuesta militar)
+* (FOR {&SECURITY MEASURE})	call (for {&security measure})
+	llamar (por {y} medida de seguridad)
+* (FOR {COALITION GOVERNMENT})	head (for {coalition government})
+	la cabeza (por {} gobierno de coalición)
+* (FOR {FIGHTER &AIRCRAFT})
+
+* (FOR {FINANCIAL AID})	ask (for {financial aid})
+	preguntar (para la ayuda financiera {})
+* (FOR {FREE STATE})	rallied (for {free state})
+	reunido (para {} estado libre)
+* (FOR {HUMANITARIAN AID})	ask (for {humanitarian aid})
+	preguntar (por {} la ayuda humanitaria)
+* (FOR {HUMANITARIAN AID})	finance (for {humanitarian aid})
+	finanzas (por {} la ayuda humanitaria)
+* (FOR {HUMANITARIAN CRISIS})	blame (for {humanitarian crisis})
+	culpa (por {} crisis humanitaria)
+* (FOR {INTERNATIONAL ACTION})	call (for {international action})
+	llamada (por {} la acción internacional)
+* (FOR {MEDICAL TREATMENT})	evacuate (for {medical treatment})
+	evacuar (para el tratamiento médico {})
+* (FOR {POLITICAL REFORM})	appeal (for {political reform})
+	apelación (para la reforma política {})
+* (FOR {SUICIDE_ATTACK})	call (for {suicide_attack})
+	llamada (por suicide_attack {})
+* (FOR)	lobby (for)
+	vestíbulo (para)
+* (FOR)	depart (for)
+	salir (para)
+* (FOR)	blast (for)
+	explosión (para)
+* (FOR)	sue (for)
+	pedir)
+* (FROM &PROPOSAL)
+
+* (FROM &TOWN)
+
+* (FROM &TREATY)
+
+* (FROM &TREATY)
+
+* (FROM ACID)	die (from acid)
+	morir (de ácido)
+* (FROM AIR)	blitz (from air)
+	Blitz (del aire)
+* (FROM AREAS)	cleanse (from areas)
+	limpiar (de áreas)
+* (FROM BLAME)	distance (from blame)
+	distancia (de culpa)
+* (FROM BORDER)	withdraw (from border)
+	retirar (de frontera)
+* (FROM BUSINESS)	refrain (from business)
+	abstenerse (de negocios)
+* (FROM COALITION)	withdraw (from coalition)
+	retirar (de la coalición)
+* (FROM DEMONSTRATION)	return (from demonstration)
+	volver (de demostración)
+* (FROM DISEASE)	die (from disease)
+	morir (de la enfermedad)
+* (FROM ENTERING)	prevent (from entering)
+	impedir (entren)
+* (FROM EXPERIENCE)	benefit (from experience)
+	beneficio (por experiencia)
+* (FROM HIGHWAY)	withdraw (from highway)
+	retirar (de carretera)
+* (FROM INJURIES)	die (from injuries)
+	morir (de lesiones)
+* (FROM LEAVING)	prevent (from leaving)
+	impedir (salir)
+* (FROM MANOEUVRES)	withdraw (from manoeuvres)
+	retirar (de maniobras)
+* (FROM MEETING)	emerge (from meeting)
+	emerger (de reunión)
+* (FROM OFFICE)	remove (from office)
+	eliminar (de oficina)
+* (FROM PARLIAMENT)	expel (from parliament)
+	expulsar (del parlamento)
+* (FROM PARTY)	resign (from party)
+	renunciar (de parte)
+* (FROM PETITION)	block (from petition)
+	bloque (en la denuncia)
+* (FROM RACE)	withdraw (from race)
+	retirar (de raza)
+* (FROM REMARKS)	distance (from remarks)
+	distancia (de comentarios)
+* (FROM REPORTING)	ban (from reporting)
+	prohibición (de informes)
+* (FROM SUMMIT)	exclude (from summit)
+	excluir (de la cumbre)
+* (FROM VIOLENCE)	abstain (from violence)
+	abstenerse (de la violencia)
+* (FROM ^) (WITH MEDICINE)	arrive (from ^) (with medicine)
+	llegar (desde ^) (con medicamentos)
+* (FROM {DIPLOMATIC EFFORTS})	withdraw (from {diplomatic efforts})
+	retirar (de {} esfuerzos diplomáticos)
+* (FROM {RELIEF PROJECT})	withdraw (from {relief project})
+	retirar (de {} proyecto de ayuda)
+* (FROM)	return (from)
+	regresar de)
+* (FROM)	distance (from)
+	distancia desde)
+* (FROM)	exclude (from)
+	excluir de)
+* (GUNFIRE)	kill (gunfire)
+	matar (disparos)
+* (HOLDING TALKS)	favor (holding talks)
+	favorecer (en conversaciones)
+* (IN  COURT)	sue (in  court)
+	demandar (en la corte)
+* (IN &CRIME) (OF SANCTION)
+
+* (IN &CURRENCY)
+
+* (IN &DETENTION)
+
+* (IN &DETENTION)
+
+* (IN &DISPUTE)
+
+* (IN &DISPUTE)
+
+* (IN &DISPUTE)
+
+* (IN &DISPUTE)
+
+* (IN &FIGHT)
+
+* (IN &FIGHT)
+
+* (IN &FIGHT_OF_WORDS)
+
+* (IN &NEGOTIATION)
+
+* (IN ACCIDENT)	kill (in accident)
+	matar (en el accidente)
+* (IN ACCUSATION)	join (in accusation)
+	join (en la acusación)
+* (IN AID)	cut (in aid)
+	corte (de la ayuda)
+* (IN AIRSTRIKE)	die (in airstrike)
+	morir (en ataque aéreo)
+* (IN BACK)	stab (in back)
+	arma blanca (en la espalda)
+* (IN BATTLES)	die (in battles)
+	morir (en batallas)
+* (IN BLAST)	die (in blast)
+	morir (en la explosión)
+* (IN BREACH) (OF LAW)	found (in breach) (of law)
+	encontrado (en incumplimiento) (de la ley)
+* (IN CALL)	discuss (in call)
+	discutir (durante la llamada)
+* (IN CALLING)	join (in calling)
+	join (en el teléfono)
+* (IN CAPITAL)	chant (in capital)
+	canto (en la capital)
+* (IN CLASH)	kill (in clash)
+	matar (en choque)
+* (IN CLASHES)	die (in clashes)
+	morir (en los enfrentamientos)
+* (IN COMMEMORATING)	gather (in commemorating)
+	reunir (en la conmemoración)
+* (IN CONDEMNING)	join (in condemning)
+	join (en la condena)
+* (IN CONDEMNING)	join (in condemning)
+	join (en la condena)
+* (IN CONNECTION)	hold (in connection)
+	mantener (en relación)
+* (IN COURT)	charge (in court)
+	cargar (en la corte)
+* (IN COURT)	appear (in court)
+	comparecer ante un tribunal)
+* (IN CRITICISING)	join (in criticising)
+	join (en la crítica)
+* (IN DEMOCRACY)	assist (in democracy)
+	asistencia (en la democracia)
+* (IN DENYING)	join (in denying)
+	join (negar)
+* (IN DEPLORING)	join (in deploring)
+	join (en lamentar)
+* (IN DIPLOMACY)	engage (in diplomacy)
+	participar (en la diplomacia)
+* (IN DIPLOMACY)	engage (in diplomacy)
+	participar (en la diplomacia)
+* (IN EFFORT)	engage (in effort)
+	participar (en lo posible)
+* (IN EFFORT)	involve (in effort)
+	implicar (en lo posible)
+* (IN ELECTION)	beat (in election)
+	batir (en las elecciones)
+* (IN ELECTION)	vote (in election)
+	voto (en las elecciones)
+* (IN ELECTIONS)	attack (in elections)
+	ataque (en las elecciones)
+* (IN FAVOR)	vote (in favor)
+	voto (a favor)
+* (IN FAVOR)	appear (in favor)
+	aparecerá (a favor)
+* (IN FAVOR) (OF {CONSTITUTIONAL AMENDMENT})	vote (in favor) (of {constitutional amendment})
+	votar (a favor) (de enmienda constitucional {})
+* (IN FAVOUR)	rule (in favour)
+	regla (a favor)
+* (IN FAVOUR) (OF EXTRADITION)	rule (in favour) (of extradition)
+	gobernar (a favor) (de extradición)
+* (IN FAVOUR/FAVOR)	demonstrate (in favour/favor)
+	demostrar (a favor / favor)
+* (IN FIREFIGHT)	engage (in firefight)
+	participar (en el tiroteo)
+* (IN FIREFIGHT)	die (in firefight)
+	morir (en tiroteo)
+* (IN FRONT)	rallied (in front)
+	repuntado (delante)
+* (IN FUNERAL)	march (in funeral)
+	marcha (en el funeral)
+* (IN FURY)	explode (in fury)
+	explotar (furia)
+* (IN GUNBATTLE)	arrest (in gunbattle)
+	arrestar (en tiroteo)
+* (IN GUNBATTLE)	kill (in gunbattle)
+	matar (en el tiroteo)
+* (IN GUNBATTLE)	kill (in gunbattle)
+	matar (en el tiroteo)
+* (IN GUNFIGHT)	engage (in gunfight)
+	participar (en el tiroteo)
+* (IN INQUIRIES)	help (in inquiries)
+	ayuda (en las encuestas)
+* (IN INTERVIEW)	charge (in interview)
+	carga (en la entrevista)
+* (IN LETTER)	warn (in letter)
+	advertir (en la carta)
+* (IN MEETING)	clash (in meeting)
+	choque (en la reunión)
+* (IN MEMORY)	march (in memory)
+	marcha (en memoria)
+* (IN POLLS)	fight (in polls)
+	luchar (en las encuestas)
+* (IN PROTEST)	put (in protest)
+	poner (en protesta)
+* (IN PROTEST)	rallied (in protest)
+	reunido (en protesta)
+* (IN PROTEST)	block (in protest)
+	bloque (en protesta)
+* (IN PROTEST)	ransack (in protest)
+	ransack (en protesta)
+* (IN PURSUIT)	cross (in pursuit)
+	cruzar (en la búsqueda)
+* (IN RAID)	seize (in raid)
+	apoderarse (en el ataque)
+* (IN RAID)	swoop (in raid)
+	sola vez (en el ataque)
+* (IN RAID)	die (in raid)
+	morir (en el ataque)
+* (IN RALLY) (FOR)	gather (in rally) (for)
+	reunir (en el rally) (por)
+* (IN RETALIATION)	blockade (in retaliation)
+	bloqueo (represalia)
+* (IN RIOT)	killed_and (in riot)
+	killed_and (en disturbios)
+* (IN SCANDAL)	arrest (in scandal)
+	arrestar (en el escándalo)
+* (IN SHOOTING)	involve (in shooting)
+	implicar (en rodaje)
+* (IN SHOOTOUT)	kill (in shootout)
+	matar (en el tiroteo)
+* (IN SHOOTOUT)	kill (in shootout)
+	matar (en el tiroteo)
+* (IN SKIRMISHES)	die (in skirmishes)
+	morir (en escaramuzas)
+* (IN SOLIDARITY)	demonstrate (in solidarity)
+	demostrar (en solidaridad)
+* (IN STORM)	die (in storm)
+	morir (en la tormenta)
+* (IN STRIKE)	target (in strike)
+	de destino (en huelga)
+* (IN STRIKE)	bomb (in strike)
+	bomba (en huelga)
+* (IN SUPPORT)	protest (in support)
+	protesta (en apoyo)
+* (IN SYMPATHY)	march (in sympathy)
+	marcha (por simpatía)
+* (IN TRADE)	engage (in trade)
+	participar (en el comercio)
+* (IN TRIAL)	condemn (in trial)
+	condenar (en prueba)
+* (IN WITHDRAWAL)	engage (in withdrawal)
+	comprometerse (con abstinencia)
+* (IN ^) (FOR CONSULTATION)	arrive (in ^) (for consultation)
+	llegar (en ^) (de consulta)
+* (IN ^) (FOR SUMMIT)	arrive (in ^) (for summit)
+	llegar (en ^) (para la cumbre)
+* (IN { DEVELOPMENT})	invest (in { development})
+	invertir (en desarrollo {})
+* (IN {ACCIDENTAL BLAST})	killed_and (in {accidental blast})
+	killed_and (en explosión accidental {})
+* (IN {AIR STRIKE})	hit (in {air strike})
+	golpe (en el ataque aéreo {})
+* (IN {CORRUPTION CASE})	charge (in {corruption case})
+	carga (en el caso de corrupción {})
+* (IN {DRONE STRIKE})	die (in {drone strike})
+	morir (en ataque de drone {})
+* (IN {JOINT MANOEUVRES})	assault (in {joint manoeuvres})
+	asalto (en maniobras conjuntas {})
+* (IN {JOINT VENTURE})	invest (in {joint venture})
+	invertir (en joint venture {})
+* (IN {RADIO MESSAGE})	accuse (in {radio message})
+	acusar (en {} mensaje de radio)
+* (IN {SUICIDE BOMBING})	die (in {suicide bombing})
+	morir (en atentado suicida {})
+* (IN {TELEPHONE CONVERSATION})	discuss (in {telephone conversation})
+	discutir (en conversación telefónica {})
+* (IN {TRAINING ACCIDENT})	killed_and (in {training accident})
+	killed_and (en accidente de entrenamiento {})
+* (IN {VERBAL &FIGHT})
+
+* (IN) (FOR TALK)	expect (in) (for talk)
+	esperar (en) (para hablar)
+* (INSIDE)	blockade (inside)
+	bloqueo (en el interior)
+* (INTO &DETENTION)
+
+* (INTO &TOWN)
+
+* (INTO + POSIT)
+
+* (INTO ALLEGATION)	look (into allegation)
+	mira (sobre la alegación)
+* (INTO CHARGE)	look (into charge)
+	buscar (en forma gratuita)
+* (INTO CHARGES)	look (into charges)
+	mirar (deducidos los gastos)
+* (INTO COMPLAINTS)	look (into complaints)
+	mirar (las quejas)
+* (INTO COMPUTER)	hack (into computer)
+	Hack (en la computadora)
+* (INTO COUNTRY)	allow (into country)
+	permitir (en el país)
+* (INTO DEADLOCK)	head (into deadlock)
+	la cabeza (en punto muerto)
+* (INTO DEATH)	look (into death)
+	buscar (en la muerte)
+* (INTO NETWORK)	hack (into network)
+	cortar (en red)
+* (INTO OFFENSIVE)	thrust (into offensive)
+	de empuje (en ofensiva)
+* (INTO REPORTS)	look (into reports)
+	buscar (en los informes)
+* (INTO SEA)	crash (into sea)
+	accidente (en el mar)
+* (INTO SECOND)	beat (into second)
+	batir (en segundos)
+* (INTO STREETS)	pour (into streets)
+	verter (en las calles)
+* (INTO TALKS)	head (into talks)
+	la cabeza (en las conversaciones)
+* (INTO TERRITORY)	penetrate (into territory)
+	penetrar (en el territorio)
+* (INTO {EMERGENCY SESSION})	go (into {emergency session})
+	ir (en sesión de emergencia {})
+* (INTO)	probe (into)
+	investigar)
+* (INTO)	fly (into)
+	volar dentro)
+* (INTO)	push (into)
+	llevar a)
+* (NO OBSTACLE)	saw (no obstacle)
+	sierra (sin obstáculos)
+* (OF &CRIME)
+
+* (OF &FIGHT)
+
+* (OF &FIGHT)
+
+* (OF &WEAPON)
+
+* (OF ATTACK)	suspect (of attack)
+	sospechar (de ataque)
+* (OF BASES)	pulled_out (of bases)
+	pulled_out (de bases)
+* (OF CHARGES)	clear (of charges)
+	clara (de pago)
+* (OF CITIZENSHIP)	strip (of citizenship)
+	tira (de la ciudadanía)
+* (OF COMMITMENT)	reassure (of commitment)
+	tranquilizar (de compromiso)
+* (OF COOPERATION)	suspect (of cooperation)
+	sospechar (de cooperación)
+* (OF EXODUS)	warn (of exodus)
+	advertir (de éxodo)
+* (OF EXPANSIONISM)	accuse (of expansionism)
+	acusar (expansionismo)
+* (OF FRAUD)	suspect (of fraud)
+	sospechar (de fraude)
+* (OF FUNDING)	clear (of funding)
+	clara (de financiación)
+* (OF GENOCIDE)	accuse (of genocide)
+	acusar (de genocidio)
+* (OF GROWING CRISIS)	warn (of growing crisis)
+	advertir (de creciente crisis)
+* (OF HARTALS) +
+
+* (OF MASSACRE)	accuse (of massacre)
+	acusar (de matanza)
+* (OF PLOT)	warn (of plot)
+	advertir (de la trama)
+* (OF RACE)	pulled_out (of race)
+	pulled_out (de raza)
+* (OF RESPONSE)	warn (of response)
+	advertir (de respuesta)
+* (OF RISK)	warn (of risk)
+	advertir (de riesgo)
+* (OF SABRE-RATTLING)	accuse (of sabre-rattling)
+	acusar (del ruido de sables)
+* (OF STEALING)	suspect (of stealing)
+	sospechar (de robar)
+* (OF SUPPORT)	reassure (of support)
+	tranquilizar (de apoyo)
+* (OF TALKS)	pulled_out (of talks)
+	pulled_out (de negociaciones)
+* (OF TERRORISM)	accuse (of terrorism)
+	acusar (del terrorismo)
+* (OF TORTURE)	accuse (of torture)
+	acusar (de la tortura)
+* (OF TREASON)	suspect (of treason)
+	sospechar (de traición)
+* (OF VIOLENCE)	accuse (of violence)
+	acusar (de la violencia)
+* (OF WOUNDS)	die (of wounds)
+	morir (de las heridas)
+* (OF {COLLECTIVE ACTION})	warn (of {collective action})
+	advertir (de la acción colectiva {})
+* (OF {DISASTROUS CONSEQUENCES})	warn (of {disastrous consequences})
+	advertir (de {} consecuencias desastrosas)
+* (OF {ETHNIC CLEANSING})	accuse (of {ethnic cleansing})
+	acusar (de {} limpieza étnica)
+* (OF {INTERNATIONAL PRESSURE})	warn (of {international pressure})
+	advertir (de {} la presión internacional)
+* (OF {NATURAL CAUSES})	die (of {natural causes})
+	morir (de causas naturales {})
+* (OF {RIGHTS ABUSES})	accuse (of {rights abuses})
+	acusar (de {} violaciones de los derechos)
+* (OF {RIGHTS ABUSE})	accuse (of {rights abuse})
+	acusar (de violación de los derechos {})
+* (OFF SANCTIONS)	shrug (off sanctions)
+	encogimiento de hombros (fuera de sanciones)
+* (ON  ISSUES)	press (on  issues)
+	de prensa (en números)
+* (ON  {TRAINING MISSION})	kill (on  {training mission})
+	matar (en misión de entrenamiento {})
+* (ON &CEASEFIRE)
+
+* (ON &NEGOTIATION)
+
+* (ON &PROPOSAL)
+
+* (ON ALERT)	put (on alert)
+	poner (en estado de alerta)
+* (ON ALERT) (ALONG BORDER)	put (on alert) (along border)
+	poner (en estado de alerta) (en la frontera)
+* (ON CHANGES)	vote (on changes)
+	votación (en los cambios)
+* (ON CHARGES)	indict (on charges)
+	acusar (de pago)
+* (ON CUSTOM)	cooperate (on custom)
+	cooperar (en la costumbre)
+* (ON DEAL)	renege (on deal)
+	renegar (en cantidad)
+* (ON DRAFT)	consult (on draft)
+	consultar (en proyecto)
+* (ON FIRE)	set (on fire)
+	incendiar)
+* (ON IMPORTANCE)	agree (on importance)
+	de acuerdo (en importancia)
+* (ON INITIATIVE)	embark (on initiative)
+	embarcarse (en la iniciativa)
+* (ON MISSION)	head (on mission)
+	la cabeza (en misión)
+* (ON NEED)	agree (on need)
+	de acuerdo (en la necesidad)
+* (ON OPERATION)	brief (on operation)
+	breve (en funcionamiento)
+* (ON PROMISE)	renege (on promise)
+	renegar (la promesa)
+* (ON RETURN) (OF &REFUGEE)
+
+* (ON STATE) (OF ALERT)	place (on state) (of alert)
+	colocar (en el estado) (de alerta)
+* (ON SUSPICION)	arrest (on suspicion)
+	arrestar (bajo sospecha)
+* (ON TARIFF)	cooperate (on tariff)
+	cooperar (en la tarifa)
+* (ON TOUR) (OF) +
+
+* (ON TOUR) (TO) +
+
+* (ON TRADE)	agree (on trade)
+	de acuerdo (en el comercio)
+* (ON TRIAL)	put (on trial)
+	llevar a jucio)
+* (ON TRIAL)	go (on trial)
+	ir a juicio)
+* (ON VISIT)	embark (on visit)
+	embarcarse (la visita)
+* (ON {DIPLOMATIC OFFENSIVE})	embark (on {diplomatic offensive})
+	embarcarse (el {} ofensiva diplomática)
+* (ON)	call (on)
+	recurrir)
+* (OUT OF)	drive (out of)
+	conducir (de los)
+* (OUT)	push (out)
+	expulsar)
+* (OUT) (OF COALITION)	pull (out) (of coalition)
+	tire (sale) (de la coalición)
+* (OUT) (OF GOVERNMENT)	pull (out) (of government)
+	tire (sale) (del gobierno)
+* (OUT) (OF TOURNAMENT)	pull (out) (of tournament)
+	tire (sale) (del torneo)
+* (OUTSIDE)	rallied (outside)
+	repuntado (fuera)
+* (OVER &CURRENCY)
+
+* (OVER &TOWN)
+
+* (OVER ATTACK)	protest (over attack)
+	protesta (por el ataque)
+* (OVER COMPROMISE)	haggle (over compromise)
+	regatear (más del compromiso)
+* (OVER DEATH)	protest (over death)
+	protesta (sobre la muerte)
+* (OVER EFFORTS)	clash (over efforts)
+	choque (más de esfuerzos)
+* (OVER FEAR)	deploy (over fear)
+	implementar (por encima del miedo)
+* (OVER IMPRISONMENT)	clash (over imprisonment)
+	choque (más de prisión)
+* (OVER LOAN)	sign (over loan)
+	firmar (más del préstamo)
+* (OVER LUNCH)	exchange (over lunch)
+	intercambio (durante el almuerzo)
+* (OVER PLAN)	clash (over plan)
+	choque (sobre el plan)
+* (OVER POLICY)	divide (over policy)
+	dividir (sobre la política)
+* (OVER RESTRICTION)	protest (over restriction)
+	protesta (más restricción)
+* (OVER SHOOTING)	protest (over shooting)
+	protesta (durante la filmación)
+* (OVER TELEPHONE)	talk (over telephone)
+	hablar (a través del teléfono)
+* (OVER VISIT)	negotiate (over visit)
+	negociar (por la visita)
+* (OVER {TRAVEL RESTRICTION})	protest (over {travel restriction})
+	protesta (más de {} restricción de desplazamiento)
+* (PEACE CONFERENCE)	plan (peace conference)
+	Plan (conferencia de paz)
+* (THE STAKES)	raise (the stakes)
+	(elevar las apuestas)
+* (THROUGH HEART)	cut (through heart)
+	corte (a través del corazón)
+* (THROUGH PROTEST)	march (through protest)
+	marcha (a través de la protesta)
+* (THROUGH VILLAGES)	sweep (through villages)
+	barrer (a través de aldeas)
+* (TO &ASYLUM)
+
+* (TO &CEASEFIRE)
+
+* (TO &DEFENSE)
+
+* (TO &DETENTION)
+
+* (TO &PEOPLE)
+
+* (TO &PKO)
+
+* (TO &TREATY)
+
+* (TO )	fly (to )
+	volar a )
+* (TO A VOTE)	put (to a vote)
+	poner (a votación)
+* (TO ASSASSINATION)	link (to assassination)
+	enlace (al asesinato)
+* (TO ATTACK)	link (to attack)
+	enlace (para atacar)
+* (TO BARRACKS)	return (to barracks)
+	volver (a los cuarteles)
+* (TO BORDER)	rush (to border)
+	fiebre (a la frontera)
+* (TO CABINET)	promote (to cabinet)
+	la promoción (para mueble)
+* (TO CLOSE)	order (to close)
+	fin (cerrar)
+* (TO COOPERATION)	commit (to cooperation)
+	comprometerse (a la cooperación)
+* (TO CORE)	shock (to core)
+	choque (hasta el núcleo)
+* (TO COURT)	apply (to court)
+	aplicar (a la corte)
+* (TO COURT)	summon (to court)
+	convocar (a la corte)
+* (TO DEATH)	put (to death)
+	dar muerte a)
+* (TO DEATH)	hack (to death)
+	Hack (hasta la muerte)
+* (TO DEMONSTRATE)	gather (to demonstrate)
+	recopilar (demostrar)
+* (TO ELECTIONS)	agree (to elections)
+	de acuerdo (con las elecciones)
+* (TO FUTURE) (WITH OPTIMISM)	look (to future) (with optimism)
+	mirar (a futuro) (con optimismo)
+* (TO GALLOWS)	send (to gallows)
+	enviar (a la horca)
+* (TO GOVERNMENT)	appeal (to government)
+	apelación (al gobierno)
+* (TO HEAD)	elect (to head)
+	elegidos (a la cabeza)
+* (TO HOSPITAL)	commit (to hospital)
+	comprometerse (al hospital)
+* (TO INSPECTION)	agree (to inspection)
+	de acuerdo (a inspección)
+* (TO LEAVE)	order (to leave)
+	fin (para salir)
+* (TO PEACE &TREATY)
+
+* (TO PEACE)	agree (to peace)
+	de acuerdo (para la paz)
+* (TO POLLS)	head (to polls)
+	cabeza (las encuestas)
+* (TO POST)	promote (to post)
+	promover (a publicar)
+* (TO PRESS)	call (to press)
+	llamar (presionar)
+* (TO PRESS) (FOR OUSTER)	look (to press) (for ouster)
+	mirar (a la prensa) (por expulsión)
+* (TO PROPOSAL)	agree (to proposal)
+	de acuerdo (a la propuesta)
+* (TO REMAIN) (IN &DETENTION)
+
+* (TO SANCTIONS)	agree (to sanctions)
+	de acuerdo (a las sanciones)
+* (TO SHOOT)	order (to shoot)
+	fin (para disparar)
+* (TO STREET)	take (to street)
+	tomar (a la calle)
+* (TO SUMMIT)	welcome (to summit)
+	la bienvenida (a la cumbre)
+* (TO {BANNED PARTIES}) $
+
+* (TO {EARLY ELECTIONS})	agree (to {early elections})
+	de acuerdo (a {} elecciones anticipadas)
+* (TO {ENERGY &SECURITY})
+
+* (TO {OIL MARKET})	return (to {oil market})
+	retorno (a {} mercado del petróleo)
+* (TO {PEACE PLAN})	agree (to {peace plan})
+	de acuerdo (a {} plan de paz)
+* (TO {POLICE &DETENTION})
+
+* (TO)	come (to)
+	ven a)
+* (TO)	rush (to)
+	apresurarse a)
+* (TO)	welcome (to)
+	Bienvenido a)
+* (TO)	export (to)
+	exportar a)
+* (TO)	immigrate (to)
+	emigrar (a)
+* (TO/FOR PROTEST)	gather (to/for protest)
+	reunir (a / de la protesta)
+* (TOWARD DEMOBILISATION)	move (toward demobilisation)
+	mover (hacia la desmovilización)
+* (TOWARD DEMOBILIZATION)	move (toward demobilization)
+	mover (hacia la desmovilización)
+* (TOWARD MEETING) + REQUIREMENT ECON
+
+* (TOWARD TALKS)	move (toward talks)
+	mover (hacia las conversaciones)
+* (UNDER AUSPICES)	meet (under auspices)
+	se encuentran (bajo los auspicios)
+* (UNDER CENSURE)	come (under censure)
+	venir (en virtud de la censura)
+* (UNDER FIRE)	come (under fire)
+	venir (bajo el fuego)
+* (UNDER GUNFIRE)	die (under gunfire)
+	morir (bajo fuego)
+* (UNDER MEDIATION)	meet (under mediation)
+	se encuentran (en virtud de la mediación)
+* (UNDER RAID)	shudder (under raid)
+	estremecerse (en RAID)
+* (UNDER SURVEILLANCE)	place (under surveillance)
+	lugar (bajo vigilancia)
+* (UP &MILITARY)
+
+* (UP {&MILITARY RESERVE})	call (up {&military reserve})
+	llamada (hasta {y} reserva militar)
+* (UPON)	call (upon)
+	invocar)
+* (WHETHER SUSPEND)	decide (whether suspend)
+	decidir (si suspender)
+* (WITH &AIRCRAFT)
+
+* (WITH &CAR)
+
+* (WITH &INFORMATION)
+
+* (WITH &INVESTIGATION)
+
+* (WITH &MILITARY)
+
+* (WITH &WEAPON)
+
+* (WITH &WEAPON)
+
+* (WITH AID)	arrive (with aid)
+	llegar (con ayuda)
+* (WITH ANGER)	react (with anger)
+	reaccionar (con enojo)
+* (WITH CORRUPTION)	battle (with corruption)
+	batalla (con la corrupción)
+* (WITH DEMANDS)	present (with demands)
+	presente (con demandas)
+* (WITH DISBELIEF)	react (with disbelief)
+	reaccionar (con incredulidad)
+* (WITH DISMAY)	react (with dismay)
+	reaccionar (con consternación)
+* (WITH HOSTILITY)	view (with hostility)
+	vista (con hostilidad)
+* (WITH IT)	deal (with it)
+	tratar con él)
+* (WITH KIDNAPPER)	plead (with kidnapper)
+	alegar (con secuestrador)
+* (WITH LEADERS)	meet (with leaders)
+	se encuentran (con los líderes)
+* (WITH MORTAR)	hit (with mortar)
+	golpear (con mortero)
+* (WITH MURDER)	charge (with murder)
+	cargar (asesinato)
+* (WITH OFFICIALS)	clash (with officials)
+	choque (con los funcionarios)
+* (WITH OUTRAGE)	react (with outrage)
+	reaccionar (con indignación)
+* (WITH POLICY)	wrestle (with policy)
+	luchar (la política)
+* (WITH RIOTERS)	clash (with rioters)
+	choque (con los alborotadores)
+* (WITH ROCKETS)	attack (with rockets)
+	ataque (con cohetes)
+* (WITH ROCKS)	pelt (with rocks)
+	piel (con piedras)
+* (WITH ROCKS)	bomb (with rocks)
+	bomba (con piedras)
+* (WITH SCEPTICISM)	react (with scepticism)
+	reaccionar (con escepticismo)
+* (WITH SIGNATURES)	present (with signatures)
+	presente (con firmas)
+* (WITH STONES)	pelt (with stones)
+	piel (con piedras)
+* (WITH TERRORISM)	charge (with terrorism)
+	cargar (con el terrorismo)
+* (WITH WARNING)	close (with warning)
+	cerrar (con aviso)
+* (WITH WARNING)	grapple (with warning)
+	Grapa (con aviso)
+* (WITH WARNINGS)	squared_off (with warnings)
+	squared_off (con cuidado)
+* (WITH WAYS)	grapple (with ways)
+	lidiar (con formas)
+* (WITH {&CAR &WEAPON})
+
+* (WITH {&FIGHT &CRIME})
+
+* (WITH)	agree (with)
+	de acuerdo con)
+* (WITH)	link (with)
+	enlace (con)
+* (WITH)	negotiate (with)
+	negociar con)
+* (WITH)	break (with)
+	romper con)
+* +
+
+* + &NEGOTIATION
+
+* + CALLS
+
+* + CONFERENCE
+
+* + HOURS
+
+* + MISSION
+
+* + TO HEAD
+
+* A DEVIL	call a devil
+	llamar a un diablo
+* ABDUCTION	support abduction
+	el secuestro de apoyo
+* ABDUCTION (OF ^) BY +
+
+* ABLAZE	set ablaze
+	incendiados
+* ABOUT	protest about
+	protestar
+* ABUSES	commit abuses
+	cometer abusos
+* ACCESS	get access
+	tener acceso
+* ACCESS	give access
+	dar acceso
+* ACCESS	grant access
+	autorizará el acceso
+* ACCESS	close access
+	acceso cercano
+* ACCESS (TO AIRSPACE)	deny access (to airspace)
+	denegar el acceso (al espacio aéreo)
+* ACCESSION	oppose accession
+	oponerse a la adhesión
+* ACCUSATION	dismiss accusation
+	desestimar la acusación
+* ACCUSATION	hurl accusation
+	acusación hurl
+* ACCUSATION	trade accusation
+	acusación comercio
+* ACCUSATIONS	deny accusations
+	negar las acusaciones
+* ACCUSATIONS	exchange accusations
+	acusaciones de intercambio
+* ACHIEVEMENT	hold achievement
+	logro de retención
+* ACID	threw acid
+	lanzó ácido
+* ACQUISITION	mull acquisition
+	adquisición Mull
+* ACQUITTAL	appeal acquittal
+	absolutoria apelación
+* ACQUITTAL	overturn acquittal
+	revocar la absolución
+* ACROSS	advance across
+	avanzar por los
+* ACTION	slam action
+	acción Slam
+* ACTION (AGAINST)	oppose action (against)
+	oponerse a la acción (en contra)
+* ACTION (AGAINST)	demand action (against)
+	la acción de la demanda (en contra)
+* ACTION (AGAINST)	pledge action (against)
+	acción promesa (en contra)
+* ACTIVIST	release activist
+	activista de la liberación
+* ACTIVIST	arrest activist
+	activista de detención
+* ACTIVITY	monitor activity
+	Monitor de actividad
+* ADDRESS	deliver address
+	pronunciará el discurso
+* ADMISSION	favor admission
+	favorecer la admisión
+* ADVISOR	withdraw advisor
+	retirar asesor
+* AFIRE	set afire
+	encender un fuego
+* AGAINST	rallied against
+	se incrementó frente
+* AGAINST	fire against
+	contra incendios
+* AGENTS	send agents
+	enviar agentes
+* AGGREMENT	sign aggrement
+	aggrement signo
+* AGGRESSION	accuse aggression
+	acusar a la agresión
+* AGGRESSION	plan aggression
+	plan de agresión
+* AGREE	announce agree
+	anunciar acuerdo
+* AGREEMENTS	endorse agreements
+	refrendar los acuerdos
+* AGRESSION	confront agression
+	frente a la agresión
+* AHEAD	push ahead
+	seguir adelante
+* AHEAD (WITH TOUR)	go ahead (with tour)
+	seguir adelante (con la gira)
+* AID	review aid
+	ayudas opinión
+* AID	request aid
+	solicitud de ayuda
+* AID	announce aid
+	anunciar la ayuda
+* AID	announce aid
+	anunciar la ayuda
+* AID	discuss aid
+	discutir la ayuda
+* AID	rush aid
+	ayuda fiebre
+* AID	deliver aid
+	entregar ayuda
+* AID	weigh aid
+	sopesar la ayuda
+* AID	halt aid
+	ayuda detuvo
+* AID	pillage aid
+	ayuda saqueo
+* AID FUND	establish aid fund
+	establecer fondo de ayuda
+* AIDE	arrest aide
+	ayudante de detención
+* AIRFIELD	seize airfield
+	tomar el campo de aviación
+* AIRLIFT	resume airlift
+	curriculum vitae de transporte aéreo
+* AIRLIFT (FROM ^) (TO)	launch airlift (from ^) (to)
+	puente aéreo de lanzamiento (de ^) (a)
+* AIRPORT	order airport
+	aeropuerto de orden
+* AIRPORT	close airport
+	cerca del aeropuerto
+* AIRPORT	seize airport
+	tomar el aeropuerto
+* AIRSPACE	violate airspace
+	violando el espacio aéreo
+* AIRSPACE	close airspace
+	cierre del espacio aéreo
+* AIRSTRIKE	prepare airstrike
+	preparar ataque aéreo
+* AIRSTRIKE	launch airstrike
+	ataque aéreo de lanzamiento
+* AIRSTRIKES	consider airstrikes
+	considerar los ataques aéreos
+* AIRSTRIKES	unleash airstrikes
+	desencadenar ataques aéreos
+* AIR_STRIKE	discuss air_strike
+	discutir air_strike
+* ALARM	voice alarm
+	alarma por voz
+* ALARM	raise alarm
+	dar la alarma
+* ALARM	react alarm
+	reaccionar de alarma
+* ALARM	sound alarm
+	alarma sonora
+* ALERT	heighten alert
+	aumentar la alerta
+* ALLEGATION	confirm allegation
+	confirmar la alegación
+* ALLEGATION	dismiss allegation
+	desestimar la alegación
+* ALLEGATION	question allegation
+	pregunta alegación
+* ALLEGATION	repeat allegation
+	alegación de repetición
+* ALLIANCE	forge alliance
+	forjar alianza
+* ALLOW	decree allow
+	decreto permite
+* ALONGSIDE	fight alongside
+	luchar junto
+* AMBASSADOR	receive ambassador
+	recibir embajador
+* AMBASSADOR	appoint ambassador
+	nombrará embajador
+* AMBASSADOR	recall ambassador
+	embajador de recordatorio
+* AMBASSADOR (TO RETURN)	order ambassador (to return)
+	Para el embajador (volver)
+* AMBASSADORS	exchange ambassadors
+	embajadores de cambio
+* AMBITION	support ambition
+	la ambición de apoyo
+* AMENDMENT	pass amendment
+	modificación pase
+* AMNESTY	request amnesty
+	solicitud de amnistía
+* AMNESTY	suggest amnesty
+	sugerir la amnistía
+* AMNESTY	offer amnesty
+	oferta de amnistía
+* AMNESTY	ask amnesty
+	pedir la amnistía
+* AMNESTY	extend amnesty
+	extender la amnistía
+* AMNESTY	introduce amnesty
+	introducir la amnistía
+* ANGER	express anger
+	expresar ira
+* ANGRILY	react angrily
+	reaccionar con ira
+* ANNIVERSARY	mark anniversary
+	marca de aniversario
+* ANNIVERSARY (BY PROTEST)	mark anniversary (by protest)
+	aniversario marca (la protesta)
+* ANNOUNCEMENT	reject announcement
+	rechazar el anuncio
+* ANXIETY	express anxiety
+	ansiedad expreso
+* APART (TO PEACE)	remain apart (to peace)
+	mantenerse al margen (para la paz)
+* APOLOGY	issue apology
+	cuestión disculpa
+* APOLOGY	ask apology
+	pedir disculpas
+* APOSTATE	declare apostate
+	declarar apóstata
+* APPEAL	consider appeal
+	considerar la apelación
+* APPEAL	deliver appeal
+	entregar la apelación
+* APPEAL	welcome appeal
+	recurso de bienvenida
+* APPEAL	file appeal
+	apelación archivo
+* APPEAL	reject appeal
+	rechace la apelación
+* APPEAL	ignore appeal
+	ignorar la apelación
+* APPEAL	hear appeal
+	escuchar la apelación
+* APPEAL (AGAINST SENTENCE)	lodge appeal (against sentence)
+	apelación Lodge (de la pena)
+* APPEAL (AGAINST)	launch appeal (against)
+	recurso de lanzamiento (en contra)
+* APPEAL (FOR RELEASE)	issue appeal (for release)
+	cuestión apelación (para la liberación)
+* APPOINTMENT	dismiss appointment
+	desestimar cita
+* APPOINTMENT	slam appointment
+	cita Slam
+* APPRECIATION	express appreciation
+	reconocimiento expreso
+* APPREHENSION	express apprehension
+	aprehensión expreso
+* APPROACH	announce approach
+	anunciar enfoque
+* APPROVAL	give approval
+	dar su aprobación
+* APPROVAL	withheld approval
+	aprobación retenido
+* AREA	comb area
+	área de peine
+* AREA	capture area
+	área de captura
+* ARM	help arm
+	brazo de ayuda
+* ARM-IN-ARM	walk arm-in-arm
+	ir del brazo
+* ARMOR	use armor
+	el uso de armadura
+* ARMOUR	offer armour
+	oferta armadura
+* ARMS	supply arms
+	brazos de suministro
+* ARMS	surrender arms
+	entregar las armas
+* ARMS	deploy arms
+	desplegar los brazos
+* ARMS (FROM &PKO)
+
+* ARMS EMBARGO	violate arms embargo
+	violar el embargo de armas
+* ARREST	request arrest
+	solicitud de detención
+* ARREST	protest arrest
+	paro de protesta
+* ARREST	hail arrest
+	arresto granizo
+* ARREST	promise arrest
+	arresto promesa
+* ARREST	confirm arrest
+	confirmar la detención
+* ARREST (OF ^)	condemn arrest (of ^)
+	condenar la detención (de ^)
+* ARRIVAL	block arrival
+	bloque de llegada
+* ARTWORK	return artwork
+	obra de retorno
+* ASSASSINATION	hail assassination
+	asesinato granizo
+* ASSASSINATION	order assassination
+	asesinato fin
+* ASSASSINATION	attempt assassination
+	intento de asesinato
+* ASSAULT	attack assault
+	ataque de asalto
+* ASSAULT	stepped_up assault
+	asalto stepped_up
+* ASSAULT	launch assault
+	asalto lanzamiento
+* ASSEMBLY	open assembly
+	asamblea abierta
+* ASSERT CLOSE RELATION	move assert close relation
+	mover hacia la estrecha relación valer
+* ASSERTION	dismiss assertion
+	desestimar la afirmación
+* ASSERTION	question assertion
+	pregunta afirmación
+* ASSET	freeze asset
+	congelación de activos
+* ASSETS	want assets
+	desee activos
+* ASSETS	seize assets
+	embargo de los bienes
+* ASSIST	request assist
+	Solicitud de asistencia
+* ASSISTANCE	announce assistance
+	anunciar la asistencia
+* ASSISTANCE	assure assistance
+	asegurar la asistencia
+* ASSISTANCE	appreciate assistance
+	apreciar la asistencia
+* ASSISTANCE	provide assistance
+	proveer asistencia
+* ASSISTANCE	cut assistance
+	asistencia corte
+* ASSURANCE	give assurance
+	dar seguridad
+* ASSURANCE	obtain assurance
+	obtener una seguridad
+* ASSURANCES	ask assurances
+	pedir garantías
+* ASSURENCES	refuse assurences
+	negarse assurences
+* AT	fire at
+	incendio en
+* AT SUMMIT	clash at summit
+	choque en la cumbre
+* ATROCITIES	accuse atrocities
+	acusar atrocidades
+* ATTACK	avert attack
+	evitar el ataque
+* ATTACK	claim attack
+	ataque reclamo
+* ATTACK	deny attack
+	negar el ataque
+* ATTACK	prevent attack
+	prevenir los ataques
+* ATTACK	finance attack
+	ataque de las finanzas
+* ATTACK	stop attack
+	detener el ataque
+* ATTACK	issue attack
+	ataque tema
+* ATTACK	lead attack
+	ataque de plomo
+* ATTACK	vow attack
+	ataque de voto
+* ATTACK	stage attack
+	ataque etapa
+* ATTACK	shoot attack
+	ataque de rodaje
+* ATTACK (AGAINST)	welcome attack (against)
+	ataque de bienvenida (en contra)
+* ATTACK (IN INTERVIEW)	launch attack (in interview)
+	ataque de lanzamiento (en la entrevista)
+* ATTACK (IN)	prepare attack (in)
+	preparar ataque (en)
+* ATTACK (ON PLAN)	launch attack (on plan)
+	ataque de lanzamiento (el plan)
+* ATTACK (ON POLICIES)	launch attack (on policies)
+	ataque de lanzamiento (en las políticas)
+* ATTACK (ON POLICY)	launch attack (on policy)
+	ataque de lanzamiento (en la política)
+* ATTACK ON +
+
+* ATTACKS	deter attacks
+	prevenir los ataques
+* ATTACKS	halt attacks
+	ataques a frenar
+* ATTACKS	condemn attacks
+	condenar los ataques
+* ATTACKS	continue attacks
+	continuar con sus ataques
+* ATTACKS	exchange attacks
+	ataques de intercambio
+* ATTACKS (ON)	hail attacks (on)
+	ataques de granizo (en)
+* ATTEMPT	welcome attempt
+	intento de bienvenida
+* ATTEMPT	abandon attempt
+	abandonar el intento
+* ATTEMPT	fail attempt
+	fracasar el intento
+* ATTEMPT (ON LIFE)	avert attempt (on life)
+	evitar el intento (en la vida)
+* ATTITUDE	reverse attitude
+	actitud inversa
+* ATTITUDE	blast attitude
+	actitud explosión
+* AUTHOR	ban author
+	autor prohibición
+* AUTHORISATION	request authorisation
+	solicitud de autorización
+* AUTHORISATION	receive authorisation
+	recibir la autorización
+* AUTHORIZATION	issue authorization
+	autorización de emisión
+* AUTONOMY	demand autonomy
+	la autonomía de la demanda
+* AWAY	pass away
+	fallecer
+* AWAY	break away
+	separarse
+* AWAY (FROM SUMMIT)	stay away (from summit)
+	mantenerse alejado (de la cumbre)
+* AWAY (FROM)	back away (from)
+	Detrás lejos (de)
+* AWAY (FROM)	back away (from)
+	Detrás lejos (de)
+* BABY	snatch baby
+	arrebatar bebé
+* BACK	arrive back
+	llegar de nuevo
+* BACK	give back
+	devolver
+* BACK	pull back
+	echar para atrás
+* BACK (AT)	hit back (at)
+	devolver el golpe (a)
+* BACK TO	head back to
+	regresar a
+* BACK {&MILITARY PART}	send back {&military part}
+	enviar de vuelta {y} parte militar
+* BACK {AIR STRIKE}	hold back {air strike}
+	contenerse {ataque aéreo}
+* BACKING	seek backing
+	buscar respaldo
+* BACKING	reaffirm backing
+	reafirmar el respaldo
+* BACKING	withhold backing
+	retener el respaldo
+* BACKING	receive backing
+	recibir respaldo
+* BAIL	grant bail
+	fianza subvención
+* BAIL	refuse bail
+	denegar la fianza
+* BALLOT	cast ballot
+	votación fundido
+* BAN	defend ban
+	defender la prohibición
+* BAN	lift ban
+	prohibición de ascensor
+* BAN	waive ban
+	renunciar a la prohibición
+* BAN	fight ban
+	prohibición de lucha
+* BAN	defend ban
+	defender la prohibición
+* BAN	uphold ban
+	mantener la prohibición
+* BAN	defy , defy ban
+	Defy prohibición
+* BAN	enforce ban
+	hacer cumplir la prohibición
+* BAN	extend ban
+	extender la prohibición
+* BAN (ON EXPORTS)	repeal ban (on exports)
+	prohibición de derogación (de las exportaciones)
+* BAN (ON IMPORT)	extend ban (on import)
+	extender la prohibición (de importación)
+* BAN (ON TRADE)	lift ban (on trade)
+	prohibición de elevación (en el comercio)
+* BAN (ON TRAVEL)	impose ban (on travel)
+	imponer la prohibición (de viaje)
+* BAN (TO UNREST)	link ban (to unrest)
+	prohibición de enlace (a los disturbios)
+* BAR	decide bar
+	decidir bar
+* BARRAGE	fire barrage
+	andanada de fuego
+* BARRIER	build barrier
+	construir barrera
+* BARRIER	erect barrier
+	erigir barreras
+* BASE	close base
+	base cerca
+* BASE	set_up base
+	base de SET_UP
+* BASE	close base
+	base cerca
+* BASE	attack base
+	base de ataques
+* BASE	overrun base
+	base de rebasamiento
+* BASES	upgrade bases
+	actualizar las bases
+* BASES	capture bases
+	bases de captura
+* BATALLION (OF &PKO)
+
+* BEGINING (OF DEMOCRACY)	mark begining (of democracy)
+	marca de inicio (de la democracia)
+* BENEFITS	rescind benefits
+	dejar sin efecto los beneficios
+* BETWEEN	shoot between
+	disparar entre
+* BIAS	complain bias
+	quejarse sesgo
+* BID	boost bid
+	oferta impulso
+* BID	support bid
+	oferta de apoyo
+* BID	foil bid
+	oferta de papel
+* BID	launch bid
+	oferta de lanzamiento
+* BILL	draft bill
+	borrador de factura
+* BILL	draft bill
+	borrador de factura
+* BILL	adopt bill
+	adoptar la factura
+* BILL	oppose bill
+	oponerse a proyecto de ley
+* BILLIONS	award billions
+	miles de millones de premio
+* BIRTHDAY	celebrate birthday
+	Celebrar cumpleaños
+* BITTER WORDS	exchange bitter words
+	el intercambio de palabras amargas
+* BITTERLY	take bitterly
+	tomar amargura
+* BITTERLY	react bitterly
+	reaccionar con amargura
+* BLACKLIST	advise blacklist
+	lista negra de asesoramiento
+* BLACKOUT (BY FORCE)	impose blackout (by force)
+	imponer apagón (por la fuerza)
+* BLAME	pin blame
+	culpa pin
+* BLESSING	give blessing
+	dar la bendición
+* BLESSING	get blessing
+	obtuvieron la aprobación
+* BLOCK	move block
+	movimiento de bloque
+* BLOCKADE	end blockade
+	bloqueo final
+* BLOCKADE	lift blockade
+	bloqueo de elevación
+* BLOCKADE (ON GOODS)	impose blockade (on goods)
+	imponer el bloqueo (de bienes)
+* BLOODSHED	stop bloodshed
+	detener el derramamiento de sangre
+* BLOW	deal blow
+	golpe acuerdo
+* BLOW	deal blow
+	golpe acuerdo
+* BLOW	deliver blow
+	entregar golpe
+* BLUEPRINT (FOR PEACE)	relaunch blueprint (for peace)
+	plan de relanzamiento (para la paz)
+* BOAT	seize boat
+	tomar el barco
+* BOLSTER FORCE	report bolster force
+	reportar reforzar la fuerza
+* BOLSTER TIES (WITH +)
+
+* BOMBARDMENT	continue bombardment
+	continuará el bombardeo
+* BOMBING	claim bombing
+	bombardeo reclamo
+* BOMBING	condemn bombing
+	condenar los bombardeos
+* BOMBSHELL	drop bombshell
+	colocar bomba
+* BORDER	reopen border
+	reabrir la frontera
+* BORDER	open border
+	frontera abierta
+* BORDER	shut border
+	frontera cerrada
+* BORDER	close border
+	cerca de la frontera
+* BORDER	reclose border
+	volver a cerrar la frontera
+* BORDER (BETWEEN)	issue border (between)
+	tema de la frontera (entre)
+* BORDER (INTO)	cross border (into)
+	transfronteriza (en)
+* BORDER CLOSED	declare border closed
+	declarar cerrada la frontera
+* BOYCOTT	lift boycott
+	boicot ascensor
+* BOYCOTT	slam boycott
+	boicot Slam
+* BOYCOTT	defend boycott
+	defender boicot
+* BOYCOTT	say boycott
+	decir boicot
+* BOYCOTT	confirm boycott
+	confirmar boicot
+* BOYCOTT (OF MEETING)	confirm boycott (of meeting)
+	confirmar boicot (de la reunión)
+* BRIDGE	open bridge
+	puente abierto
+* BRIDGE	destroy bridge
+	destruir puente
+* BRIDGE	occupy bridge
+	ocupar puente
+* BROADCAST	order broadcast
+	emisión fin
+* BUDGET	approve budget
+	aprobar el presupuesto
+* BUDGET	increase budget
+	aumento del presupuesto
+* BUILD-UP	deny build-up
+	negar la acumulación
+* BUILDING	consider building
+	considerar la construcción
+* BUILDINGS	destroy buildings
+	destruir edificios
+* BUILDUP	accelerate buildup
+	acelerar la acumulación
+* BULLETS	fire bullets
+	balas de fuego
+* BUS	attack bus
+	ataque de autobús
+* BY ULTIMATUM	stand by ultimatum
+	una pausa ultimátum
+* CABINET	present cabinet
+	gabinete actual
+* CABINET	approve cabinet
+	aprobar el gabinete
+* CALL	repeat call
+	repetición de llamada
+* CALL	back call
+	devolución de llamada
+* CALL	reject call
+	rechazar llamada
+* CALL	face call
+	llamada de la cara
+* CALL (FOR &CEASEFIRE)
+
+* CALL (FOR CRACKDOWN)	resist call (for crackdown)
+	resistirse a la llamada (por represión)
+* CALL (FOR MEETING)	drop call (for meeting)
+	llamada gota (por reunión)
+* CALL (FOR TALKS)	welcome call (for talks)
+	llamada de bienvenida (para las conversaciones)
+* CALL (FROM)	receive call (from)
+	recibir llamadas (de)
+* CALL (TO BOYCOTT)	support call (to boycott)
+	llamada de soporte (boicotear)
+* CALL FOR AID	repeat call for aid
+	llamada de repetición para la ayuda
+* CALL ON + TO RESIGN
+
+* CALLER	telephone caller
+	llama por teléfono
+* CALLS	voice calls
+	Llamadas de voz
+* CALLS	face calls
+	llamadas cara
+* CALLS (FOR &CEASEFIRE)
+
+* CALLS (FOR RESTRAINT)	issue calls (for restraint)
+	emisión de llamadas (a la moderación)
+* CAMP	quit camp
+	dejar el campamento
+* CAMP	evacuate camp
+	evacuar el campamento
+* CAMP	destroy camp
+	destruir el campamento
+* CAMP (FOR &REFUGEE)
+
+* CAMPAIGN	launch campaign
+	campaña de lanzamiento
+* CAMPAIGN	join campaign
+	unirse a la campaña
+* CAMPAIGN	protest campaign
+	campaña de protesta
+* CAMPAIGN	protest campaign
+	campaña de protesta
+* CAMPAIGN (AGAINST)	launch campaign (against)
+	campaña de lanzamiento (en contra)
+* CAMPAIGN {FOR DONATIONS}	launch campaign {for donations}
+	campaña de lanzamiento para las donaciones {}
+* CAMPS	close camps
+	campos cercanos
+* CANCELLATION (OF &TREATY)
+
+* CANCELLATION (OF DEBT)	want cancellation (of debt)
+	quieren cancelación (de la deuda)
+* CANDIDACY	approve candidacy
+	aprobar la candidatura
+* CANDIDATE	defeat candidate
+	candidato a la derrota
+* CAPTURE	applaud capture
+	aplaudir la captura
+* CAPTURE	deny capture
+	negar la captura
+* CAPTURE (OF ^)	condemn capture (of ^)
+	condenar la captura (de ^)
+* CARS	pelt cars
+	coches Pelt
+* CASE	dismiss case
+	desestimar el caso
+* CASE (AGAINST PARTY)	open case (against party)
+	caso abierto (en contra del partido)
+* CASE (AGAINST)	file case (against)
+	caso de archivos (en contra)
+* CASE AGAINST	condemn case against
+	condenar caso contra
+* CATASTROPHE	warn catastrophe
+	advertir a la catástrofe
+* CAUTION	express caution
+	expresa la precaución
+* CELEBRATION	prepare celebration
+	preparar la celebración
+* CELEBRATION	join , join celebration
+	unirse, unirse a la celebración
+* CENTER	close center
+	cerca de centro
+* CENTRE	close centre
+	cerca de centro
+* CEREMONY	attend ceremony
+	asistir a la ceremonia
+* CESSATION (IN &FIGHT)
+
+* CHALLENGE	defeat challenge
+	desafío derrota
+* CHALLENGE (FOR LEADERSHIP)	announce challenge (for leadership)
+	anunciar desafío (de liderazgo)
+* CHANCE (FOR PEACE)	see chance (for peace)
+	ver azar (para la paz)
+* CHANGE (IN POLICY)	urge change (in policy)
+	instar a cambio (en la política)
+* CHANGES	force changes
+	cambios de fuerza
+* CHANGES	reject changes
+	rechazar los cambios
+* CHARGE	reject charge
+	rechazar el cargo
+* CHARGE	repeat charge
+	cargo de repetición
+* CHARGE	face charge
+	cargo cara
+* CHARGE (AGAINST &PEOPLE)
+
+* CHARGE (AGAINST)	file charge (against)
+	carga de archivos (en contra)
+* CHARGES	accept charges
+	aceptar cargos
+* CHARGES	dismiss charges
+	retirar los cargos
+* CHARGES	drop charges
+	retirar los cargos
+* CHARGES	press charges
+	presentar cargos
+* CHILL (IN RELATIONS)	acknowledge chill (in relations)
+	reconocer el enfriamiento (en las relaciones)
+* CHRISTMAS	celebrate christmas
+	Celebra navidad
+* CITIZEN	kidnap citizen
+	secuestrar a los ciudadanos
+* CITIZENSHIP	seek citizenship
+	buscar la ciudadanía
+* CLAIM	dismiss claim
+	desestimar la alegación
+* CLAIM	reaffirm claim
+	reafirmar el reclamo
+* CLAIM	approve claim
+	aprobar la reivindicación
+* CLAIM	challenge claim
+	reclamo desafío
+* CLAIM	dispute claim
+	reclamación de disputa
+* CLAIM (AGAINST) +
+
+* CLAIM (TO TERRITORY)	reiterate claim (to territory)
+	reiterar el reclamo (al territorio)
+* CLAMPDOWN	praise clampdown
+	represión elogios
+* CLARIFICATION	seek clarification
+	pedir aclaraciones
+* CLASH	avoid clash
+	evitar el choque
+* CLASHES	report clashes
+	enfrentamientos informe
+* CLASHES	halt clashes
+	enfrentamientos halt
+* CLASHES	investigate clashes
+	investigar los enfrentamientos
+* CLEMENCY	grant clemency
+	clemencia subvención
+* CLINIC	open clinic
+	clínica abierta
+* CLOSE	remain close
+	permanecer cerca
+* CLOSED	share closed
+	acción cerró
+* CLOSING (OF EMBASSY)	announce closing (of embassy)
+	anunciar el cierre (de la embajada)
+* CLOTHIING	detain clothiing
+	detener a clothiing
+* COALITION	join coalition
+	unirse a la coalición
+* COALITION	ruled_out coalition
+	coalición ruled_out
+* COALITION	resign coalition
+	renunciar a la coalición
+* COEXISTENCE	back coexistence
+	la coexistencia de nuevo
+* COMMEMORATION	attend commemoration
+	asistir a la conmemoración
+* COMMENT	refuse comment
+	negarse comentario
+* COMMENT	support comment
+	comentario de apoyo
+* COMMENT	defend comment
+	defender comentario
+* COMMENT	protest comment
+	comentario protesta
+* COMMITMENT	seek commitment
+	buscar el compromiso
+* COMMITMENT	reiterate commitment
+	reiterar el compromiso
+* COMMITMENT	affirm commitment
+	afirmar el compromiso
+* COMMITMENT	receive commitment
+	recibir compromiso
+* COMMITMENT (AGAINST THREATS)	reaffirm commitment (against threats)
+	reafirmar el compromiso (frente a las amenazas)
+* COMMITTED	remain committed
+	mantener su compromiso
+* COMMITTEE	set_up committee
+	comité SET_UP
+* COMMITTEE	appoint committee
+	designar comité
+* COMPANY	telephone company
+	compañía telefónica
+* COMPENSATION	seek compensation
+	pedir una indemnización
+* COMPENSATION	offer compensation
+	oferta de compensación
+* COMPENSATION	paid compensation
+	compensación pagada
+* COMPENSATION	seek compensation
+	pedir una indemnización
+* COMPENSATION (FOR INVASION)	claim compensation (for invasion)
+	reclamar una indemnización (por invasión)
+* COMPLAINT	join complaint
+	acumular la denuncia
+* COMPLAINT	file complaint
+	queja archivo
+* COMPLAINT (WITH COURT)	lodge complaint (with court)
+	denuncia presentada (con corte)
+* COMPLIANCE	force compliance
+	el cumplimiento de la fuerza
+* COMPLIMENT	return compliment
+	elogio de retorno
+* COMPROMISE	consider compromise
+	tener en cuenta el compromiso
+* COMPROMISE	offer compromise
+	oferta de transacción
+* COMPROMISE	reach compromise
+	llegar a un compromiso
+* COMPROMISE	reject compromise
+	rechazar el compromiso
+* COMPUTER	hack computer
+	hackear la computadora
+* CONCERN	reaffirm concern
+	reafirmar la preocupación
+* CONCERN	share concern
+	cuota de preocupación
+* CONCERN	reiterate concern
+	reiterar la preocupación
+* CONCERN (OVER)	voice concern (over)
+	preocupación de voz (más)
+* CONCERNED	remain concerned
+	permanecerá en cuestión
+* CONCERNS	admit concerns
+	admitir preocupaciones
+* CONCERNS	played_down concerns
+	preocupaciones played_down
+* CONCERNS	raise concerns
+	plantear inquietudes
+* CONCESSION	trade concession
+	concesión comercial
+* CONCESSION	ruled_out concession
+	concesión ruled_out
+* CONCESSIONS	offer concessions
+	oferta de concesiones
+* CONDEMNATION	reject condemnation
+	rechazar la condena
+* CONDEMNATION	slam condemnation
+	condena golpe
+* CONDITION	impose condition
+	imponer condiciones
+* CONDITION	reject condition
+	rechazar la condición
+* CONDITIONS	set conditions
+	condiciones ajustadas
+* CONDITIONS (BEFORE END)	set conditions (before end)
+	condiciones determinadas (antes del final)
+* CONDITIONS (OF TALKS)	approve conditions (of talks)
+	aprobar las condiciones (de negociaciones)
+* CONDOLENCE	paid condolence
+	condolencia pagado
+* CONDOLENCE	express condolence
+	expresa condolencias
+* CONDOLENCES	extend condolences
+	extender el pésame
+* CONFERENCE	propose conference
+	proponer conferencia
+* CONFERENCE	hold conference
+	conferencia de espera
+* CONFERENCE	attend conference
+	asistir a la conferencia
+* CONFERENCE	attend conference
+	asistir a la conferencia
+* CONFERENCE	open conference
+	conferencia abierta
+* CONFERENCE	host conference
+	conferencia de acogida
+* CONFERENCE	attack conference
+	conferencia de ataque
+* CONFERENCE	boycott conference
+	conferencia de boicot
+* CONFERENCE	ban conference
+	conferencia de prohibición
+* CONFERENCE &MILITARY
+
+* CONFIDENCE	voice confidence
+	la confianza de voz
+* CONFIDENCE	voice confidence
+	la confianza de voz
+* CONFIDENCE (AGAINST)	show confidence (against)
+	mostrar confianza (en contra)
+* CONFINED	remain confined
+	permanecerá confinado
+* CONFISCATION	order confiscation
+	confiscación fin
+* CONGRATULATIONS	extend congratulations
+	las felicitaciones
+* CONGRESS	battle congress
+	congreso de batalla
+* CONNECTION	deny connection
+	negar la conexión
+* CONSENSUS	reach consensus
+	llegar a un consenso
+* CONSEQUENCES	warn consequences
+	advertir a consecuencias
+* CONSTITUTION	draft constitution
+	proyecto de constitución
+* CONSTITUTION	revise constitution
+	Revisar constitución
+* CONSTRUCTION	cancel construction
+	cancelar la construcción
+* CONSUL	seize consul
+	tomar el cónsul
+* CONSULATE	close consulate
+	cerca del consulado
+* CONSULATE	occupy consulate
+	ocupar el consulado
+* CONSULTATION	schedule consultation
+	horario de consulta
+* CONSULTATIONS	hold consultations
+	celebrar consultas
+* CONTACT	establish contact
+	establecer contacto
+* CONTACT	refuse contact
+	rechazar el contacto
+* CONTACT	ruled_out contact
+	contactos ruled_out
+* CONTACT	sever contact
+	romper el contacto
+* CONTACTS	forge contacts
+	establecer contactos
+* CONTESTANTS	beat contestants
+	vencer a los concursantes
+* CONTRACT	extend contract
+	extender el contrato
+* CONTRACT	approve contract
+	aprobar contrato
+* CONTRACT	award contract
+	la adjudicación del contrato
+* CONTRACT	sign contract
+	firman contrato
+* CONTRACT	approve contract
+	aprobar contrato
+* CONTRACT	ruled_out contract
+	contrato ruled_out
+* CONTRIBUTION (TO FORCE)	make contribution (to force)
+	hacer una contribución (a la fuerza)
+* CONTROL	transfer control
+	control de transferencia
+* CONTROL	tighten control
+	reforzar el control
+* CONTROL	extend control
+	extender el control
+* CONTROL (OF VILLAGES)	seize control (of villages)
+	tomar el control (de los pueblos)
+* CONTROL (OF {THE HOUSE})	take control (of {the house})
+	tomar el control (de la casa {})
+* CONTROL +
+
+* CONTROLS	tighten controls
+	reforzar los controles
+* CONVENTION	violate convention
+	violar la convención
+* CONVICT	free convict
+	convicto libre
+* CONVICT	recapture convict
+	convicto recaptura
+* CONVICTION	overturn conviction
+	anular la condena
+* CONVICTION	overturn conviction
+	anular la condena
+* CONVICTION (IN COURT)	challenge conviction (in court)
+	convicción de desafío (en la corte)
+* CONVINCED	remain convinced
+	Seguimos convencidos
+* CONVOY	block convoy
+	bloque convoy
+* CONVOY	ambush convoy
+	convoy emboscada
+* CONVOY OF	hijack convoy of
+	secuestrar convoy de
+* COOLLY	react coolly
+	reaccionar con frialdad
+* COOPERAT	open cooperat
+	cooperat abierto
+* COOPERATION	emphasize cooperation
+	hincapié en la cooperación
+* COOPERATION	urge cooperation
+	instar a la cooperación
+* COOPERATION	offer cooperation
+	oferta de cooperación
+* COOPERATION	support cooperation
+	apoyar la cooperación
+* COOPERATION	expand cooperation
+	ampliar la cooperación
+* COOPERATION	resume cooperation
+	cooperación hoja de vida
+* COOPERATION	ruled_out cooperation
+	cooperación ruled_out
+* COOPERATION	ruled_out cooperation
+	cooperación ruled_out
+* COOPERATION	cut cooperation
+	cooperación corte
+* COORDINATION	complete coordination
+	la coordinación completa
+* CORE (OF &MILITARY)
+
+* COUNCIL	launch council
+	consejo de lanzamiento
+* COUNTER-ARGUMENT	deliver counter-argument
+	entregar contraargumento
+* COUNTER-ATTACK	press counter-attack
+	pulse el contraataque
+* COUNTER-ATTACK	launch counter-attack
+	lanzamiento contraataque
+* COUNTER-OFFENSIVE (AGAINST)	press counter-offensive (against)
+	pulse contraofensiva (en contra)
+* COUNTERPARTS	welcome counterparts
+	homólogos de bienvenida
+* COUNTRIES	export countries
+	países de exportación
+* COUP	face coup
+	cara golpe
+* COUP	condemn coup
+	condenar golpe de Estado
+* COUP AGAINST	plan coup against
+	golpe de Estado contra el plan de
+* COURT	appeal court
+	Tribunal de Apelación
+* COURT	attack court
+	corte de ataque
+* COURT MARTIAL	face court martial
+	corte marcial cara
+* CRACKDOWN	defend crackdown
+	defender represión
+* CRACKDOWN	pledge crackdown
+	represión promesa
+* CRACKDOWN	continue crackdown
+	continuar la represión
+* CREATION	oppose creation
+	oponerse a la creación
+* CREATION (OF TRIBUNAL)	urge creation (of tribunal)
+	instar a la creación (del tribunal)
+* CREDENTIALS	challenge credentials
+	credenciales de desafío
+* CREDENTIALS (AS AMBASSADOR)	present credentials (as ambassador)
+	presentes credenciales (como embajador)
+* CREDIT	seek credit
+	buscar crédito
+* CREDIT	offer credit
+	oferta de crédito
+* CREDIT	release credit
+	crédito de liberación
+* CREDIT	grant credit
+	concesión de crédito
+* CRIMINAL	call criminal
+	penal llamada
+* CRISIS	acknowledge crisis
+	reconocer la crisis
+* CRISIS	avoid crisis
+	evitar la crisis
+* CRISIS	resolve crisis
+	crisis de determinación
+* CRITERIA	fulfill criteria
+	cumplir con los criterios
+* CRITICALLY	react critically
+	reaccionar críticamente
+* CRITICISM	defy criticism
+	desafiando las críticas
+* CRITICISM	battle criticism
+	la crítica batalla
+* CRITICISM	voice criticism
+	la crítica de voz
+* CRITICISM	issue criticism
+	la crítica cuestión
+* CRITICISM	reject criticism
+	rechazar las críticas
+* CRITICISM	face criticism
+	la crítica la cara
+* CRITICS	attack critics
+	críticos de ataque
+* CROWD	join crowd
+	unirse a multitud
+* CROWDS	block crowds
+	multitudes de bloque
+* CURFEW	lift curfew
+	toque de queda ascensor
+* CURFEW	clamp curfew
+	toque de queda pinza
+* CUT (IN {ECONOMIC AID})	plan cut (in {economic aid})
+	plan de corte (en {} la ayuda económica)
+* DAMAGES	claim damages
+	reclamo por daños y perjuicios
+* DANGER	spell danger
+	deletrear peligro
+* DANGEROUS	believe dangerous
+	creer peligroso
+* DATA	gather data
+	reunir datos
+* DAY (OF MOURNING)	observe day (of mourning)
+	observar los días (de duelo)
+* DEAD	mourn dead
+	llorar muertos
+* DEAD	find dead
+	encontrar muertos
+* DEADLINE	set deadline
+	plazo establecido
+* DEADLOCK	break deadlock
+	estancamiento ruptura
+* DEADLOCK	resolve deadlock
+	estancamiento resolución
+* DEADLOCK	reach deadlock
+	llegar a punto muerto
+* DEADLOCKED	remain deadlocked
+	siguen estancadas
+* DEAL	reach deal
+	llegar a acuerdo
+* DEAL	conclude deal
+	concluir acuerdo
+* DEAL	revise deal
+	Revisar oferta
+* DEAL	plan deal
+	plan de reparto
+* DEAL	endorse deal
+	respaldar acuerdo
+* DEAL	strike deal
+	oferta huelga
+* DEAL	announce deal
+	anunciar acuerdo
+* DEAL	clinch deal
+	hacerse con mucho
+* DEAL	refuse deal
+	rechazar el acuerdo
+* DEAL	cancel deal
+	cancela trato
+* DEAL (FOR  MILIARY)	sign deal (for  miliary)
+	acuerdo de firma (por miliar)
+* DEAL (WITH MANUFACTURER)	sign deal (with manufacturer)
+	firman acuerdo (con el fabricante)
+* DEATH	mourn death
+	llorar la muerte
+* DEATH	chant death
+	la muerte canto
+* DEATH (OF ^)	blame death (of ^)
+	la muerte culpa (de ^)
+* DEBATE	open debate
+	debate abierto
+* DEBATE	postpone debate
+	posponer el debate
+* DEBATE ON	open debate on
+	debate abierto sobre
+* DEBT	reduce debt
+	reducir la deuda
+* DECISION	discuss decision
+	discutir la decisión
+* DECISION	approve decision
+	aprobar la decisión
+* DECISION	support decision
+	Decision Support
+* DECISION	hail decision
+	decisión granizo
+* DECISION	reverse decision
+	decisión inversa
+* DECISION	force decision
+	toma de fuerza
+* DECISION	challenge decision
+	decisión desafío
+* DECISION	condemn decision
+	condenar la decisión
+* DECISION	protest decision
+	toma de protesta
+* DECISION	overturn decision
+	revocar la decisión
+* DECISION	reject decision
+	rechazar la decisión
+* DECISION	ignore decision
+	ignorar la decisión
+* DECLARATION	support declaration
+	Declaración de apoyo
+* DECLARATION	sign declaration
+	firman una declaración
+* DECLARATION (OF SELF-DETERMINATION)	issue declaration (of self-determination)
+	Declaración tema (la autodeterminación)
+* DECLARATION (ON SOVEREIGNTY)	adopt declaration (on sovereignty)
+	adoptar la declaración (la soberanía)
+* DECREE	sign decree
+	decreto signo
+* DEEP	penetrate deep
+	penetrar profundamente
+* DEFEAT	deliver defeat
+	entregar la derrota
+* DEFEAT	hail defeat
+	derrota granizo
+* DEFEAT	pledge defeat
+	derrota promesa
+* DEFIANCE	hurl defiance
+	hurl desafío
+* DEFIANCE	step_up , stepped_up defiance
+	step_up, stepped_up desafío
+* DEFIANT	remain defiant
+	siendo desafiante
+* DEFICIT	cut deficit
+	déficit de corte
+* DELAY (OF TRIAL)	raise delay (of trial)
+	aumentar retardo (de prueba)
+* DELEGATION	lead delegation
+	delegación de plomo
+* DELEGATION	send delegation
+	enviar delegación
+* DELEGATION	send delegation
+	enviar delegación
+* DELEGATION	withdraw delegation
+	retirar delegación
+* DELIGHT	express delight
+	deleite expreso
+* DELIVERY	accept delivery
+	aceptar la entrega
+* DELIVERY (OF AID)	postpone delivery (of aid)
+	posponer la entrega (de la ayuda)
+* DEMAND	reiterate demand
+	reiterar la demanda
+* DEMAND	attack demand
+	la demanda ataque
+* DEMAND	rebuff demand
+	una solicitud de rechazo
+* DEMAND	reject demand
+	rechazar la demanda
+* DEMAND (FOR AUTONOMY)	reject demand (for autonomy)
+	rechazar la demanda (de autonomía)
+* DEMAND (FOR SANCTION)	reiterate demand (for sanction)
+	reiterar la demanda (por sanción)
+* DEMAND THAT +
+
+* DEMANDS	support demands
+	demandas de apoyo
+* DEMANDS	reject demands
+	rechazar las demandas
+* DEMISE	celebrate demise
+	celebrar la desaparición
+* DEMOCRACY	join democracy
+	unirse a la democracia
+* DEMOCRATISATON	want democratisaton
+	quieren democratisaton
+* DEMOCRATIZATION	want democratization
+	quieren la democratización
+* DEMONSTRATION	plan demonstration
+	plan de demostración
+* DEMONSTRATION	stage demonstration
+	demostración etapa
+* DEMONSTRATION	disperse demonstration
+	dispersar la demostración
+* DEMONSTRATION	ban demonstration
+	demostración de la prohibición
+* DEMONSTRATION (AGAINST)	plan demonstration (against)
+	plan de demostración (en contra)
+* DEMONSTRATION (IN SOLIDARITY)	stage demonstration (in solidarity)
+	demostración de la etapa (solidarios)
+* DEMONSTRATION (IN SUPPORT)	stage demonstration (in support)
+	demostración de la etapa (a favor)
+* DEMONSTRATOR	kill demonstrator
+	matar demostrador
+* DEMONSTRATORS	arrest demonstrators
+	manifestantes de detención
+* DEMONSTRATORS	battle demonstrators
+	manifestantes de batalla
+* DENIAL	publish denial
+	publicar la negación
+* DENIAL	protest denial
+	la negación de protesta
+* DENUNCIATION	issue denunciation
+	cuestión denuncia
+* DEPARTURE	postpone departure
+	posponer la salida
+* DEPARTURE	celebrate departure
+	celebrar la salida
+* DEPARTURE (FROM BATTLEFIELD)	plan departure (from battlefield)
+	plan de salida (de batalla)
+* DEPLOYMENT	consider deployment
+	considerar el despliegue
+* DEPLOYMENT	recommend deployment
+	recomendar la implementación
+* DEPLOYMENT	approve deployment
+	aprobar el despliegue
+* DEPLOYMENT	exercise deployment
+	el despliegue de ejercicio
+* DEPLOYMENT	accelerate deployment
+	acelerar el despliegue
+* DEPLOYMENT (OF &MILITARY)
+
+* DEPLOYMENT (OF &MILITARY)
+
+* DEPLOYMENT (OF &PKO)
+
+* DEPLOYMENT (OF {&SECURITY FORCES})	order deployment (of {&security forces})
+	Para el despliegue (de las fuerzas de seguridad {&amp;})
+* DEPORT	stop deport
+	dejar de deportar
+* DEPORTATION	resume deportation
+	curriculum vitae de expulsión
+* DESIRE	signal desire
+	el deseo de la señal
+* DESIRE	reiterate desire
+	reiterar el deseo
+* DESIRE (FOR &NEGOTIATION)
+
+* DESIRE FOR TALKS WITH +
+
+* DESTRUCTION	defend destruction
+	defender a la destrucción
+* DETAIL	provide detail
+	proporcionar detalles
+* DETERMINATION	express determination
+	determinación expresa
+* DETERMINATION	reaffirm determination
+	reafirmar la determinación
+* DETRIMENT	describe detriment
+	describir en detrimento
+* DEVELOPMENT	support development
+	apoyar el desarrollo
+* DICTATOR	call dictator
+	dictador llamada
+* DINNER	host dinner
+	el anfitrión de la cena
+* DIPLOMACY	stress diplomacy
+	la diplomacia estrés
+* DIPLOMACY	frustrate diplomacy
+	frustrar la diplomacia
+* DIPLOMAT	send diplomat
+	enviar diplomático
+* DIPLOMAT	base diplomat
+	diplomático de base
+* DIPLOMAT (TO CLOSE)	order diplomat (to close)
+	Para diplomático (cerrar)
+* DIPLOMAT (TO LEAVE)	order diplomat (to leave)
+	Para diplomático (para salir)
+* DIPLOMATIC	resume diplomatic
+	reanudar diplomática
+* DIPLOMATIC	shut diplomatic
+	cerrar diplomática
+* DIPLOMATS	expel diplomats
+	expulsar a los diplomáticos
+* DISAPPOINTMENT	express disappointment
+	expresa la decepción
+* DISAPPOINTMENT	voice disappointment
+	decepción de voz
+* DISAPPROVAL	express disapproval
+	expresa desaprobación
+* DISAPPROVAL	voice disapproval
+	la desaprobación de voz
+* DISARMAMENT	ruled_out disarmament
+	desarme ruled_out
+* DISCONTENT	express discontent
+	expresa el descontento
+* DISCUSSION	encourage discussion
+	fomentar la discusión
+* DISCUSSION	start discussion
+	iniciar la discusión
+* DISCUSSION	start discussion
+	iniciar la discusión
+* DISMAY	express dismay
+	consternación expreso
+* DISMAY	voice dismay
+	consternación de voz
+* DISMISSAL	confirm dismissal
+	confirmar el despido
+* DISMISSAL	approve dismissal
+	aprobar el despido
+* DISMISSAL	reiterate dismissal
+	reiterar el despido
+* DISPATCH (FOR VICTIM)	order dispatch (for victim)
+	orden de despacho (por víctima)
+* DISPATCH (OF &MILITARY)
+
+* DISPLEASURE	express displeasure
+	disgusto expreso
+* DISPLEASURE	voice displeasure
+	descontento de voz
+* DISSATISFACTION	express dissatisfaction
+	insatisfacción expresa
+* DISSENT	apprise dissent
+	informar a la disidencia
+* DISSENT	voice dissent
+	expresar su disconformidad
+* DISSOLUTION	criticize dissolution
+	criticar a la disolución
+* DISTANCE	shoot distance
+	distancia de rodaje
+* DISTRESS	express distress
+	expresa la angustia
+* DISTRIBUTION (OF AID)	oversee distribution (of aid)
+	supervisar la distribución (de la ayuda)
+* DISTRUST	express distrust
+	desconfianza expreso
+* DISTURBANCE	quell disturbance
+	sofocar disturbios
+* DIVIDENDS	paid dividends
+	dividendos pagados
+* DIVORCE	want divorce
+	quiero el divorcio
+* DOCUMENTS	provide documents
+	proporcionar documentos
+* DOCUMENTS	collect documents
+	recoger los documentos
+* DOGFIGHT	mock dogfight
+	pelea de perros simulacro
+* DOLLARS	provide dollars
+	proporcionar dólares
+* DONATION	launch donation
+	donación de lanzamiento
+* DONATION	withdraw donation
+	retirar la donación
+* DONATIONS	receive donations
+	recibir donaciones
+* DONOR	seek donor
+	buscar donantes
+* DOUBT	cast doubt
+	poner en duda
+* DOUBT	cast doubt
+	poner en duda
+* DOUBT (OVER CLAIM)	cast doubt (over claim)
+	poner en duda (sobre demanda)
+* DOWN	back down
+	echarse atrás
+* DOWN	step down
+	reducir
+* DOWN	vote down
+	rechazar
+* DOWN	burn down
+	quemar
+* DOWN	clamp down
+	medidas drásticas
+* DOWN	cut down
+	reducir
+* DOWN &INFORMATION	close down information
+	cerrar la información
+* DOWN &WEAPON	laid_down down weapon
+	laid_down abajo arma
+* DOWN (FROM)	back down (from)
+	marcha atrás (de)
+* DOWN (IN HISTORY)	go down (in history)
+	pasar a la historia)
+* DOWN (ON PROTEST)	swoop down (on protest)
+	abatirse (de protesta)
+* DOWN HEADQUARTERS	shut down headquarters
+	apagar la sede
+* DOWN INVESTIGATION +
+
+* DOWN RIOT	put down riot
+	sofocar disturbios
+* DOWN TELEVISION	shut down television
+	apagar la televisión
+* DRIVE	stepped_up drive
+	unidad stepped_up
+* DRUG	seize drug
+	apoderarse de drogas
+* DRUGS	order drugs
+	medicamentos pedidos
+* EACH OTHER	understand each other
+	entenderse entre sí
+* EACH OTHER	accuse each other
+	acusan mutuamente
+* ECONOMY	stabilise economy
+	estabilizar la economía
+* EFFIGY	burn effigy
+	quemar la efigie
+* EFFORT	launch effort
+	esfuerzo de lanzamiento
+* EFFORT	pledge effort
+	esfuerzo promesa
+* EFFORT	resume effort
+	esfuerzo hoja de vida
+* EFFORT	back effort
+	esfuerzo de vuelta
+* EFFORT	continue effort
+	continuar el esfuerzo
+* EFFORT	redouble effort
+	redoblar esfuerzos
+* EFFORTS	urge efforts
+	instar a los esfuerzos
+* EFFORTS	support efforts
+	los esfuerzos de apoyo
+* EFFORTS	coordinate efforts
+	coordinar los esfuerzos
+* EFFORTS (TO DISARM)	support efforts (to disarm)
+	los esfuerzos de apoyo (desarmar)
+* ELECTION	free election
+	elección libre
+* ELECTION	reaffirm election
+	reafirmar la elección
+* ELECTION	accept election
+	aceptar la elección
+* ELECTION	call election
+	la elección de llamadas
+* ELECTION	monitor election
+	supervisar las elecciones
+* ELECTION	demand election
+	la elección de la demanda
+* ELECTION	boycott election
+	elecciones boicot
+* ELECTIONS	hijack elections
+	secuestrar elecciones
+* ELECTIONS	want elections
+	quieren elecciones
+* ELECTIONS	hold elections
+	celebrar elecciones
+* ELECTIONS	lead elections
+	elecciones de plomo
+* EMBARGO	stop embargo
+	dejar de embargo
+* EMBARGO	challenge embargo
+	embargo de desafío
+* EMBARGO	recommend embargo
+	recomendar embargo
+* EMBARGO	continue embargo
+	continuará embargo de
+* EMBARGO (ON ARMS)	introduce embargo (on arms)
+	introducir el embargo (en brazos)
+* EMBASSIES	close embassies
+	cerrar embajadas
+* EMBASSY	open , reopen embassy
+	abierta, reabrir la embajada
+* EMBASSY	occupy embassy
+	ocupar la embajada
+* EMBASSY	close embassy
+	cerca de la embajada
+* EMBASSY OUT	pull embassy out
+	tire hacia fuera de la embajada
+* EMBRACE	receive embrace
+	recibir abrazo
+* EMERGENCY	declare emergency
+	declarar de emergencia
+* EMERGENCY	plan emergency
+	plan de emergencia
+* EMERGENCY	resume emergency
+	curriculum vitae de emergencia
+* ENCLAVE	take enclave
+	tomar enclave
+* END	call end
+	fin de la llamada
+* END (OF STRIKE)	announce end (of strike)
+	anunciar final (de la huelga)
+* END (TO &DISPUTE)
+
+* END (TO OFFENSIVE)	demand end (to offensive)
+	la demanda final (a la ofensiva)
+* ENDORSEMENT	deliver endorsement
+	entregar respaldo
+* ENGINEER	telephone engineer
+	ingeniero de telecomunicaciones
+* ENGINEER	seize engineer
+	tomar el ingeniero
+* ENTRANCE	block entrance
+	entrada del bloque
+* ENTRY	back entry
+	la entrada de nuevo
+* ENTRY	refuse entry
+	denegar la entrada
+* ENTRY	deny entry
+	denegar la entrada
+* ENTRY	restrict entry
+	restringir la entrada
+* ENTRY (OF &FOOD)
+
+* ENVOY	receive envoy
+	recibir el enviado
+* ENVOY	receive envoy
+	recibir el enviado
+* ENVOY	appoint envoy
+	nombrar enviado
+* ENVOY	attack envoy
+	ataque enviado
+* ENVOY	kidnapped_and_killed envoy
+	El enviado kidnapped_and_killed
+* EQUIPMENT	return equipment
+	equipos de retorno
+* EVACUATION	ask evacuation
+	pedir a la evacuación
+* EVACUATION	complete evacuation
+	evacuación completa
+* EVACUATION	start evacuation
+	iniciar la evacuación
+* EVACUATION	organise evacuation
+	organizar la evacuación
+* EVACUATION	order evacuation
+	para la evacuación
+* EVACUATION	start evacuation
+	iniciar la evacuación
+* EVACUATION (OF)	prepare evacuation (of)
+	preparar la evacuación (de)
+* EVENT	boycott event
+	evento boicot
+* EVENTS (WITH CONCERN)	follow events (with concern)
+	seguir los acontecimientos (con preocupación)
+* EVICTION	order eviction
+	para el desalojo
+* EVIDENCE	present evidence
+	presentar pruebas
+* EVIDENNCE	release evidennce
+	evidennce liberación
+* EXASPERATION	express exasperation
+	exasperación expreso
+* EXCHANGES	enhance exchanges
+	mejorar los intercambios
+* EXCITEMENT	voice excitement
+	la emoción de voz
+* EXECUTION	hail execution
+	ejecución granizo
+* EXECUTION	protest execution
+	la ejecución de protesta
+* EXEMPT (OF TAXES)	decide exempt (of taxes)
+	decidir exentos (de impuestos)
+* EXISTENCE (OF {MILITANT BASES})	deny existence (of {militant bases})
+	negar la existencia (de bases militantes {})
+* EXPECTATION	boost expectation
+	impulso expectativa
+* EXPECTS +
+
+* EXPLANATION	ask explanation
+	pedir explicación
+* EXPLANATION	want explanation
+	quieren explicación
+* EXPLANATION	demand explanation
+	explicación de la demanda
+* EXPORT	sign export
+	firmar la exportación
+* EXPORT	resume export
+	reanudar la exportación
+* EXPORT	ban export
+	prohibición de exportación
+* EXPORTS	ban exports
+	prohíben la exportación
+* EXPULSION	oppose expulsion
+	oponerse a la expulsión
+* EXPULSION	contest expulsion
+	concurso de expulsión
+* EXPULSION	propose expulsion
+	proponer la expulsión
+* EXPULSION	order expulsion
+	orden de expulsión
+* EXTENSION	grant extension
+	extensión de la concesión
+* EXTINCTION	battle extinction
+	la extinción de batalla
+* EXTRADITION	request extradition
+	solicitud de extradición
+* EXTRADITION	approve extradition
+	aprobar la extradición
+* EXTRADITION	demand extradition
+	la demanda de extradición
+* EXTRADITION	hail extradition
+	extradición granizo
+* EXTRADITION	block extradition
+	bloque de extradición
+* EXTREMISM	battle extremism
+	extremismo batalla
+* FACTION	attack faction
+	ataque facción
+* FAILURE	lament failure
+	lamentan el fracaso
+* FAILURE	blast failure
+	insuficiencia explosión
+* FALL (OF &TOWN)
+
+* FAMILIES	evacuate families
+	evacuar a las familias
+* FAREWELL	paid farewell
+	despedida pagado
+* FEAR	express fear
+	expresar miedo
+* FEAR	express fear
+	expresar miedo
+* FEARS	say fears
+	decir temores
+* FEARS	played_down fears
+	temores played_down
+* FEARS	voice fears
+	temores de voz
+* FEET (ON)	wipe feet (on)
+	limpie los pies (sobre)
+* FENCE (ALONG BORDER)	erect fence (along border)
+	erigir la cerca (en la frontera)
+* FENCE (ON BORDER)	build fence (on border)
+	construir la cerca (en la frontera)
+* FESTIVAL	celebrate festival
+	celebrar el festival
+* FIGHTER	invite fighter
+	invitar luchador
+* FIGHTER	train fighter
+	combatiente del tren
+* FIGHTER-BOMBER	supply fighter-bomber
+	suministro de cazabombardero
+* FIGHTERS	remove fighters
+	eliminar combatientes
+* FIGHTERS	receive fighters
+	recibir combatientes
+* FILES	ask files
+	pedir a los archivos
+* FINANCIAL	provide financial
+	proporcionar financiera
+* FINE	impose fine
+	imponer multa
+* FIRE	confirm fire
+	confirmar el fuego
+* FIRE	hold fire
+	Alto al fuego
+* FIRE	set fire
+	encender
+* FIRE	return fire
+	fuego de respuesta
+* FIRE	open fire
+	abran fuego
+* FIRE	exchange fire
+	intercambian disparos
+* FIRE (IN PROTEST)	set fire (in protest)
+	prendió fuego (en protesta)
+* FIRE (TO FLAG)	set fire (to flag)
+	prendió fuego (marcar)
+* FIREBOMB	threw firebomb
+	arrojó una bomba incendiaria
+* FIREBOMBS	threw firebombs
+	arrojaron bombas incendiarias
+* FIRECRACKERS	threw firecrackers
+	arrojaron petardos
+* FIREPOWER	boost firepower
+	aumentar la potencia de fuego
+* FIRST MOVE	make first move
+	hacer el primer movimiento
+* FIRST VISIT TO ^ +
+
+* FLAG	fly flag
+	volar la bandera
+* FLAG	burn flag
+	quemar la bandera
+* FLIERS	drop fliers
+	deje caer volantes
+* FLIGHT	launch flight
+	vuelo de lanzamiento
+* FLIGHT	resume flight
+	vuelo curriculum vitae
+* FLIGHTS	resume flights
+	reanudar los vuelos
+* FLIGHTS	halt flights
+	vuelos a frenar
+* FOR	involve for
+	involucrar a
+* FOR	slam for
+	golpe de
+* FOR &INVESTIGATION	push for investigation
+	impulsar la investigación
+* FOR + TO LEAVE
+
+* FOR DAY	hold for day
+	mantener durante el día
+* FOR LESSER	vote for lesser
+	votar por menor
+* FOR STRIKE_TO_PROTEST	prepare for strike_to_protest
+	prepararse para strike_to_protest
+* FOR VIOLAT HUMANITARIAN LAW	condemn for violat humanitarian law
+	condenar el derecho humanitario violat
+* FOR VIOLENCE	blame for violence
+	la culpa de la violencia
+* FORCE	submit force
+	presentar vigor
+* FORCE	wipe_out , wiped_out force
+	wipe_out, fuerza wiped_out
+* FORCE (TO PROTECT)	favor force (to protect)
+	favorecer a la fuerza (para proteger)
+* FORCES	acknowledge forces
+	reconocer las fuerzas
+* FORCES	join forces
+	unir fuerzas
+* FORCES	train forces
+	las fuerzas del tren
+* FORCES	cut forces
+	fuerzas de corte
+* FORCES	maintain forces
+	mantener las fuerzas
+* FORGIVENESS	ask forgiveness
+	pedir perdón
+* FORMULATION	accept formulation
+	aceptar la formulación
+* FORTIFICATIONS	build fortifications
+	construir fortificaciones
+* FORWARD	look forward
+	esperar
+* FORWARD {PEACE PLAN}	put forward {peace plan}
+	presentado {} plan de paz
+* FRAUD	investigate fraud
+	investigar el fraude
+* FREE	set free
+	liberar
+* FREEING	prevent freeing
+	prevenir la liberación
+* FRIEND	believe friend
+	creer amigo
+* FRIENDSHIP	offer friendship
+	Pedidos de amistad
+* FRIENDSHIP	stepped_up friendship
+	amistad stepped_up
+* FRIENDSHIP	reassert friendship
+	reafirmar la amistad
+* FROM	defend from
+	defenderse de
+* FROM	import from
+	importar de
+* FROM $ TO +
+
+* FROM &DETENTION	release from detention
+	liberación de la detención
+* FROM +
+
+* FROM GUARD	remove from guard
+	eliminar de guardia
+* FROM HEAT	kill from heat
+	matar del calor
+* FRUSTRATION	express frustration
+	frustración expreso
+* FUGITIVE	want fugitive
+	quieren fugitivo
+* FUND	offer fund
+	oferta de fondos
+* FUND	pledge fund
+	fondo de la promesa
+* FUND	set_up , set_up fund
+	SET_UP, fondo de SET_UP
+* FUND	donate fund
+	donar fondos
+* FUND	release fund
+	fondo de la liberación
+* FUNDING	set_up funding
+	financiación SET_UP
+* FUNDS	set_up funds
+	fondos SET_UP
+* FUNERAL	join funeral
+	unirse a funeral
+* FURIOUSLY	react furiously
+	reaccionar con furia
+* FURY	express fury
+	furia expreso
+* FURY	release fury
+	comunicado de la furia
+* GIFT	deliver gift
+	entregar regalo
+* GO-AHEAD	give go-ahead
+	dará luz verde
+* GOODS	seize goods
+	apoderarse de los bienes
+* GOVERNMENT	defeat government
+	gobierno de la derrota
+* GOVERNMENT	resign government
+	dimisión del gobierno
+* GOVERNMENT	attack government
+	gobierno de ataque
+* GOVERNOR	dismiss governor
+	despedir a gobernador
+* GRANT	approve grant
+	aprobar la concesión
+* GRANT	sign grant
+	subvención signo
+* GRANT	award grant
+	concesión de una subvención
+* GRANT	receive grant
+	recibir la concesión
+* GRANTS	stop grants
+	dejar de subvenciones
+* GRATITUDE	express gratitude
+	expresar gratitud
+* GREETINGS	convey greetings
+	llegar un saludo
+* GRENADE	slam grenade
+	granada Slam
+* GRENADES	launch grenades
+	granadas de lanzamiento
+* GRIEF	express grief
+	expresa el dolor
+* GRIP	tighten grip
+	apriete agarre
+* GRIP	tighten grip
+	apriete agarre
+* GROUNDWORK (FOR ASSAULT)	lay groundwork (for assault)
+	sentar las bases (por asalto)
+* GUARDS	deploy guards
+	desplegar guardias
+* GUARDS (ON BORDER)	deploy guards (on border)
+	desplegar guardias (en la frontera)
+* GUIDELINE	draft guideline
+	el proyecto de directiva
+* GUIDELINE	dictate guideline
+	dictar directriz
+* GUIDELINES	set guidelines
+	directrices establecidas
+* GUILTY	found guilty
+	declarado culpable
+* GUILTY (OF TORTURE)	rule guilty (of torture)
+	descartar culpables (de la tortura)
+* GUNFIRE	end gunfire
+	disparos finales
+* GUNFIRE	exchange gunfire
+	intercambio de disparos
+* GUNFIRE	die gunfire
+	disparos troquel
+* GUNMEN	hunt gunmen
+	cazan hombres armados
+* GUNSHOTS	trade gunshots
+	disparos comerciales
+* HAND	extend hand
+	extender la mano
+* HANDOVER	delay handover
+	traspaso de retardo
+* HANDOVER (OF DOCUMENT)	complete handover (of document)
+	entrega completa (del documento)
+* HAPPY	declare happy
+	declarar feliz
+* HARDLINE	maintain hardline
+	mantener la línea dura
+* HARVEST	welcome harvest
+	Bienvenido a la cosecha
+* HASH	seize hash
+	apoderarse de hash
+* HEAD	bow head
+	diadema
+* HEADQUARTERS	monitor headquarters
+	la sede del monitor
+* HEADQUARTERS	abandon headquarters
+	abandonar la sede
+* HEADQUARTERS	capture headquarters
+	la sede de captura
+* HEARING	face hearing
+	audiencia cara
+* HEAT	put heat
+	poner de calor
+* HELL	promise hell
+	diablos promesa
+* HELP	ask help
+	pide ayuda
+* HELP	seek help
+	busca ayuda
+* HELP	offer help
+	ofrecer ayuda
+* HELP	plan help
+	plan de ayuda
+* HELP +
+
+* HEROIN	seize heroin
+	apoderarse de la heroína
+* HERSELF	kill herself
+	matarse
+* HIGHWAY	close highway
+	cerca de la autopista
+* HIMSELF	kill himself
+	matarse
+* HIMSELF (ON FIRE)	set himself (on fire)
+	establecer a sí mismo (en el fuego)
+* HITTING	continue hitting
+	continuará golpeando
+* HOMAGE	paid homage
+	homenaje
+* HOME	allow home
+	permitir el hogar
+* HOME	burn home
+	quemar su casa
+* HOME (AFTER EVACUATION)	return home (after evacuation)
+	volver a casa (después de la evacuación)
+* HOMELESS	help homeless
+	Personas sin hogar
+* HOMES	destroy homes
+	destruir casas
+* HOMES	raid homes
+	casas de raid
+* HOMES	attack homes
+	casas de ataque
+* HOMETOWN	capture hometown
+	captura de la ciudad natal
+* HONOR	award honor
+	honor de la concesión
+* HOPE	raise hope
+	aumentar la esperanza
+* HOPEFUL	declare hopeful
+	declarar la esperanza
+* HORROR	express horror
+	Pánico
+* HORROR	voice horror
+	el horror de voz
+* HOSPITALS	open hospitals
+	hospitales abiertos
+* HOSTILITY	express hostility
+	hostilidad expresa
+* HOSTILITY	reiterate hostility
+	reiterar la hostilidad
+* HOURS	give hours
+	dará horas
+* HOUSE	surround house
+	casa envolvente
+* HOUSE	destroy house
+	destruir la casa
+* HOUSES	burn houses
+	quemar casas
+* HUMANITARIAN	request humanitarian
+	solicitar humanitaria
+* HUNGER-STRIKE	die hunger-strike
+	morir de hambre huelga
+* HUNT	launch hunt
+	caza de lanzamiento
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

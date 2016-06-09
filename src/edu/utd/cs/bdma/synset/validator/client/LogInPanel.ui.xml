@@ -1,0 +1,127 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b3="urn:import:org.gwtbootstrap3.client.ui"
+	xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
+	<ui:style>
+	.important {
+		font-weight: bold;
+	}
+	
+	.error {
+	font-weight: bold;
+	font-size: 16px;
+	color: RED;
+
+	}
+	</ui:style>
+	<g:PopupPanel width="400px">
+		<b:TabPanel tabPosition="top" ui:field="tabPanel">
+			<b:Tab heading="Log In" active="true">
+				<b:Form type="VERTICAL">
+				<b:Label styleName="error" ui:field="errorLabel"></b:Label>
+				<b:ControlGroup>
+					<b:ControlLabel>Email Address</b:ControlLabel>
+
+					<b:TextBox ui:field="emailTextBox" placeholder="enter a .edu email address" />
+				
+				</b:ControlGroup>
+				<b:ControlGroup ui:field="passwordFields">
+					<b:ControlLabel>Password</b:ControlLabel>
+					<b:PasswordTextBox ui:field="passwordTextBox" />
+					<b:Button type="LINK" ui:field="forgetPasswordButton">Forget Password</b:Button>
+				</b:ControlGroup>
+
+					<b:CheckBox ui:field="remMeCheckbox">Remember Me</b:CheckBox>
+					<b:SubmitButton addStyleNames="btn" ui:field="loginButton">Log In</b:SubmitButton>
+					<b:SubmitButton addStyleNames="btn" ui:field="sendRecInfoButton" visible="false">Send Password Recovery Link</b:SubmitButton>
+				</b:Form>
+			</b:Tab>
+
+
+			<b:Tab heading="Sign Up">
+				<b:Form type="HORIZONTAL" ui:field="signUpForm">
+				<b:Label styleName="error" ui:field="errorLabelSignup"></b:Label>
+					<b:ControlGroup>
+						<b:ControlLabel>First Name</b:ControlLabel>
+						<b:Controls>
+							<b:TextBox ui:field="firstNameTextBoxSignUp" />
+						</b:Controls>
+
+					</b:ControlGroup>
+					<b:ControlGroup>
+						<b:ControlLabel>Last Name</b:ControlLabel>
+						<b:Controls>
+							<b:TextBox ui:field="lastNameTextBoxSignUp" />
+						</b:Controls>
+
+					</b:ControlGroup>
+					<b:ControlGroup>
+						<b:ControlLabel>Email Address</b:ControlLabel>
+						<b:Controls>
+
+							<b:TextBox ui:field="emailTextBoxSignUp" placeholder="enter a .edu email address" />
+
+
+
+
+						</b:Controls>
+
+					</b:ControlGroup>
+					<b:ControlGroup>
+						<b:ControlLabel>Password</b:ControlLabel>
+						<b:Controls>
+							<b:PasswordTextBox ui:field="passwordTextBoxSignUp" />
+						</b:Controls>
+
+					</b:ControlGroup>
+					<b:ControlGroup>
+						<b:ControlLabel>Re-enter Password</b:ControlLabel>
+						<b:Controls>
+							<b:PasswordTextBox ui:field="passwordTextBoxSignUpVerify" />
+						</b:Controls>
+
+					</b:ControlGroup>
+
+					<b:ControlGroup>
+						<b:ControlLabel>Select Your Language</b:ControlLabel>
+						<b:Controls>
+							<g:ListBox ui:field="langListbox">
+								<g:item value="es">
+									Spanish
+								</g:item>
+								<g:item value="ar">
+									Arabic
+								</g:item>
+							</g:ListBox>
+
+						</b:Controls>
+					</b:ControlGroup>
+										<b:ControlGroup>
+						<b:ControlLabel>Select Your Country</b:ControlLabel>
+						<b:Controls>
+							<g:ListBox ui:field="countryListBox">
+							</g:ListBox>
+
+						</b:Controls>
+					</b:ControlGroup>
+                        
+					<b:SubmitButton addStyleNames="btn" block="true" ui:field="signUpButton">Sign Up</b:SubmitButton>
+				</b:Form>
+				<b:Form type="VERTICAL" ui:field="verifyForm" visible="false">
+				     <g:Label>Verification mail sent to: </g:Label>
+				     <g:HTML ui:field="verifyEmailLabel"></g:HTML>
+				     <b:ControlGroup>
+						<b:ControlLabel>Enter the code to verify</b:ControlLabel>
+						<b:Controls>
+							<b:TextBox ui:field="verifyCodeTextBox" />
+						</b:Controls>
+
+					</b:ControlGroup>
+				     <b:SubmitButton ui:field="verifyButton">Verify</b:SubmitButton>
+				</b:Form>			
+				</b:Tab>
+
+
+		</b:TabPanel>
+	</g:PopupPanel>
+</ui:UiBinder> 
