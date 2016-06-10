@@ -13,6 +13,8 @@ public interface UserInfoServiceAsync {
 	void signup(UserInfo info, AsyncCallback<Boolean> callback);
 
 	void verify(String email, String code, AsyncCallback<Boolean> callback);
+	
+	void verifyPassword(String email, String code, String password, AsyncCallback<Boolean> callback);
 
 	void logout(AsyncCallback<Boolean> callback);
 

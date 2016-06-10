@@ -22,6 +22,8 @@ public interface UserInfoService extends RemoteService{
 	
 	public boolean verify(String email, String code);
 	
+	public boolean verifyPassword(String email, String code, String password);
+	
 	public boolean logout();
 	
 	public String checkLogin();

@@ -193,6 +193,25 @@ public class UserInfoServiceImpl extends RemoteServiceServlet implements UserInf
 		}
 		else return false; 
 	}
+	
+	public boolean verifyPassword(String email, String code, String password){//change entity for pass verification
+		Query query = new Query("PasswordVerificationInfo").setFilter(new FilterPredicate("email", FilterOperator.EQUAL, email));
+		PreparedQuery pquery = dataCache.prepare(query);
+		Iterable<Entity> iter = pquery.asIterable();
+		if (iter.iterator().hasNext()){
+			boolean result = iter.iterator().next().getProperty("code").equals(code);
+			UserInfo info = ofy().load().type(UserInfo.class).filter("emailAddress", email).first().now();
+			//change password
+            //info.setVerified(result);
+			if (result){
+			info.setEncryptedPassword(encrypt(password));
+            ofy().save().entity(info).now();
+			}
+			
+			return result;
+		}
+		else return false; 
+	}
 
 	@Override
 	public boolean logout() {

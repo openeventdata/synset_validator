@@ -2,6 +2,7 @@ package edu.utd.cs.bdma.synset.validator.client;
 
 import java.util.ArrayList;
 
+import com.gargoylesoftware.htmlunit.javascript.host.Text;
 import com.github.gwtbootstrap.client.ui.Button;
 import com.github.gwtbootstrap.client.ui.CheckBox;
 import com.github.gwtbootstrap.client.ui.ControlGroup;
@@ -98,6 +99,17 @@ public class LogInPanel extends PopupPanel {
 	
 	@UiField
 	ControlGroup emailGroup;
+	
+	@UiField
+	TextBox verifyPassRecCodeTB;
+	
+	@UiField
+	TextBox newPasswordTB;
+	
+	@UiField
+	TextBox newPasswordTB2;
+	
+	
 
 	String userFullName;
 
@@ -157,6 +169,42 @@ public class LogInPanel extends PopupPanel {
 				newPasswordForm.setVisible(true);
 			}
 		});
+	}
+	
+	@UiHandler("changePassButton")//add handler, make button
+	void verifyRecovery(ClickEvent e){
+		//get email
+		String email = emailTextBox.getText();
+		String verificationCode = verifyPassRecCodeTB.getText();//get code;
+		String password1 = newPasswordTB.getText();//get pass;
+		String password2 = newPasswordTB2.getText();//get pass;
+		if(password1.equals(password2)){
+			userService.verifyPassword(email, verificationCode, password1, new AsyncCallback<Boolean>(){
+				
+			@Override
+			public void onFailure(Throwable caught) {
+				// TODO Auto-generated method stub
+			}
+			
+			@Override
+			public void onSuccess(Boolean result) {
+				// TODO Auto-generated method stub
+				if(result){
+					newPasswordForm.setVisible(false);
+					remMeCheckbox.setVisible(true);
+					passwordFields.setVisible(true);
+					loginButton.setVisible(true);
+					errorLabel.setText("Password reset successfully");
+				}
+				else{
+					errorLabel.setText("Incorrect verification code;");
+				}
+			}
+			});
+		}
+		else{
+			errorLabel.setText("Passwords do not match.");
+			}
 	}
 
 	@UiHandler("loginButton")
