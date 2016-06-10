@@ -92,6 +92,12 @@ public class LogInPanel extends PopupPanel {
 	
 	@UiField
 	HTML verifyEmailLabel;
+	
+	@UiField
+	Form newPasswordForm;
+	
+	@UiField
+	ControlGroup emailGroup;
 
 	String userFullName;
 
@@ -130,6 +136,27 @@ public class LogInPanel extends PopupPanel {
 		passwordFields.setVisible(false);
 		loginButton.setVisible(false);
 		sendRecInfoButton.setVisible(true);
+	}
+	
+	@UiHandler("sendRecInfoButton")
+	void onPasswordRecRequest(ClickEvent e){
+		String emailAddress = emailTextBox.getText();
+		userService.sendRecoveryRequest(emailAddress, new AsyncCallback<Void>() {
+
+			@Override
+			public void onFailure(Throwable caught) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onSuccess(Void result) {
+				// TODO Auto-generated method stub
+				sendRecInfoButton.setVisible(false);
+				emailGroup.setVisible(false);
+				newPasswordForm.setVisible(true);
+			}
+		});
 	}
 
 	@UiHandler("loginButton")

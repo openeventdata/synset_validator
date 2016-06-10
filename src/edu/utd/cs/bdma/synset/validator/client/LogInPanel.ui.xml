@@ -19,7 +19,7 @@
 			<b:Tab heading="Log In" active="true">
 				<b:Form type="VERTICAL">
 				<b:Label styleName="error" ui:field="errorLabel"></b:Label>
-				<b:ControlGroup>
+				<b:ControlGroup ui:field="emailGroup">
 					<b:ControlLabel>Email Address</b:ControlLabel>
 
 					<b:TextBox ui:field="emailTextBox" placeholder="enter a .edu email address" />
@@ -33,7 +33,27 @@
 
 					<b:CheckBox ui:field="remMeCheckbox">Remember Me</b:CheckBox>
 					<b:SubmitButton addStyleNames="btn" ui:field="loginButton">Log In</b:SubmitButton>
-					<b:SubmitButton addStyleNames="btn" ui:field="sendRecInfoButton" visible="false">Send Password Recovery Link</b:SubmitButton>
+					<b:SubmitButton addStyleNames="btn" ui:field="sendRecInfoButton" visible="false">Send Password Recovery Code</b:SubmitButton>
+				</b:Form>
+				<b:Form type="VERTICAL" ui:field="newPasswordForm" visible="false">
+				     <b:ControlGroup>
+						<b:ControlLabel>Enter the Password Recovery Code: </b:ControlLabel>
+						<b:Controls>
+							<b:TextBox ui:field="verifyPassRecCodeTB" />
+						</b:Controls>
+						
+						<b:ControlLabel>Enter the New Password:</b:ControlLabel>
+						<b:Controls>
+							<b:TextBox ui:field="newPasswordTB" />
+						</b:Controls>
+						
+						<b:ControlLabel>Re-Enter the Password:</b:ControlLabel>
+						<b:Controls>
+							<b:TextBox ui:field="newPasswordTB2" />
+						</b:Controls>
+
+					</b:ControlGroup>
+				     <b:SubmitButton ui:field="changePassButton">Change Password</b:SubmitButton>
 				</b:Form>
 			</b:Tab>
 

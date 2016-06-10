@@ -27,4 +27,6 @@ public interface UserInfoService extends RemoteService{
 	public String checkLogin();
 	
 	public ArrayList<String> listCountries();
+	
+	public void sendRecoveryRequest(String emailAddress);
 }

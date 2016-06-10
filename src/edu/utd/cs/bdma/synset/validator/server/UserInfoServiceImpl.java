@@ -56,6 +56,8 @@ public class UserInfoServiceImpl extends RemoteServiceServlet implements UserInf
 
 	static DatastoreService dataCache = CachingDatastoreServiceFactory.getDatastoreService(900);
 	static String appId = SystemProperty.applicationId.get();
+	static String verifyAccMsg = "Please enter the follwoing code in the sign-up window to verify your identity.\n\n CODE:  ";
+	static String passwordRecMsg = "Please enter the following code to reset your password. \n\nPassword Recovery Code: ";
 	static {
 		ObjectifyService.register(UserInfo.class);
 	}
@@ -109,7 +111,7 @@ public class UserInfoServiceImpl extends RemoteServiceServlet implements UserInf
 		if (storedInfo == null) {
 			ofy().save().entity(info).now();
 
-			sendVerificationEmail(info.getEmailAddress());
+			sendVerificationEmail(info.getEmailAddress(), verifyAccMsg, "VerificationInfo");
 			return true;
 		}
 		return false;
@@ -134,16 +136,16 @@ public class UserInfoServiceImpl extends RemoteServiceServlet implements UserInf
 //		
 //	}
 
-	private void sendVerificationEmail(String emailAddress) {
+	private void sendVerificationEmail(String emailAddress, String message, String kind) {
 		Properties props = new Properties();
 		Session session = Session.getDefaultInstance(props, null);
 
-		String msgBody = "Please enter the follwoing code in the sign-up window to verify your identity.\n\n CODE:  ";
+		String msgBody = message;
 
 		String code = generateCode(8);
 		msgBody += code;
 		
-		Entity entity = new Entity("VerificationInfo");
+		Entity entity = new Entity(kind);
 		entity.setProperty("email", emailAddress);
 		entity.setProperty("code", code);
 		dataCache.put(entity);
@@ -226,6 +228,27 @@ public class UserInfoServiceImpl extends RemoteServiceServlet implements UserInf
 		}
 		byte[] hash = digest.digest(plaintext.getBytes(StandardCharsets.UTF_8));
 		return new String(hash);
+	}
+
+	@Override
+	public void sendRecoveryRequest(String emailAddress) {
+		// TODO Auto-generated method stub
+		log("Sending Password Rec");
+		UserInfo info = ofy().load().type(UserInfo.class).filter("emailAddress", emailAddress).first().now();
+		if (info == null){
+			//do nothing
+		}
+		
+		else {
+			sendPasswordRecoveryInfo(emailAddress);
+		}
+				
+				
+				
+	}
+	
+	private void sendPasswordRecoveryInfo(String email){
+		sendVerificationEmail(email, passwordRecMsg, "PasswordVerificationInfo");
 	}
 
 }

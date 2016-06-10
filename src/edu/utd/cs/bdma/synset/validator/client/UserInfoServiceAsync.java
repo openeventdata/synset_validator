@@ -19,6 +19,8 @@ public interface UserInfoServiceAsync {
 	void checkLogin(AsyncCallback<String> callback);
 
 	void listCountries(AsyncCallback<ArrayList<String>> callback);
+
+	void sendRecoveryRequest(String emailAddress, AsyncCallback<Void> callback);
 	
 	
 
