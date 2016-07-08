@@ -17,9 +17,12 @@ import edu.utd.cs.bdma.synset.validator.shared.entity.Word;
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,11 +60,11 @@ public class DataLoaderTask implements DeferredTask{
 	private void loadCameoData(){
 		if (ofy().load().type(CameoEntry.class).count() == 0) {
 			Gson gson = new Gson();
-            System.out.println("LOading Data");
+            System.out.println("Loading Data");
 			try {
 				Type type = new TypeToken<ArrayList<CameoEntry>>() {
 				}.getType();
-				ArrayList<CameoEntry> cameoList = gson.fromJson(new FileReader("cameo.json"), type);
+				ArrayList<CameoEntry> cameoList = gson.fromJson(new InputStreamReader(new FileInputStream("cameo.json"), "UTF-8"), type);
 				ofy().save().entities(cameoList).now();
 			} catch (JsonSyntaxException e) {
 				// TODO Auto-generated catch block
@@ -70,6 +73,9 @@ public class DataLoaderTask implements DeferredTask{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -81,9 +87,9 @@ public class DataLoaderTask implements DeferredTask{
 			try {
 				Type type = new TypeToken<ArrayList<CameoRule>>() {
 				}.getType();
-				ArrayList<CameoRule> cameoRules = gson.fromJson(new FileReader("OutputRule.json"), type);
+				ArrayList<CameoRule> cameoRules = gson.fromJson(new InputStreamReader(new FileInputStream("OutputRule.json"), "UTF-8"), type);
 				System.out.println("NO. of CameoRules: "+cameoRules.size());
-				BufferedReader br = new BufferedReader(new FileReader("translated_rules.txt"));
+				BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("translated_rules.txt"), "UTF-8"));
 				ArrayList<CameoTranslatedRule> tRules = new ArrayList<>();
 				for (CameoRule rule: cameoRules){
 					ofy().save().entity(rule).now();
@@ -168,7 +174,7 @@ public class DataLoaderTask implements DeferredTask{
 	}
 
 	private static String getContentAsString(String filename) throws IOException {
-		BufferedReader br = new BufferedReader(new FileReader(filename));
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
 		StringBuilder sb = new StringBuilder();
 		while (br.ready()) {
 			sb.append(br.readLine());

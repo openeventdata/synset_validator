@@ -1,28 +1,33 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui"
-		xmlns:b="urn:import:com.github.gwtbootstrap.client.ui" 
-		xmlns:v="urn:import:edu.utd.cs.bdma.synset.validator.client">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:v="urn:import:edu.utd.cs.bdma.synset.validator.client">
 	<ui:style>
 	.important {
 		font-weight: bold;
 	}
+	
 	.padding {
-        padding-left: 10px;
-     } 
+		padding-left: 10px;
+	}
 	</ui:style>
 	<g:VerticalPanel>
-	    <g:HorizontalPanel ui:field="horizontalPanel" spacing="10">
-	    <b:Heading ui:field="heading" size="3">No Cameo Code Selected</b:Heading>
-	    <b:Button ui:field="detailsButton" type="LINK">Details</b:Button>
-	    <g:Label>Related words from Cameo Codebook</g:Label>
-	    <g:ListBox ui:field="wordsListBox"></g:ListBox>
-	    <b:Button ui:field="loadButton" type="INFO"> Load </b:Button>
-	    	    <b:Button ui:field="saveButton" type="PRIMARY" enabled="false" visible="false"> Save Changes </b:Button>
- 	    </g:HorizontalPanel>
+		<g:HorizontalPanel ui:field="horizontalPanel"
+			spacing="10">
+			<b:Heading ui:field="heading" size="3">No Cameo Code Selected</b:Heading>
+			<b:Button ui:field="detailsButton" type="LINK">Details</b:Button>
+			<g:Label>Related words from Cameo Codebook</g:Label>
+			<g:ListBox ui:field="wordsListBox"></g:ListBox>
+			<b:Button ui:field="loadButton" type="INFO"> Load </b:Button>
+			<g:CheckBox ui:field="autoAdvance" value="true">Automatically load the next word</g:CheckBox>
+			<b:Button ui:field="saveButton" type="PRIMARY" enabled="false"
+				visible="false"> Save Changes </b:Button>
+		</g:HorizontalPanel>
+
+
 		<g:Label ui:field="summeryLabel"></g:Label>
-	
-		
+
+
 	</g:VerticalPanel>
-	
+
 </ui:UiBinder> 

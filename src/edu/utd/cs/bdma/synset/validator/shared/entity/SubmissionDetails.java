@@ -49,5 +49,24 @@ public class SubmissionDetails implements Serializable{
 	public boolean contains(String s){
 		return word.contains(s) || cameoCode.contains(s) || cameoDescription.contains(s);
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if (obj == null) return false;
+		if (obj instanceof SubmissionDetails){
+			SubmissionDetails other = (SubmissionDetails) obj;
+			return cameoCode.equals(other.cameoCode)
+					&& word.equals(other.word);
+		} else {
+			return false;
+		}
+	}
+	
+	@Override
+	public int hashCode() {
+          
+          return (word+cameoCode).hashCode();
+	}
 
 }

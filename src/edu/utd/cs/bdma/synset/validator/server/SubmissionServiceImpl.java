@@ -118,6 +118,10 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
     private Submission create(String cameoCode, String word){
     	CameoEntry entry = ofy().load().type(CameoEntry.class).filter("code", cameoCode).first().now();
     	Word wordEntry = ofy().load().type(Word.class).filter("text", word).first().now();
+    	if (wordEntry == null){
+    		wordEntry = new Word(word);
+    		ofy().save().entity(wordEntry).now();
+    	}
     	UserInfo user = (UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user");
     	
 //    	Submission submission = ofy().load().type(Submission.class)
@@ -129,7 +133,7 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
 	    	Submission submission = new Submission();
 	    	submission.setCameoId(entry.getId());
 	    	submission.setUserId(user.getId());
-	    	submission.setWordId(wordEntry.getId());
+	    	if (wordEntry != null)submission.setWordId(wordEntry.getId());
 	    	submission.setTime(new Date(System.currentTimeMillis()));
 	    	
 	    	ofy().save().entity(submission).now();
@@ -207,7 +211,11 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
     		log("Submission Located "+submission.getId());
     		UpdatedInfo info = new UpdatedInfo();
     		List<VerdictOnRule> verdicts = ofy().load().type(VerdictOnRule.class).filter("submissionId", submission.getId()).list();
-    		if (verdicts != null) info.setVerdictsOnRules(new ArrayList<>(verdicts));
+    		if (verdicts != null){
+    			info.setVerdictsOnRules(new ArrayList<>(verdicts));
+    			log("NUMBER OF VERDICTS SENT: "+verdicts.size());
+    		}
+    		
     		
     		List<CameoSelectedSynset> selectedSynsets = ofy().load()
     				                                   .type(CameoSelectedSynset.class)
@@ -215,9 +223,6 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
     		
     		info.setCameoSelectedSynsets(new ArrayList<>(selectedSynsets));
     		
-    		//List<SynsetWord> newWords = ofy().load().type(SynsetWord.class).filter("submissionId", submission.getId()).list();
-    		
-    		//info.setNewWords(new ArrayList<>(newWords));
     		
     		List<FeedbackOnSynsetWord> feedbacks = ofy().load().type(FeedbackOnSynsetWord.class).filter("submissionId", submission.getId()).list();
 
@@ -225,36 +230,7 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
     		
     		info.setFeedbackOnSynsetWords(new ArrayList<>(feedbacks));
     		
-    		//List<SynsetEntry> newSynEntries = ofy().load().type(SynsetEntry.class).filter("submissionId", submission.getId()).list();
-
-    	    
     		
-    		ArrayList<SynsetEntryWithWords> entries = new ArrayList<>();
-    		
-//    		for (SynsetEntry e: newSynEntries){
-//    			
-//    			entries.add(new SynsetEntryWithWords(e));
-//    		}
-    		
-//    		log("Number of Words: "+entries.get(0).getWords().size());
-//    		
-//    		for (SynsetWord w: newWords){
-//    			boolean added = false;
-//                for (SynsetEntryWithWords sw: entries){
-//                	if (w.getIdSynsetEntry() == sw.getEntry().getId()){
-//                		sw.addWord(w);
-//                		added = true;
-//                		break;
-//                	}
-//                }
-//                if (!added){
-//                	newWordsExistingSynset.add(w);
-//                }
-//                
-//    		}
-//    		
-//    		info.setSynsetEntryWithWords(entries);
-    		//info.setNewWords(newWordsExistingSynset);
     		
     		return info;
     	}

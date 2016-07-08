@@ -79,7 +79,11 @@ public class FeedbackOnSynsetWord implements Serializable{
 		this.comment = comment;
 	}
 	
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return ""+submissionId+" "+verdict+" "+comment;
+	}
 	
 	
 	

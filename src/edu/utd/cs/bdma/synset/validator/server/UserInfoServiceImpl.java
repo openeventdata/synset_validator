@@ -38,6 +38,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.MessagingException;
@@ -144,8 +145,9 @@ public class UserInfoServiceImpl extends RemoteServiceServlet implements UserInf
 
 		String code = generateCode(8);
 		msgBody += code;
-		
-		Entity entity = new Entity(kind);
+		Query entityQuery = new Query(kind).setFilter(new FilterPredicate("email", FilterOperator.EQUAL, emailAddress));
+		List<Entity> list = dataCache.prepare(entityQuery).asList(FetchOptions.Builder.withDefaults());
+		Entity entity = (list.size() == 0)? new Entity(kind): list.get(0);
 		entity.setProperty("email", emailAddress);
 		entity.setProperty("code", code);
 		dataCache.put(entity);

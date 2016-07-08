@@ -71,6 +71,26 @@ public class Submission implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if (obj == null) return false;
+		if (obj instanceof Submission){
+			Submission other = (Submission) obj;
+			return cameoId.equals(other.cameoId)
+					&& wordId.equals(other.wordId)
+					&& userId.equals(other.userId);
+		} else {
+			return false;
+		}
+	}
+	
+	@Override
+	public int hashCode() {
+          Long temp = wordId+cameoId+userId;
+          return temp.hashCode();
+	}
+	
 	
 	
 }

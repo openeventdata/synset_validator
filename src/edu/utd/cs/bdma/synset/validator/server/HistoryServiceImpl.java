@@ -1,6 +1,7 @@
 package edu.utd.cs.bdma.synset.validator.server;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import com.google.appengine.api.datastore.KeyFactory;
@@ -39,6 +40,7 @@ public class HistoryServiceImpl extends RemoteServiceServlet implements HistoryS
 			List<Submission> submitList = ofy().load().type(Submission.class).filter("userId", user.getId()).list();
 			
 			for (Submission submission: submitList){
+				if (submission.getWordId() == null) continue;
 				CameoEntry entry = ofy().load().type(CameoEntry.class).filterKey(KeyFactory.createKey("CameoEntry", submission.getCameoId())).first().now();
 				Word word = ofy().load().type(Word.class).filterKey(KeyFactory.createKey("Word", submission.getWordId())).first().now();
 				SubmissionDetails det = new SubmissionDetails();
@@ -51,6 +53,8 @@ public class HistoryServiceImpl extends RemoteServiceServlet implements HistoryS
 				submissions.add(det);
 				
 			}
+			HashSet<SubmissionDetails> hset = new HashSet<>(submissions);
+			submissions = new ArrayList<>(hset);
 			log("Number of submisssions: "+ submissions.size());
 			return submissions;
 		}

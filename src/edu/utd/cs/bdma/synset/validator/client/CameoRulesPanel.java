@@ -114,6 +114,7 @@ public class CameoRulesPanel extends Composite{
 		this.setVisible(false);
 		sectionHeader.setVisible(false);
 		verdictMap.clear();
+		rulesTable.clear();
 		rulesTable.setStyleName("infoTable");
 		for (int i = 0; i < rules.size(); i++){
 			rulesTable.setWidget(i, 0, new Label(rules.get(i).getRuleText()));
@@ -234,6 +235,7 @@ public class CameoRulesPanel extends Composite{
 	}
 	
 	public ArrayList<VerdictOnRule> getVerdicts() {
+		GWT.log("Number of comment : "+verdictMap.size());
 		return new ArrayList<>(verdictMap.values());
 	}
 

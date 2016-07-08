@@ -96,4 +96,13 @@ public class CameoEntry implements Serializable{
 	}
 	
 	
+	public CameoEntrySummery summerize(){
+		CameoEntrySummery summery = new CameoEntrySummery();
+		summery.setCode(code);
+		summery.setConcept(concept);
+		summery.setDescription(description);
+		
+		return summery;
+	}
+	
 }

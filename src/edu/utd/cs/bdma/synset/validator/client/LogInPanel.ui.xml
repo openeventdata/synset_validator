@@ -17,7 +17,7 @@
 	<g:PopupPanel width="400px">
 		<b:TabPanel tabPosition="top" ui:field="tabPanel">
 			<b:Tab heading="Log In" active="true">
-				<b:Form type="VERTICAL">
+				<b:Form type="VERTICAL" ui:field="signInForm">
 				<b:Label styleName="error" ui:field="errorLabel"></b:Label>
 				<b:ControlGroup ui:field="emailGroup">
 					<b:ControlLabel>Email Address</b:ControlLabel>

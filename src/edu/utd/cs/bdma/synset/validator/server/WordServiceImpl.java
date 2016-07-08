@@ -3,8 +3,10 @@ package edu.utd.cs.bdma.synset.validator.server;
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -36,10 +38,11 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 	
 	static {
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("countries"+"_es"+".txt"));
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("countries"+"_es"+".txt"), "UTF-8"));
 			while (br.ready()){
 				countries.add(br.readLine().split("\t")[0].trim());
 			}
+			br.close();
 			Collections.sort(countries);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -56,15 +59,15 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 		ObjectifyService.register(SynsetWord.class);
 		ObjectifyService.register(CameoSelectedSynset.class);
 		ObjectifyService.register(FeedbackOnSynsetWord.class);
-		try {
-			loadData();
-		} catch (JsonSyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			loadData();
+//		} catch (JsonSyntaxException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 	}
 
@@ -138,7 +141,7 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 	}
 
 	private static String getContentAsString(String filename) throws IOException {
-		BufferedReader br = new BufferedReader(new FileReader(filename));
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
 		StringBuilder sb = new StringBuilder();
 		while (br.ready()) {
 			sb.append(br.readLine());
@@ -161,10 +164,11 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 				entryWithWord.addAllWords(getWords(entry, langCode));
 				entriesWithWords.add(entryWithWord);
 			}
+			if (entriesWithWords.size()>0){
 			log("Synset Entry with Word length " + entriesWithWords.size());
 			log("First words: "+entriesWithWords.get(0).getWords().size());
 			log("First ID: "+ entriesWithWords.get(0).getEntry().getId());
-
+			}
 		}
 		return entriesWithWords;
 	}

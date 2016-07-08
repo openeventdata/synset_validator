@@ -23,26 +23,29 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
 import edu.utd.cs.bdma.synset.validator.shared.customevents.CameoCodeSelectedEvent;
+import edu.utd.cs.bdma.synset.validator.shared.entity.CameoEntrySummery;
 
 public class CameoSummeryPanel extends PopupPanel implements HasHandlers{
 
 	private static final CameoServiceAsync cameoService = GWT.create(CameoService.class); 
 	static EventBus eventBus = GWT.create(SimpleEventBus.class);
 	
-	private HandlerManager handlerManager;
-
-	private String searchKey = "";
 	
-	private List<String> summeries;
+	
+	private List<CameoEntrySummery> summeries;
+	private List<CameoEntrySummery> filteredSummeries = new ArrayList<>() ;
 	
 	@UiField
 	LoadingPanel loadingPanel;
+	
+	Widget parentWidget;
 	
 	private static CameoSummeryPanelUiBinder uiBinder = GWT.create(CameoSummeryPanelUiBinder.class);
 
@@ -51,8 +54,7 @@ public class CameoSummeryPanel extends PopupPanel implements HasHandlers{
 
 	public CameoSummeryPanel() {
 		setWidget(uiBinder.createAndBindUi(this));
-		handlerManager = new HandlerManager(this);
-		//mainPanel.add(loadingPanel);
+		
 			
 	}
 
@@ -67,10 +69,13 @@ public class CameoSummeryPanel extends PopupPanel implements HasHandlers{
 	
 		
 	public void getAndShow(final Widget widget){
-		this.showRelativeTo(widget);
+		if (summeries != null)
+		            GWT.log("Num Summeries: "+summeries.size());
+		parentWidget = widget;
+		this.showRelativeTo(parentWidget);
 		loadingPanel.show();
 		if (summeries == null ){
-			cameoService.getCameoSummery(new AsyncCallback<List<String>>() {
+			cameoService.getCameoSummery(new AsyncCallback<List<CameoEntrySummery>>() {
 
 				@Override
 				public void onFailure(Throwable caught) {
@@ -79,37 +84,49 @@ public class CameoSummeryPanel extends PopupPanel implements HasHandlers{
 				}
 
 				@Override
-				public void onSuccess(List<String> result) {
+				public void onSuccess(List<CameoEntrySummery> result) {
 					// TODO Auto-generated method stub
 					summeries = result;
-					constructTable(summeries, widget);
+					for (CameoEntrySummery s: summeries){
+						filteredSummeries.add(s);
+					}
+					constructTable(summeries);
 					loadingPanel.hide();
 				}
 			});
 		} else {
-			constructTable(summeries, widget);
+			GWT.log("Testing Drawing");
 			filterResult();
+			constructTable(filteredSummeries);
+			
 			loadingPanel.hide();
 		}
 	}
 
-	private void constructTable(List<String> summeries2, Widget widget) {
+	private void constructTable(List<CameoEntrySummery> summeries2) {
 		// TODO Auto-generated method stub
 	    summeryTable.clear();
 		int i = 0;
 		summeryTable.setCellPadding(10);
-		for(String summery: summeries){
-			summeryTable.setWidget(i++, 0, new Label(summery));
+		for(CameoEntrySummery summery: summeries2){
+			summeryTable.setWidget(i++, 0, new HTML(buildTableEntry(summery)));
 		}
 		GWT.log("Finished Processing");
 		//this.showRelativeTo(widget);
+	}
+	
+	
+	private String buildTableEntry(CameoEntrySummery summery){
+		return "<span style=\"font-weight: bold; color: green;\">"+summery.getCode()
+		             +"</span><span style=\"font-weight: bold;\"> "
+		                            +summery.getConcept()+"</span> "+summery.getDescription();
 	}
 
 	@UiHandler("summeryTable")
 	void summeryClicked(ClickEvent e){
 		int row = summeryTable.getCellForEvent(e).getRowIndex();
 		GWT.log(""+row);
-		String cameoCode = ((Label)summeryTable.getWidget(row, 0)).getText().split(":")[0];
+		String cameoCode = filteredSummeries.get(row).getCode();
 		//eventBus.fireEvent(new CameoCodeSelectedEvent(cameoCode));
 		this.hide();
 		fireEvent(new CameoCodeSelectedEvent(cameoCode));
@@ -124,18 +141,20 @@ public class CameoSummeryPanel extends PopupPanel implements HasHandlers{
     void handleKeyPress(KeyUpEvent event){
     	
          filterResult();
-    	
+    	 constructTable(filteredSummeries);
     }
     
     void filterResult(){
-    	summeryTable.clear();
-		int i = 0;
-		summeryTable.setCellPadding(10);
-		for(String summery: summeries){
+
+        filteredSummeries.clear();    
+        GWT.log("Length: "+searchTextBox.getText());
+		for(CameoEntrySummery summery: summeries){
 			if (summery.contains(searchTextBox.getText()))
-			summeryTable.setWidget(i++, 0, new Label(summery));
+			        filteredSummeries.add(summery);
 		}
+		GWT.log("Filtered Summeries: "+filteredSummeries.size());
 		GWT.log("Finished Processing");
+		
     }
 
     

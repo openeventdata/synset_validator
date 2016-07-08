@@ -1,2 +1,0 @@
-serviceClass: edu.utd.cs.bdma.synset.validator.client.CameoService
-path: 37D4F486187F3F66F936C003888DBC48.gwt.rpc

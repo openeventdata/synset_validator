@@ -21,12 +21,25 @@ public class CameoSelectedSynset implements Serializable{
 	Date submissionTime;
 	
 	@Index Long idSynsetEntry;
+	Boolean examplesValid;
 	
 	public Long getId() {
 		return id;
 	}
+	
+	
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	
+	public void setExamplesValid(boolean examplesValid) {
+		this.examplesValid = examplesValid;
+	}
+	
+	public boolean isExamplesValid() {
+		if (examplesValid == null) return true;
+		return examplesValid;
 	}
 	
 	public void setSubmissionId(Long submissionId) {

@@ -104,6 +104,17 @@
     <url-pattern>/synset_validator/loaddata</url-pattern>
     
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DataCleanerServlet</servlet-name>
+    <servlet-class>edu.utd.cs.bdma.synset.validator.server.DataCleaner</servlet-class>
+   </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>DataCleanerServlet</servlet-name>
+    <url-pattern>/synset_validator/cleandb</url-pattern>
+    
+  </servlet-mapping>
 
   
   <!-- Default page to serve -->

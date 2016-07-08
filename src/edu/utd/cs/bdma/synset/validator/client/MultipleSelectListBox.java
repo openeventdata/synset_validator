@@ -9,6 +9,7 @@ import com.github.gwtbootstrap.client.ui.constants.IconPosition;
 import com.github.gwtbootstrap.client.ui.constants.IconType;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.rpc.core.java.util.Arrays;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.Composite;
@@ -35,6 +36,7 @@ public class MultipleSelectListBox extends Composite{
 		initWidget(button);
 		length = dynNameLength;
 		popup = new PopupPanel();
+        button.setWidth("180px");   
 		button.addClickHandler(new ClickHandler() {
 			
 			@Override
@@ -104,7 +106,7 @@ public class MultipleSelectListBox extends Composite{
 			} else {
 				table.getRowFormatter().removeStyleName(i, "listSelectedItem");
 			}
-			table.setWidget(i, 0, new HTML(options.get(i)));
+			table.setWidget(i, 0, new HTML(SafeHtmlUtils.htmlEscape(options.get(i))));
 		}
 		Button saveButton = new Button("Save");
 		sPanel.add(table);

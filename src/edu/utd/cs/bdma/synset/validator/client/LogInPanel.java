@@ -195,6 +195,7 @@ public class LogInPanel extends PopupPanel {
 					passwordFields.setVisible(true);
 					loginButton.setVisible(true);
 					errorLabel.setText("Password reset successfully");
+					newPasswordForm.setVisible(false);
 				}
 				else{
 					errorLabel.setText("Incorrect verification code;");

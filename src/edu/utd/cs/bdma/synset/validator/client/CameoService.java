@@ -8,6 +8,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 import com.googlecode.objectify.Key;
 
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoEntry;
+import edu.utd.cs.bdma.synset.validator.shared.entity.CameoEntrySummery;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoRule;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoTranslatedRule;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntryWithWords;
@@ -21,7 +22,7 @@ public interface CameoService extends RemoteService{
 	
 	public ArrayList<CameoTranslatedRule> getCameoTranslation(CameoRule rule, String langCode);
 	
-	public List<String> getCameoSummery();
+	public List<CameoEntrySummery> getCameoSummery();
 	
 	public ArrayList<String> getRelatedWords(String cameoCode);
 	

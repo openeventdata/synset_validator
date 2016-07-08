@@ -6,6 +6,7 @@ import java.util.List;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoEntry;
+import edu.utd.cs.bdma.synset.validator.shared.entity.CameoEntrySummery;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoRule;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoTranslatedRule;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntryWithWords;
@@ -19,7 +20,7 @@ public interface CameoServiceAsync {
 
 	void getCameoTranslation(CameoRule rule, String langCode, AsyncCallback<ArrayList<CameoTranslatedRule>> callback);
 
-	void getCameoSummery(AsyncCallback<List<String>> callback);
+	void getCameoSummery(AsyncCallback<List<CameoEntrySummery>> callback);
 
 	void getRelatedWords(String cameoCode, AsyncCallback<ArrayList<String>> callback);
 

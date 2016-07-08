@@ -83,6 +83,11 @@ td{
 	padding-bottom: 10px
 }
 
+.gwt-PopupPanel-noborder {
+    border: none !important;
+    background: none !important;
+ }
+
 
 .regulartext{
 	font-size: 16px

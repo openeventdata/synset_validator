@@ -133,7 +133,7 @@ static EventBus eventBus = GWT.create(SimpleEventBus.class);
 		GWT.log(""+row);
 		//eventBus.fireEvent(new CameoCodeSelectedEvent(cameoCode));
 		this.hide();
-		fireEvent(new CameoCodeSelectedEvent(submitDetails.get(row).getCameoCode()));
+		//fireEvent(new CameoCodeSelectedEvent(submitDetails.get(row).getCameoCode()));
 		fireEvent(new CameoWordSelectedEvent(submitDetails.get(row).getCameoCode(), submitDetails.get(row).getWord()));
 	}
 

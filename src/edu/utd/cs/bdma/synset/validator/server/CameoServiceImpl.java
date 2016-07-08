@@ -3,11 +3,16 @@ package edu.utd.cs.bdma.synset.validator.server;
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -22,6 +27,7 @@ import com.googlecode.objectify.ObjectifyService;
 
 import edu.utd.cs.bdma.synset.validator.client.CameoService;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoEntry;
+import edu.utd.cs.bdma.synset.validator.shared.entity.CameoEntrySummery;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoRule;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoTranslatedRule;
 import edu.utd.cs.bdma.synset.validator.shared.entity.Submission;
@@ -44,74 +50,6 @@ public class CameoServiceImpl extends RemoteServiceServlet implements CameoServi
 	
 	
 	
-	@Override
-	public void init() throws ServletException {
-		// TODO Auto-generated method stub
-		super.init();
-		if (ofy().load().type(CameoEntry.class).count() == 0) {
-			Gson gson = new Gson();
-            log("LOading Data");
-			try {
-				Type type = new TypeToken<ArrayList<CameoEntry>>() {
-				}.getType();
-				ArrayList<CameoEntry> cameoList = gson.fromJson(new FileReader("cameo.json"), type);
-				ofy().save().entities(cameoList).now();
-			} catch (JsonSyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (JsonIOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		if (ofy().load().type(CameoRule.class).count() == 0) {
-			Gson gson = new Gson();
-            log("LOading Data");
-			try {
-				Type type = new TypeToken<ArrayList<CameoRule>>() {
-				}.getType();
-				ArrayList<CameoRule> cameoRules = gson.fromJson(new FileReader("OutputRule.json"), type);
-				BufferedReader br = new BufferedReader(new FileReader("translated_rules.txt"));
-				for (CameoRule rule: cameoRules){
-					ofy().save().entity(rule).now();
-					br.readLine();
-					CameoTranslatedRule transRule = new CameoTranslatedRule("es", br.readLine().trim(), "google", false);
-					transRule.setRuleID(rule.getId());
-					ofy().save().entity(transRule).now();
-				}
-				
-			} catch (JsonSyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (JsonIOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		if (ofy().load().type(CameoTranslatedRule.class).count() == 0){
-			List<CameoRule> rules = ofy().load().type(CameoRule.class).list();
-			ArrayList<CameoTranslatedRule> tRules = new ArrayList<>();
-			for (CameoRule rule: rules){
-				CameoTranslatedRule tRule = new CameoTranslatedRule("es", "Dummy "+rule.getId(), "Dummy", false);
-				tRule.setRuleID(rule.getId());
-				tRules.add(tRule);
-			}
-			
-			ofy().save().entities(tRules).now();
-		}
-	}
-
 	@Override
 	public CameoEntry getCameoInfo(String cameoCode) {
 		// TODO Auto-generated method stub
@@ -149,15 +87,21 @@ public class CameoServiceImpl extends RemoteServiceServlet implements CameoServi
 	}
 
 	@Override
-	public List<String> getCameoSummery() {
+	public List<CameoEntrySummery> getCameoSummery() {
 		// TODO Auto-generated method stub
 		List<CameoEntry> list = ofy().load().type(CameoEntry.class).list();
 		
-		List<String> summeries = new ArrayList<>();
+		List<CameoEntrySummery> summeries = new ArrayList<>();
 		for (CameoEntry e: list) {
-			summeries.add(e.summery());
+			summeries.add(e.summerize());
 			log(e.summery());
 		}
+		
+		Collections.sort(summeries, new Comparator<CameoEntrySummery>(){
+			public int compare(CameoEntrySummery o1, CameoEntrySummery o2) {
+				return o1.getCode().compareTo(o2.getCode());
+			};
+		});
 		
 		return summeries;
 	}

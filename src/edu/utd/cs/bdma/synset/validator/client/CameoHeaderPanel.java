@@ -11,6 +11,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
@@ -58,6 +59,9 @@ public class CameoHeaderPanel extends Composite  {
 	@UiField
 	Button loadButton;
 	
+	@UiField
+	CheckBox autoAdvance;
+	
 	CameoPopUpPanel cameoPopUpPanel = new CameoPopUpPanel();
 	
 	
@@ -69,7 +73,7 @@ public class CameoHeaderPanel extends Composite  {
 
 	}
 	
-	public void setCode(String cameoCode){
+	public void setCode(final String cameoCode, final String defaultSelected){
 		GWT.log("Inside Set()");
 		if (this.cameoCode == null || !this.cameoCode.equals(cameoCode)){
 			GWT.log("Insode IF");
@@ -110,11 +114,40 @@ public class CameoHeaderPanel extends Composite  {
 						wordsListBox.addItem(s);
 					}
 					wordsListBox.setVisible(true);
+					if (defaultSelected != null) {
+						fireEvent(new CameoWordSelectedEvent(cameoCode, defaultSelected));
+						setSelection(defaultSelected);
+					}
+
+					
 				}
 			});
 			
 		}
+		
+		else if (defaultSelected != null) {
+			fireEvent(new CameoWordSelectedEvent(cameoCode, defaultSelected));
+			setSelection(defaultSelected);
+		}
+
+
 	}
+	
+	public boolean advanceToNextWord(){
+		if (autoAdvance.getValue()){
+			if (wordsListBox.getSelectedIndex() < wordsListBox.getItemCount()-1){
+				wordsListBox.setSelectedIndex(wordsListBox.getSelectedIndex()+1);
+				fireEvent(new CameoWordSelectedEvent(cameoCode, wordsListBox.getSelectedItemText()));
+			}
+		}
+		
+		return autoAdvance.getValue();
+	}
+	
+	public void setCode(String cameoCode){
+		setCode(cameoCode, null);
+	}
+	
 	
 	public void setSelection(String word){
 		int selectedIndex = 0;
