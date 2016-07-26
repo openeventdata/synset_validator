@@ -49,6 +49,7 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
 		//log("Working without inserting");
 		// TODO Auto-generated method stub
 		Submission submission = create(cameoCode, word);
+		submission.setComment(info.getComment());
 		Long submissionId = submission.getId();
 		for (VerdictOnRule v : info.getVerdictsOnRules()) {
 			// v.setIdUser(userID);
@@ -93,6 +94,7 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
 			}
 
 		}
+        
         log("Number of new words added: "+ info.getNewWords().size());
         for (SynsetWordWithFeedback w : info.getNewWords()){
         	w.getSynsetWord().setSubmissionId(submissionId);
@@ -230,7 +232,7 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
     		
     		info.setFeedbackOnSynsetWords(new ArrayList<>(feedbacks));
     		
-    		
+    		info.setComment(submission.getComment());
     		
     		return info;
     	}

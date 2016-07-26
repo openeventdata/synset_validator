@@ -2,6 +2,6 @@
 # RPC service class, partial path of RPC policy file
 edu.utd.cs.bdma.synset.validator.client.UserInfoService, C9711D44EA2F44667351595FEE9D5FB6.gwt.rpc
 edu.utd.cs.bdma.synset.validator.client.WordService, ED8A7DB1A80E972FB0C9C35FA003FB40.gwt.rpc
-edu.utd.cs.bdma.synset.validator.client.SubmissionService, 4985FE6F4C99CA2B773FF315697940AC.gwt.rpc
 edu.utd.cs.bdma.synset.validator.client.HistoryService, 51675EBB4B6646739CEC51FA7C2F953D.gwt.rpc
 edu.utd.cs.bdma.synset.validator.client.CameoService, B426384A4CCCE2DA501FFA07C9463AA4.gwt.rpc
+edu.utd.cs.bdma.synset.validator.client.SubmissionService, 9B740AD7AF0D191BC8DA4E13EB0A8A71.gwt.rpc

@@ -165,8 +165,10 @@ public class CameoHeaderPanel extends Composite  {
 	@UiHandler("loadButton")
 	public void onLoadRequest(ClickEvent e)
 	{
-		fireEvent(new CameoWordSelectedEvent(cameoCode, wordsListBox.getSelectedItemText()));
-		saveButton.setEnabled(true);
+		if (wordsListBox.getItemCount() != 0){
+		    fireEvent(new CameoWordSelectedEvent(cameoCode, wordsListBox.getSelectedItemText()));
+		    saveButton.setEnabled(true);
+		}
 	}
 	
 	@UiHandler("saveButton")

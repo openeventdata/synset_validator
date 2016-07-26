@@ -30,7 +30,8 @@
 		<g:FlexTable ui:field="synsetTable">
 		
 		</g:FlexTable>
-		
+		<b:Heading size="5" ui:field="commentHeader">Overall Comment about the Submission:</b:Heading>
+		<b:TextArea width="inherit" ui:field="overallComment"></b:TextArea>
 		
 	</g:VerticalPanel>
 </ui:UiBinder> 

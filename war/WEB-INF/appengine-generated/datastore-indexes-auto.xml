@@ -1,8 +1,8 @@
-<!-- Indices written at Fri, 8 Jul 2016 08:13:35 CDT -->
+<!-- Indices written at Tue, 26 Jul 2016 12:35:53 CDT -->
 
 <datastore-indexes>
 
-    <!-- Used 2 times in query history -->
+    <!-- Used 4 times in query history -->
     <datastore-index kind="CameoRule" ancestor="false" source="auto">
         <property name="cameoCode" direction="asc"/>
         <property name="word" direction="asc"/>

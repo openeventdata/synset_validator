@@ -21,10 +21,23 @@ public class Submission implements Serializable{
 	@Index Long adminId;
 	
 	@Index Date time;
+	
+	private String comment;
 
+	
+	public String getComment() {
+		return comment;
+	}
+	
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+	
 	public Long getId() {
 		return id;
 	}
+	
+	
 
 
 	public Date getTime() {

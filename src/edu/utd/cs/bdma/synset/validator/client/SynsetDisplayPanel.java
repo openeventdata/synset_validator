@@ -133,6 +133,12 @@ public class SynsetDisplayPanel extends Composite {
 
 	@UiField
 	HTML infoMessage;
+	
+	@UiField
+    TextArea overallComment;
+	
+	@UiField
+	Heading commentHeader;
 
 	TextBox newwordTextBox = new TextBox();
 
@@ -230,6 +236,10 @@ public class SynsetDisplayPanel extends Composite {
 
 	public ArrayList<SynsetWordWithFeedback> getNewWords() {
 		return newWords;
+	}
+	
+	public String getComment(){
+		return overallComment.getText();
 	}
 
 	public void setCameoCode(String cameoCode) {
@@ -430,6 +440,9 @@ public class SynsetDisplayPanel extends Composite {
 		infoMessage.setVisible(visible);
 		// lPanel.setVisible(!visible);
 		newEntryButton.setVisible(visible);
+		commentHeader.setVisible(visible);
+		overallComment.setVisible(visible);
+		
 	}
 
 	protected void designUI() {

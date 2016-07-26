@@ -273,6 +273,7 @@ public class CameoDevelopment implements EntryPoint, CameoCodeSelectedEventHandl
 		info.setFeedbackOnSynsetWords(synsetPanel.getSelFeedbacks());
 		info.setNewWords(synsetPanel.getNewWords());
 		info.setSynsetEntryWithWords(synsetPanel.getNewSynsets());
+		info.setComment(synsetPanel.getComment());
 		
 		GWT.log(synsetPanel.getSelFeedbacks().toString());
 		info.setVerdictsOnRules(rulesPanel.getVerdicts());

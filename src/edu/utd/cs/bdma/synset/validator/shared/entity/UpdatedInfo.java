@@ -17,6 +17,17 @@ public class UpdatedInfo implements Serializable{
 	private ArrayList<SynsetWordWithFeedback> newWords= new ArrayList<>();
 	
 	private HashMap<Long, FeedbackOnSynsetWord> feedbackSWNewEntry = new HashMap<>();
+	
+	private String comment;
+	
+	
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+	
+	public String getComment() {
+		return comment;
+	}
 
 	public ArrayList<FeedbackOnSynsetWord> getFeedbackOnSynsetWords() {
 		return feedbackOnSynsetWords;
