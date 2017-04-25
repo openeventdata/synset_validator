@@ -6,13 +6,24 @@ import java.util.ArrayList;
 public class SynsetEntryWithWords implements Serializable{
 	
 	SynsetEntry entry;
+	ArrayList<SynsetExample> examples;
 	
 	ArrayList<SynsetWord> words;
+	
+	private boolean readOnly;
 	
 	public SynsetEntryWithWords(SynsetEntry entry) {
 		// TODO Auto-generated constructor stub
 		this.entry = entry;
 		words = new ArrayList<>();
+	}
+	
+	public void setReadOnly(boolean readOnly) {
+		this.readOnly = readOnly;
+	}
+	
+	boolean getReadOnly(){
+		return readOnly;
 	}
 	
     public void addWord(SynsetWord word){
@@ -21,6 +32,14 @@ public class SynsetEntryWithWords implements Serializable{
     
     public SynsetEntry getEntry() {
 		return entry;
+	}
+    
+    public void setExamples(ArrayList<SynsetExample> examples) {
+		this.examples = examples;
+	}
+    
+    public ArrayList<SynsetExample> getExamples() {
+		return examples;
 	}
     
     public ArrayList<SynsetWord> getWords() {

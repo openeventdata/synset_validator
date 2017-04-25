@@ -14,6 +14,8 @@ import edu.utd.cs.bdma.synset.validator.shared.entity.FeedbackOnSynsetWord;
 import edu.utd.cs.bdma.synset.validator.shared.entity.Submission;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntry;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntryWithWords;
+import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetExampleVerdict;
+import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetVerdict;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetWord;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetWordWithFeedback;
 import edu.utd.cs.bdma.synset.validator.shared.entity.UpdatedInfo;
@@ -41,6 +43,8 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
 		ObjectifyService.register(VerdictOnRule.class);
 		ObjectifyService.register(Submission.class);
 		ObjectifyService.register(CameoTranslatedRule.class);
+		ObjectifyService.register(SynsetVerdict.class);
+		ObjectifyService.register(SynsetExampleVerdict.class);
 	}
 
 	@Override
@@ -57,15 +61,21 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
 		}
 		ofy().save().entities(info.getVerdictsOnRules()).now();
 		
-		
-		for (CameoSelectedSynset selection : info.getCameoSelectedSynsets()) {
-			selection.setSubmissionId(submissionId);
+		for (SynsetVerdict sv: info.getSynsetFeedbacks()){
+			sv.setSubmissionId(submissionId);
 		}
+		
+		ofy().save().entities(info.getSynsetFeedbacks()).now();
+		
+		
 		ofy().save().entities(info.getCameoSelectedSynsets()).now();
 		
 		for (FeedbackOnSynsetWord feedback : info.getFeedbackOnSynsetWords()) {
 			feedback.setSubmissionId(submissionId);
 		}
+		
+		ofy().save().entities(info.getSynsetFeedbacks()).now();
+		
         ofy().save().entities(info.getFeedbackOnSynsetWords()).now();
         
         
@@ -106,7 +116,12 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
         	ofy().save().entity(w.getFeedback()).now();
         	
         }
-			
+		
+        for (SynsetExampleVerdict sv: info.getExampleVerdicts()){
+        	sv.setSubmissionId(submissionId);
+        	
+        }
+        ofy().save().entities(info.getExampleVerdicts()).now();
 		
 		
 		
@@ -225,6 +240,10 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
     		
     		info.setCameoSelectedSynsets(new ArrayList<>(selectedSynsets));
     		
+    		List<SynsetVerdict> synsetVerdicts = ofy().load().type(SynsetVerdict.class).filter("submissionId", submission.getId()).list();
+    		
+    		info.setSynsetFeedbacks(new ArrayList<>(synsetVerdicts));
+    		
     		
     		List<FeedbackOnSynsetWord> feedbacks = ofy().load().type(FeedbackOnSynsetWord.class).filter("submissionId", submission.getId()).list();
 
@@ -234,6 +253,11 @@ public class SubmissionServiceImpl extends RemoteServiceServlet implements Submi
     		
     		info.setComment(submission.getComment());
     		
+    		List<SynsetExampleVerdict> exampleFeedbacks = ofy().load().type(SynsetExampleVerdict.class).filter("submissionId", submission.getId()).list();
+
+    		log("Size of Feedbacks; "+exampleFeedbacks.size());
+
+    		info.setExampleVerdicts(new ArrayList<>(exampleFeedbacks));
     		return info;
     	}
     	return new UpdatedInfo();

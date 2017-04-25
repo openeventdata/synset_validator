@@ -5,7 +5,8 @@ import java.util.HashMap;
 
 import com.github.gwtbootstrap.client.ui.Button;
 import com.github.gwtbootstrap.client.ui.Heading;
-import com.github.gwtbootstrap.client.ui.base.TextBox;
+import com.github.gwtbootstrap.client.ui.TextArea;
+import com.github.gwtbootstrap.client.ui.TextBox;
 import com.github.gwtbootstrap.client.ui.constants.ButtonType;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -54,17 +55,27 @@ public class CameoRulesPanel extends Composite{
 	@UiField
 	Heading sectionHeader;
 	
+	@UiField
+	HorizontalPanel addRulePanel;
+	
+	@UiField
+	TextBox ruleTextBox;
+	
+	@UiField
+	TextBox codeTextBox;
+	
 	interface CameoRulesPanelUiBinder extends UiBinder<Widget, CameoRulesPanel> {
 	}
 
 	public CameoRulesPanel() {
 		initWidget(uiBinder.createAndBindUi(this));
+		this.setVisible(false);
 	}
 
 
 	public CameoRulesPanel(String firstName) {
 		initWidget(uiBinder.createAndBindUi(this));
-		
+		this.setVisible(false);
 	}
 	
 	public void setInfo(String cCode, String w){
@@ -96,6 +107,7 @@ public class CameoRulesPanel extends Composite{
 					}
 				});
 				designTable();
+				codeTextBox.setPlaceholder("default code: "+cameoCode);
 			}
 			
 			@Override
@@ -153,7 +165,7 @@ public class CameoRulesPanel extends Composite{
 	
 	
 	
-	private void showPopup(Button button, CameoRule rule, final ArrayList<CameoTranslatedRule> tRules) {
+	private void showPopup(Button button, final CameoRule rule, final ArrayList<CameoTranslatedRule> tRules) {
 		// TODO Auto-generated method stub
 		editPopup.clear();
 		editPopup.setWidth("400px");
@@ -161,15 +173,39 @@ public class CameoRulesPanel extends Composite{
 		VerticalPanel vPanel = new VerticalPanel();
 		vPanel.add(new HTML("<h5>English Rule :</h5>   " + rule.getRuleText()));
 
-		final TextBox textBox = new TextBox();
-		vPanel.add(new HTML("<h5>Translated Rule</h5>"));
-	    vPanel.add(new HTML(tRules.get(0).getText()));
+		final TextArea commentTA = new TextArea();
+		vPanel.add(new HTML("<h5>Translated Rules</h5>"));
+		
+		FlexTable rulesTable = new FlexTable();
+		
+		if (tRules.size() > 0){
+			int i = 0; 
+			for (CameoTranslatedRule tRule: tRules){
+				rulesTable.setWidget(i, 0, new HTML(tRule.getText()));
+				rulesTable.setWidget(i++, 1, new HTML(tRule.getComment()));
+			}		
+		} else {
+			rulesTable.setWidget(0, 0, new HTML("<b>No Translation Found </b>"));
+		}
+				
+//	    if (tRules.size() > 0)
+//	    {
+//	    	vPanel.add(new HTML(tRules.get(0).getText()));
+//	    	VerdictOnRule vr = verdictMap.get(tRules.get(0).getId());
+//		    String comment = (vr == null)? "": vr.getComment();
+//		    GWT.log("Saved data is "+ verdictMap.size());
+//		    commentTA.setText(comment);
+//		    commentTA.setVisibleLines(7);
+//		    commentTA.setCharacterWidth(70);
+//	    }
+	    final TextBox ruleTB = new TextBox();
+		vPanel.add(rulesTable);
+		vPanel.add(new HTML("<h5>Add a new Rule</h5>"));
+		
+		vPanel.add(ruleTB);
 	    vPanel.add(new HTML("<h5>Comment</h5>"));
-	    VerdictOnRule vr = verdictMap.get(tRules.get(0).getId());
-	    String comment = (vr == null)? "": vr.getComment();
-	    GWT.log("Saved data is "+ verdictMap.size());
-	    textBox.setText(comment);
-	    vPanel.add(textBox);
+	    
+	    vPanel.add(commentTA);
 		
         Button saveButton = new Button("Save");
         saveButton.addClickHandler(new ClickHandler() {
@@ -179,10 +215,29 @@ public class CameoRulesPanel extends Composite{
 				// TODO Auto-generated method stub
 				editPopup.hide();
 				//Do Work Here
-				String text = textBox.getText();
-				VerdictOnRule verdict = new VerdictOnRule(VerdictOnRule.CORRECT, text);
-				verdict.setIdTranslatedRule(tRules.get(0).getId());
-				verdictMap.put(verdict.getIdTranslatedRule(), verdict);
+				CameoTranslatedRule tRule = new CameoTranslatedRule();
+				tRule.setRuleID(rule.getId());
+				tRule.setText(ruleTB.getText());
+				tRule.setComment(commentTA.getText());
+				
+				cameoService.addTranslatedRule(tRule, new AsyncCallback<CameoTranslatedRule>() {
+
+					@Override
+					public void onFailure(Throwable caught) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void onSuccess(CameoTranslatedRule result) {
+						// TODO Auto-generated method stub
+						GWT.log("Success");
+					}
+				});
+//				String text = commentTA.getText();
+//				VerdictOnRule verdict = new VerdictOnRule(VerdictOnRule.CORRECT, text);
+//				verdict.setIdTranslatedRule(tRules.get(0).getId());
+//				verdictMap.put(verdict.getIdTranslatedRule(), verdict);
 				
 			}
 		});
@@ -212,6 +267,47 @@ public class CameoRulesPanel extends Composite{
 		
 		
 		
+	}
+	
+	@UiHandler("addRuleButton")
+	void addCodeButtonClicked(ClickEvent e){
+		String ruleText = ruleTextBox.getText();
+		if (ruleText.length()==0 || !ruleText.contains("*")){
+			return;
+		} else {
+			String code = codeTextBox.getText();
+			if (code.length()==0) code = this.cameoCode;
+			CameoRule rule = new CameoRule();
+			
+			for (CameoRule r: rules){
+				if (r.equals(rule)){
+					return;
+				}
+			}
+			rule.setCameoCode(code);
+			rule.setRuleText(ruleText);
+			rule.setWord(word);
+			
+			cameoService.addCameoRule(rule, new AsyncCallback<CameoRule>() {
+
+				@Override
+				public void onFailure(Throwable caught) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void onSuccess(CameoRule result) {
+					// TODO Auto-generated method stub
+					if (result.getCameoCode().equals(cameoCode)){
+						rules.add(result);
+						ruleTextBox.setText("");
+						codeTextBox.setText("");
+						designTable();
+					}
+				}
+			});
+		}
 	}
 	
 	void onAddRequest(){

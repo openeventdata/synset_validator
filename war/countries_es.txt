@@ -1,20 +1,39 @@
-Argentina
-Bolivia
-Chile
-Colombia
-Costa Rica
-Cuba
-Ecuador
-El Salvador
-España
-Guatemala
-Guinea Ecuatorial
-Honduras
-México
-Nicaragua
-Panamá
-Paraguay
-Perú
-República Dominicana
-Uruguay
-Venezuela
+es,Argentina
+es,Bolivia
+es,Chile
+es,Colombia
+es,Costa Rica
+es,Cuba
+es,Ecuador
+es,El Salvador
+es,España
+es,Guatemala
+es,Guinea Ecuatorial
+es,Honduras
+es,México
+es,Nicaragua
+es,Panamá
+es,Paraguay
+es,Perú
+es,República Dominicana
+es,Uruguay
+es,Venezuela
+ar,Bahrain
+ar,Algeria
+ar,Egypt
+ar,Iraq
+ar,Jordan
+ar,Kuwait
+ar,Lebanon
+ar,Libya
+ar,Mauritania
+ar,Morocco
+ar,Oman
+ar,Palestine
+ar,Qatar
+ar,Saudi Arabia
+ar,Sudan
+ar,Syria
+ar,Tunisia
+ar,United Arab Emirates (UAE)
+ar,Yemen

@@ -11,6 +11,12 @@
 	    <b:Heading ui:field="sectionHeader" size="4" visible="false">Cameo Rules:</b:Heading>
 	    <g:FlexTable ui:field="rulesTable">
 	    </g:FlexTable>
-	    
+	    <g:HorizontalPanel ui:field="addRulePanel">
+	    <b:Tooltip text="English Cameo Rules only." trigger="FOCUS">
+	       <b:TextBox ui:field="ruleTextBox" placeholder="Add a new rule"></b:TextBox>
+	       </b:Tooltip>
+	       <b:TextBox ui:field="codeTextBox"></b:TextBox>
+	       <b:Button type="PRIMARY" ui:field="addRuleButton">Add this rule</b:Button>
+	    </g:HorizontalPanel>
 	</g:VerticalPanel>
 </ui:UiBinder> 

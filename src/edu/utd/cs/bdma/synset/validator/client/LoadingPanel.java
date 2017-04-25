@@ -14,8 +14,7 @@ public class LoadingPanel extends Composite{
 	
 	public LoadingPanel(String message) {
 		// TODO Auto-generated constructor stub
-		this.message = message;
-		
+		setMessage(message);
 		
 		panel.add(loadingImage);
 		panel.add(messageHTML);

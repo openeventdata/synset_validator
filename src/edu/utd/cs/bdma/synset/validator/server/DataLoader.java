@@ -3,9 +3,12 @@ package edu.utd.cs.bdma.synset.validator.server;
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,7 +50,7 @@ public class DataLoader extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doGet(req, resp);
+		//super.doGet(req, resp);
 		doPost(req, resp);
 	}
 	
@@ -56,16 +59,33 @@ public class DataLoader extends HttpServlet {
 		// TODO Auto-generated method stub
 		super.doPost(req, resp);
 		log("TASK QUEUE TASK");
-		try {
-			loadData();
-			loadCameoData();
-		} catch (JsonSyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//            loadSynsetWords();
+//		} catch (JsonSyntaxException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+	}
+	
+	
+	private void loadSynsetWords() throws JsonIOException, JsonSyntaxException, FileNotFoundException, UnsupportedEncodingException{
+		
+			Gson gson = new Gson();
+			Type type = new TypeToken<ArrayList<SynsetWord>>() {
+			}.getType();
+			ArrayList<SynsetWord> wordsList = gson.fromJson(new InputStreamReader(new FileInputStream("arabic_synset_words.json"), "UTF-8"), type );
+			List<SynsetWord> lst = ofy().load().type(SynsetWord.class).filter("languageCode", "ar").list();
+			ofy().delete().entities(lst).now();
+			
+			log(lst.size()+" arabic words deleted.");
+			ofy().save().entities(wordsList).now();
+			log("inserted data");
+	        
+			
+		
 	}
 	
 	private void loadCameoData(){
@@ -172,7 +192,7 @@ public class DataLoader extends HttpServlet {
 		}
 	}
 
-	private static String getContentAsString(String filename) throws IOException {
+	public static String getContentAsString(String filename) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(filename));
 		StringBuilder sb = new StringBuilder();
 		while (br.ready()) {

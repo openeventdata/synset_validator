@@ -18,3 +18,24 @@ Perú
 República Dominicana
 Uruguay
 Venezuela
+Algeria
+Bahrain
+Egypt
+Iraq
+Jordan
+Kuwait
+Lebanon
+Libya
+Mauritania
+Morocco
+Oman
+Palestine
+Qatar
+Saudi Arabia
+Sudan
+Syria
+Tunisia
+United Arab Emirates (UAE)
+Yemen
+United States
+United Kingdom

@@ -10,12 +10,14 @@
 	</ui:style>
 	<g:PopupPanel>
 	<g:VerticalPanel ui:field="mainPanel">
-	   <b:TextBox placeholder="Search for cameo code" width="100%" ui:field="searchTextBox"></b:TextBox>
+	   <!-- <b:TextBox placeholder="Search for cameo code" width="100%" ui:field="searchTextBox"></b:TextBox> -->
 	   <v:LoadingPanel message="Loading CAMEO Entries" ui:field="loadingPanel"></v:LoadingPanel>
-	   <g:ScrollPanel height="300px" width="300px">
-	   <g:FlexTable ui:field="summeryTable">
-	   </g:FlexTable>
+	   <g:ScrollPanel height="300px" width="500px">
+	   <!-- <g:FlexTable ui:field="summeryTable" visible="false">
+	   </g:FlexTable> -->
+	   <g:Tree ui:field="cameoTree"></g:Tree>
 	   </g:ScrollPanel>
+	   
 	   <b:Button ui:field="hideButton" type="PRIMARY" block="true"> Hide </b:Button>
 	</g:VerticalPanel>
 		</g:PopupPanel>

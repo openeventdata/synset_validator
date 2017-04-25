@@ -18,6 +18,10 @@ public class UpdatedInfo implements Serializable{
 	
 	private HashMap<Long, FeedbackOnSynsetWord> feedbackSWNewEntry = new HashMap<>();
 	
+	private ArrayList<SynsetVerdict> synsetFeedbacks = new ArrayList<>();
+	
+	private ArrayList<SynsetExampleVerdict> exampleVerdicts = new ArrayList<>();
+	
 	private String comment;
 	
 	
@@ -27,6 +31,22 @@ public class UpdatedInfo implements Serializable{
 	
 	public String getComment() {
 		return comment;
+	}
+	
+	public void setExampleVerdicts(ArrayList<SynsetExampleVerdict> exampleVerdicts) {
+		this.exampleVerdicts = exampleVerdicts;
+	}
+	
+	public ArrayList<SynsetExampleVerdict> getExampleVerdicts() {
+		return exampleVerdicts;
+	}
+	
+	public void setSynsetFeedbacks(ArrayList<SynsetVerdict> synsetFeedbacks) {
+		this.synsetFeedbacks = synsetFeedbacks;
+	}
+	
+	public ArrayList<SynsetVerdict> getSynsetFeedbacks() {
+		return synsetFeedbacks;
 	}
 
 	public ArrayList<FeedbackOnSynsetWord> getFeedbackOnSynsetWords() {

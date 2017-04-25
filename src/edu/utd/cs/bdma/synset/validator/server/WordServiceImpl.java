@@ -22,28 +22,40 @@ import com.googlecode.objectify.Key;
 import com.googlecode.objectify.ObjectifyService;
 
 import edu.utd.cs.bdma.synset.validator.client.WordService;
+
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoEntry;
+import edu.utd.cs.bdma.synset.validator.shared.entity.CameoRule;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoSelectedSynset;
 import edu.utd.cs.bdma.synset.validator.shared.entity.FeedbackOnSynsetWord;
 import edu.utd.cs.bdma.synset.validator.shared.entity.Submission;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntry;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntryWithWords;
+import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetExample;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetWord;
 import edu.utd.cs.bdma.synset.validator.shared.entity.UserInfo;
 import edu.utd.cs.bdma.synset.validator.shared.entity.Word;
 
 public class WordServiceImpl extends RemoteServiceServlet implements WordService {
 
-    static ArrayList<String> countries = new ArrayList<>();
+    static HashMap<String, ArrayList<String>> countriesMap = new HashMap<>();
 	
 	static {
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("countries"+"_es"+".txt"), "UTF-8"));
 			while (br.ready()){
-				countries.add(br.readLine().split("\t")[0].trim());
+				String line = br.readLine().trim();
+				String[] words = line.split(","); 
+				try{
+					countriesMap.get(words[0]).add(words[1]);
+				}catch(NullPointerException ex){
+					ArrayList<String> temp = new ArrayList<>();
+					temp.add(words[1]);
+					countriesMap.put(words[0], temp);
+							
+				}
 			}
 			br.close();
-			Collections.sort(countries);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -59,6 +71,9 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 		ObjectifyService.register(SynsetWord.class);
 		ObjectifyService.register(CameoSelectedSynset.class);
 		ObjectifyService.register(FeedbackOnSynsetWord.class);
+		ObjectifyService.register(CameoRule.class);
+		ObjectifyService.register(CameoEntry.class);
+		ObjectifyService.register(SynsetExample.class);
 //		try {
 //			loadData();
 //		} catch (JsonSyntaxException e) {
@@ -88,9 +103,13 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 	@Override
 	public ArrayList<SynsetWord> getWords(SynsetEntry entry, String langCode) {
 		// TODO Auto-generated method stub
+		String lCode = ((UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user")).getLanguage();
+		
+		log("Loading entries for Language: "+ lCode);
 		List<SynsetWord> words = ofy().load().type(SynsetWord.class).filter("idSynsetEntry", entry.getId())
-				.filter("languageCode", langCode).list();
+				.filter("languageCode", lCode).list();
 		if (words != null) {
+			System.out.println(words);
 			return new ArrayList<>(words);
 		} else {
 			return null;
@@ -150,10 +169,18 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 
 		return sb.toString();
 	}
-
+	
+	private ArrayList<SynsetExample> getExamples(SynsetEntry entry)
+	{
+		List<SynsetExample> examples = ofy().load().type(SynsetExample.class).filter("synsetId", entry.getId()).list();
+		log("Examples Size: " + examples.size());
+		return new ArrayList<>(examples);
+	}
+	
 	@Override
 	public ArrayList<SynsetEntryWithWords> getAll(String word, String langCode) {
 		// TODO Auto-generated method stub
+		Long userID = ((UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user")).getId();
 		ArrayList<SynsetEntry> entries = getSynsets(word);
 		if (entries != null)
 			log("Synset Entry length " + entries.size());
@@ -162,12 +189,14 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 			for (SynsetEntry entry : entries) {
 				SynsetEntryWithWords entryWithWord = new SynsetEntryWithWords(entry);
 				entryWithWord.addAllWords(getWords(entry, langCode));
+				entryWithWord.setExamples(getExamples(entry));
+				//entryWithWord.setReadOnly((""+userID).equals(entry.getSource()));
 				entriesWithWords.add(entryWithWord);
 			}
 			if (entriesWithWords.size()>0){
-			log("Synset Entry with Word length " + entriesWithWords.size());
-			log("First words: "+entriesWithWords.get(0).getWords().size());
-			log("First ID: "+ entriesWithWords.get(0).getEntry().getId());
+				log("Synset Entry with Word length " + entriesWithWords.size());
+				log("First words: " + entriesWithWords.get(0).getWords().size());
+				log("First ID: " + entriesWithWords.get(0).getEntry().getId());
 			}
 		}
 		return entriesWithWords;
@@ -203,12 +232,15 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 	}
 
 	@Override
-	public int addSynset(ArrayList<SynsetEntryWithWords> newEntries, String cameoCode, String wordText) {
+	public ArrayList<SynsetEntryWithWords> addSynset(ArrayList<SynsetEntryWithWords> newEntries, String cameoCode, String wordText) {
 		// TODO Auto-generated method stub
 		Submission submission = getSubmission();
+		UserInfo user = ((UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user"));
+
 		for (SynsetEntryWithWords newEntry : newEntries) {
 			SynsetEntry entry = newEntry.getEntry();
 			entry.addInfo(submission);
+			
 			ofy().save().entity(entry).now();
 
 			CameoSelectedSynset selection = new CameoSelectedSynset();
@@ -219,6 +251,7 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 			for (SynsetWord word : newEntry.getWords()) {
 				word.setIdSynsetEntry(entry.getId());
 				word.setSubmissionId(submission.getId());
+				word.setLanguageCode(user.getLanguage());
 				ofy().save().entity(word).now();
 			}
 
@@ -229,18 +262,28 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 				feedback.setVerdict(FeedbackOnSynsetWord.CORRECT);
 				ofy().save().entity(feedback).now();
 			}
+			
+			for (SynsetExample ex: newEntry.getExamples()){
+				ex.setSynsetId(entry.getId());
+				ex.setSource(""+submission.getUserId());
+				ofy().save().entity(ex).now();
+			}
 
 		}
 
-		return 1;
+		return newEntries;
 	}
 
 	@Override
 	public int addSynsetWord(ArrayList<SynsetWord> words) {
 		// TODO Auto-generated method stub
 		log("Got Newwords");
-		for (SynsetWord w : words)
+		UserInfo user = ((UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user"));
+		for (SynsetWord w : words){
 			w.setSubmissionId(getSubmission().getId());
+			w.setLanguageCode(user.getLanguage());
+		}
+			
 		return ofy().save().entities(words).now().size();
 	}
 
@@ -277,8 +320,29 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 
 	@Override
 	public ArrayList<String> getCountries(String langCode) {
-		// TODO Auto-generated method stub
-		return countries;
+		// TODO Auto-generated method stub\
+		String lCode = ((UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user")).getLanguage();
+		return countriesMap.get(lCode);
 	}
 
+	@Override
+	public ArrayList<SynsetExample> addExamples(SynsetEntry entry, String[] examples) {
+		// TODO Auto-generated method stub
+		Long userID = ((UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user")).getId();
+		ArrayList<SynsetExample> newExamples = new ArrayList<>();
+		
+		for (String example: examples){
+			SynsetExample ex = new SynsetExample();
+			ex.setExample(example);
+			ex.setSource(""+userID);
+			ex.setSynsetId(entry.getId());
+			newExamples.add(ex);
+		}
+		
+		ofy().save().entities(newExamples).now();
+		
+		return newExamples;
+	}
+
+	
 }

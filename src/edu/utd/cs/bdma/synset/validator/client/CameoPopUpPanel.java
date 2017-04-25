@@ -40,6 +40,7 @@ public class CameoPopUpPanel extends PopupPanel {
 	
 	public CameoPopUpPanel() {
 		setWidget(uiBinder.createAndBindUi(this));
+		this.addStyleDependentName("z");
 		cameoTable.setWidget(0, 0, new Label("Cameo Code"));
 		cameoTable.setWidget(1, 0, new Label("Name"));
 		cameoTable.setWidget(2, 0, new Label("Description"));

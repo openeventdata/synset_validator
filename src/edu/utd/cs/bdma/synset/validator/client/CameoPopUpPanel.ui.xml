@@ -6,9 +6,13 @@
 	.important {
 		font-weight: bold;
 	}
+	.test{
+	 z-index: 2;
+
+	}
 	</ui:style>
 	<g:PopupPanel>
-	  <g:VerticalPanel>
+	  <g:VerticalPanel styleName="{style.test}">
 	  <g:FlexTable ui:field="cameoTable"> </g:FlexTable>
 		<b:Button ui:field="hideButton" type="PRIMARY" block="true"> Hide </b:Button>
 	  </g:VerticalPanel>

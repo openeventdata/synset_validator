@@ -28,6 +28,12 @@ public interface CameoService extends RemoteService{
 	
 	public int addVerdictsOnRule(ArrayList<VerdictOnRule> verdicts);
 	
+	public String addRelatedWord(String newWord, String[] cameoRules, String cameoCode);
 	
+	public CameoRule addCameoRule(CameoRule rule);
+	
+	public CameoTranslatedRule addTranslatedRule(CameoTranslatedRule  rule);
+	
+	public ArrayList<String> summeryTree();
 
 }

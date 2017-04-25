@@ -9,6 +9,7 @@ import edu.utd.cs.bdma.synset.validator.shared.entity.CameoSelectedSynset;
 import edu.utd.cs.bdma.synset.validator.shared.entity.FeedbackOnSynsetWord;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntry;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntryWithWords;
+import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetExample;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetWord;
 
 @RemoteServiceRelativePath("word")
@@ -30,10 +31,13 @@ public interface WordService extends RemoteService{
 	
 	int addFeedbackOnWords(ArrayList<FeedbackOnSynsetWord> feedbacks, String cameoCode);
 	
-	public int addSynset(ArrayList<SynsetEntryWithWords> newEntries, String cameoCode, String word);
+	public ArrayList<SynsetEntryWithWords> addSynset(ArrayList<SynsetEntryWithWords> newEntries, String cameoCode, String word);
 	
 	public int addSynsetWord(ArrayList<SynsetWord> words);
 	
 	public ArrayList<String> getCountries(String langCode);
+	
+	public ArrayList<SynsetExample> addExamples(SynsetEntry entry, String[] examples);
+	
 	
 }

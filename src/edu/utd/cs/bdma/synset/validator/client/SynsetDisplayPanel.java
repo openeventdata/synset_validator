@@ -1,5 +1,6 @@
 package edu.utd.cs.bdma.synset.validator.client;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -10,6 +11,7 @@ import org.gwtbootstrap3.client.ui.Radio;
 
 import com.github.gwtbootstrap.client.ui.Button;
 import com.github.gwtbootstrap.client.ui.Heading;
+import com.github.gwtbootstrap.client.ui.RadioButton;
 import com.github.gwtbootstrap.client.ui.TextArea;
 import com.github.gwtbootstrap.client.ui.TextBox;
 import com.github.gwtbootstrap.client.ui.constants.ButtonType;
@@ -34,10 +36,14 @@ import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
+import edu.utd.cs.bdma.synset.validator.shared.entity.CameoEntry;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoSelectedSynset;
 import edu.utd.cs.bdma.synset.validator.shared.entity.FeedbackOnSynsetWord;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntry;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntryWithWords;
+import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetExample;
+import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetExampleVerdict;
+import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetVerdict;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetWord;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetWordWithFeedback;
 import edu.utd.cs.bdma.synset.validator.shared.entity.UpdatedInfo;
@@ -53,7 +59,7 @@ public class SynsetDisplayPanel extends Composite {
 	private ArrayList<FeedbackOnSynsetWord> selFeedbacks = new ArrayList<>();
 	private ArrayList<SynsetWordWithFeedback> newWords = new ArrayList<>();
 
-	private static ArrayList<String> countries = new ArrayList<>();
+	private static ArrayList<String> countries = null;
 
 	Storage localDB = null;
 
@@ -66,31 +72,27 @@ public class SynsetDisplayPanel extends Composite {
 	ArrayList<SynsetEntryWithWords> newSynsets = new ArrayList<>();
 
 	ArrayList<SynsetWord> wordsInNewSynset = new ArrayList<>();
+	
+	HashMap<Long, SynsetVerdict> synsetVerdicts = new HashMap<>();
+	
+	ArrayList<SynsetVerdict> newVerdicts = new ArrayList<>();
+	
+	ArrayList<PopupLabel> examplesLabel = new ArrayList<>();
+	
+	HashMap<Long, SynsetExampleVerdict> exampleVerdicts = new HashMap<>();
 
 	interface SynsetDisplayPanelUiBinder extends UiBinder<Widget, SynsetDisplayPanel> {
 	}
 
 	private String word;
+	private CameoEntry cameoEntry;
 	private ArrayList<SynsetEntryWithWords> entriesWithWords;
 
 	public SynsetDisplayPanel() {
 		initWidget(uiBinder.createAndBindUi(this));
 		displayContents(false);
 		mainPanel.add(lPanel);
-		wordService.getCountries("es", new AsyncCallback<ArrayList<String>>() {
 
-			@Override
-			public void onFailure(Throwable caught) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void onSuccess(ArrayList<String> result) {
-				// TODO Auto-generated method stub
-				countries = result;
-			}
-		});
 	}
 
 	public SynsetDisplayPanel(String firstName) {
@@ -108,8 +110,24 @@ public class SynsetDisplayPanel extends Composite {
 		dummyEntry = new SynsetEntryWithWords(entry);
 		newSynsets.clear();
 		synsetTable.clear();
+		examplesLabel.clear();
 		GWT.log(localDB.getItem("country"));
+		if (countries == null){
+		wordService.getCountries("es", new AsyncCallback<ArrayList<String>>() {
 
+			@Override
+			public void onFailure(Throwable caught) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onSuccess(ArrayList<String> result) {
+				// TODO Auto-generated method stub
+				countries = result;
+			}
+		});
+		}
 		// countries = localDB.getItem("country_list").split(",");
 	}
 
@@ -178,14 +196,25 @@ public class SynsetDisplayPanel extends Composite {
 					public void onSuccess(UpdatedInfo result) {
 						// TODO Auto-generated method stub
 						GWT.log("Result is " + (result == null));
+						synsetVerdicts.clear();
+						exampleVerdicts.clear();
+
 						if (result != null) {
 							ArrayList<FeedbackOnSynsetWord> fbs = result.getFeedbackOnSynsetWords();
 							for (FeedbackOnSynsetWord fb : fbs) {
 								feedbacks.put(fb.getIdWord(), fb);
 							}
-							GWT.log("" + feedbacks.size());
-							// newSynsets = result.getSynsetEntryWithWords();
-							selections = result.getCameoSelectedSynsets();
+							GWT.log("" + result.getSynsetFeedbacks().size());
+							
+							
+
+							for (SynsetVerdict verdict: result.getSynsetFeedbacks()){
+								synsetVerdicts.put(verdict.getSynsetId(), verdict);
+							}
+							GWT.log("NUMBER OF VERDICTS FOR EXAMPLES: "+result.getExampleVerdicts().size());
+							for (SynsetExampleVerdict v: result.getExampleVerdicts()){
+								exampleVerdicts.put(v.getSynsetExampleId(), v);
+							}
 						}
 						GWT.log("Success Fetching Submission");
 						lPanel.hide();
@@ -205,7 +234,9 @@ public class SynsetDisplayPanel extends Composite {
 
 	}
 	
-
+    public void setCameoEntry(CameoEntry cameoEntry) {
+		this.cameoEntry = cameoEntry;
+	} 
 
 	private <Item> void shuffle(ArrayList<Item> list)
 	{
@@ -226,9 +257,7 @@ public class SynsetDisplayPanel extends Composite {
 		return selFeedbacks;
 	}
 
-	public ArrayList<CameoSelectedSynset> getSelections() {
-		return selections;
-	}
+	
 
 	public ArrayList<SynsetEntryWithWords> getNewSynsets() {
 		return newSynsets;
@@ -253,6 +282,8 @@ public class SynsetDisplayPanel extends Composite {
 	@UiHandler("newEntryButton")
 	void requestAddForNewEntry(ClickEvent e) {
 		showNewEntryPopUp((Widget) e.getSource(), dummyEntry);
+//		SynsetEntryPanel panel = new SynsetEntryPanel();
+//		panel.show((Widget) e.getSource());
 	}
 
 	private MultipleSelectListBox prepareCountryListBox(String defaultSelections) {
@@ -265,19 +296,21 @@ public class SynsetDisplayPanel extends Composite {
 	}
 
 	public void onSave() {
-		final ArrayList<CameoSelectedSynset> selections = new ArrayList<>();
 		selFeedbacks.clear();
+		newVerdicts.clear();
 		ArrayList<FeedbackOnSynsetWord> feedbacks = new ArrayList<>();
+		
 		for (int i = 0; i < entriesWithWords.size(); i++) {
 			GWT.log("Iterating for insertion");
-			if (((CheckBox) synsetTable.getWidget(i + newSynsets.size(), 0)).getValue()) {
+			VerticalPanel synsetFeedbackPanel = (VerticalPanel) synsetTable.getWidget(i + newSynsets.size(), 3);
+			int result = feedbackFromSynsetPanel(synsetFeedbackPanel);
+			SynsetVerdict synsetVerdict = new SynsetVerdict();
+			synsetVerdict.setSynsetId(entriesWithWords.get(i).getEntry().getId());
+			
+			if (result == 0) {
 				GWT.log("Iterating for insertion 1");
-				CameoSelectedSynset selection = new CameoSelectedSynset();
-				selection.setIdSynsetEntry(entriesWithWords.get(i).getEntry().getId());
-				selection.setExamplesValid(((CheckBox)
-						                       ((
-						                    		   (VerticalPanel)synsetTable.getWidget(i+newSynsets.size(), 1)).getWidget(1))).getValue());
-				selections.add(selection);
+				synsetVerdict.setVerdict(SynsetVerdict.CORRECT);
+				
 				FlexTable table = wordTables.get(i);
 				GWT.log("Iterating for insertion 2");
 				for (int j = 1; j < table.getRowCount(); j++) {
@@ -300,30 +333,61 @@ public class SynsetDisplayPanel extends Composite {
 					fb.setCountry(((MultipleSelectListBox) table.getWidget(j, 5)).getSelectedItemsAsStr(","));
 					selFeedbacks.add(fb);
 					GWT.log(fb.toString());
+					
 				}
 
 				GWT.log("Iterating for insertion 3");
 				this.newWords.addAll(getAddedWords(i + newSynsets.size(), entriesWithWords.get(i)));
-
+				GWT.log("Iterating for insertion 4");
 			}
 
-			this.selections = selections;
+			else if (result == 1){
+				synsetVerdict.setVerdict(SynsetVerdict.INCORRECT);
+			}
+			
+			else if (result == 2){
+				synsetVerdict.setVerdict(SynsetVerdict.AMBIGUOUS);
+
+			}
+			newVerdicts.add(synsetVerdict);
+			synsetVerdicts.put(synsetVerdict.getId(), synsetVerdict);
 		}
 		ArrayList<SynsetEntryWithWords> tempSynsets = new ArrayList<>();
 
-		for (int i = 0; i < newSynsets.size(); i++) {
-			if (((CheckBox) synsetTable.getWidget(i, 0)).getValue()) {
-				tempSynsets.add(newSynsets.get(i));
-			}
+		
+		
+		for (PopupLabel pLabel: examplesLabel){
+			SynsetExampleVerdict sev = new SynsetExampleVerdict();
+			sev.setSynsetExampleId(pLabel.getId());
+			sev.setVerdict(pLabel.getVerdict());
+			exampleVerdicts.put(pLabel.getId(), sev);
 		}
 
 		newSynsets = tempSynsets;
 		displayContents(false);
 
 	}
+	
+	private int feedbackFromSynsetPanel(VerticalPanel panel){
+		for (int i = 0; i < 3; i ++){
+			RadioButton button = (RadioButton) panel.getWidget(i);
+			if (button.getValue()) return i;
+		}
+		return -1;
+	}
+	
+	public ArrayList<SynsetVerdict> getSynsetVerdicts(){
+		return newVerdicts;
+	}
+	
+	public ArrayList<SynsetExampleVerdict> getExampleVerdicts() {
+		return new ArrayList<>(exampleVerdicts.values());
+	}
+	
+	
 
 	private ArrayList<SynsetWordWithFeedback> getAddedWords(int rowId, SynsetEntryWithWords entry) {
-		FlexTable ftable = (FlexTable) ((VerticalPanel) ((VerticalPanel) synsetTable.getWidget(rowId, 2)).getWidget(1))
+		FlexTable ftable = (FlexTable) ((VerticalPanel) ((VerticalPanel) synsetTable.getWidget(rowId, 4)).getWidget(1))
 				.getWidget(0);
 		GWT.log("Iterating for insertion 4");
 		ArrayList<SynsetWordWithFeedback> addedWords = new ArrayList<SynsetWordWithFeedback>();
@@ -355,10 +419,22 @@ public class SynsetDisplayPanel extends Composite {
 		final PopupPanel popUpPanel = new PopupPanel();
 
 		final VerticalPanel vPanel = new VerticalPanel();
-		HTML glossLabel = new HTML("<h5>Add Synonym Set Definition:</h5>");
+		HTML glossLabel = new HTML("<h4>Synonym Set Definition:</h4>");
 		final TextArea textArea = new TextArea();
-		textArea.setText(entry.getEntry().getGloss());
-		HTML wordsLabel = new HTML("<h5>Add words:</h5>");
+		textArea.setText(entry.getEntry().getDescription());
+		HTML examplesLabel = new HTML("<h4>Examples:</h4>");
+		final TextArea examplesTA = new TextArea();
+		
+		
+		StringBuilder sb = new StringBuilder();
+		if (entry.getExamples() != null && entry.getExamples().size() > 0){
+			for (SynsetExample ex: entry.getExamples()){
+				sb.append(ex.getExample()+"\n");
+			}
+			examplesTA.setText(sb.toString());
+		}
+		
+		HTML wordsLabel = new HTML("<h5>Synset Words:</h5>");
 		final TextArea wordBox = new TextArea();
 		if (entry.getWords().size() == 0) {
 			wordBox.setPlaceholder("Use COMMA to seperate multiple words");
@@ -385,12 +461,46 @@ public class SynsetDisplayPanel extends Composite {
 
 						words.add(synWord);
 					}
+					
+					String[] examples = examplesTA.getText().split("\n");
 
+					ArrayList<SynsetExample> exms = new ArrayList<>();
+					
+					for (String s: examples){
+						SynsetExample ex = new SynsetExample();
+						ex.setExample(s);
+						exms.add(ex);
+					}
+					
+					
+					
 					SynsetEntryWithWords newInfo = new SynsetEntryWithWords(entry);
 					newInfo.addAllWords(words);
-					newSynsets.add(newInfo);
-					designUI();
-					popUpPanel.hide();
+					newInfo.setExamples(exms);
+					//newSynsets.add(newInfo);
+					
+					ArrayList<SynsetEntryWithWords> sew = new ArrayList<>();
+					sew.add(newInfo);
+					wordService.addSynset(sew, cameoCode, word, new AsyncCallback<ArrayList<SynsetEntryWithWords>>() {
+
+						@Override
+						public void onFailure(Throwable caught) {
+							// TODO Auto-generated method stub
+							
+						}
+
+						@Override
+						public void onSuccess(ArrayList<SynsetEntryWithWords> result) {
+							// TODO Auto-generated method stub
+							//newSynsets.addAll(result);
+							newSynsets.addAll(0, result);
+							designUI();
+							popUpPanel.hide();
+						}
+					});
+					
+				
+					
 				}
 			}
 		});
@@ -405,8 +515,11 @@ public class SynsetDisplayPanel extends Composite {
 		});
 		vPanel.add(glossLabel);
 		vPanel.add(textArea);
+		vPanel.add(examplesLabel);
+		vPanel.add(examplesTA);
 		vPanel.add(wordsLabel);
 		vPanel.add(wordBox);
+		
 
 		HorizontalPanel buttonsPanel = new HorizontalPanel();
 		buttonsPanel.add(saveButton);
@@ -440,8 +553,8 @@ public class SynsetDisplayPanel extends Composite {
 		infoMessage.setVisible(visible);
 		// lPanel.setVisible(!visible);
 		newEntryButton.setVisible(visible);
-		commentHeader.setVisible(visible);
-		overallComment.setVisible(visible);
+		//commentHeader.setVisible(visible);
+		//overallComment.setVisible(visible);
 		
 	}
 
@@ -460,40 +573,202 @@ public class SynsetDisplayPanel extends Composite {
 		// synsetTable = new FlexTable();
 
 		for (final SynsetEntryWithWords newEntry : newSynsets) {
-			final CheckBox checkBox = new CheckBox();
-			checkBox.setValue(true);
+			synsetTable.getRowFormatter().addStyleName(i,"NewEntry");
+			VerticalPanel synsetFeedbackPanel = buildSynsetFeedbackForm(newEntry.getEntry());
+            synsetTable.setWidget(i, 0, new HTML(cameoEntry.getCode()+" "+cameoEntry.getConcept()));
+            synsetTable.setWidget(i, 1, new HTML(word));
+			synsetTable.setWidget(i, 3, synsetFeedbackPanel);
+			VerticalPanel glossPanel = new VerticalPanel();
+			glossPanel.add(new HTML(contextInMultiline(newEntry.getEntry().getGloss())));
+			glossPanel.add(new HTML("<span style=\"color: green;\"><u><b> Examples: </b></u></span>"));
+			VerticalPanel vPanel = new VerticalPanel();
+			addExamples(vPanel, newEntry.getExamples());
+			
+			glossPanel.add(vPanel);
+			
+			final Button addExampleButton = new Button("Add Example");
+			
+			addExampleButton.setType(ButtonType.LINK);
+			
+			addExampleButton.addClickHandler(new ClickHandler() {
+				
+				@Override
+				public void onClick(ClickEvent event) {
+					// TODO Auto-generated method stub
+					showAddExamplePopUp(addExampleButton, newEntry.getEntry());
+				}
+			});
+            final Button updateButton = new Button("Update this Synset");
+			
+			updateButton.setType(ButtonType.LINK);
+			
+			updateButton.addClickHandler(new ClickHandler() {
+				
+				@Override
+				public void onClick(ClickEvent event) {
+					// TODO Auto-generated method stub
+					showNewEntryPopUp(updateButton, newEntry);
+				}
+			});
+			glossPanel.add(addExampleButton);
+			glossPanel.add(updateButton);
+			synsetTable.setWidget(i, 2, glossPanel);
+			String newAddedWords = newWordsToSynset.get(newEntry.getEntry().getId());
+			VerticalPanel temp = buildWordsTable(newEntry);
 
-			synsetTable.setWidget(i, 0, checkBox);
-			GWT.log(newEntry.getEntry().getGloss());
-			synsetTable.setWidget(i, 1,
-					new HTML("<span style=\"color: blue\">" + newEntry.getEntry().getGloss() + "</span>"));
-			synsetTable.setWidget(i, 2,
-					new HTML("<span style=\"color: blue\">" + wordstoString(newEntry.getWords()) + "</span>"));
+			synsetTable.setWidget(i, 4, temp);
+
 			i++;
 		}
 		wordTables.clear();
 		newWordTextBoxes.clear();
-
+        
 		for (final SynsetEntryWithWords entry : entriesWithWords) {
-			final CheckBox checkBox = new CheckBox();
-			checkBox.setValue(isSelected(entry));
-			synsetTable.setWidget(i, 0, checkBox);
+			VerticalPanel synsetVerdictPanel = buildSynsetFeedbackForm(entry.getEntry());
+			synsetTable.setWidget(i, 0, new HTML(cameoEntry.getCode()+" "+cameoEntry.getConcept()));
+            synsetTable.setWidget(i, 1, new HTML(word));
+//			final CheckBox checkBox = new CheckBox();
+//			checkBox.setValue(isSelected(entry));
+			synsetTable.setWidget(i, 3, synsetVerdictPanel);
 			GWT.log(entry.getEntry().getGloss());
 			VerticalPanel glossPanel = new VerticalPanel();
 			glossPanel.add(new HTML(contextInMultiline(entry.getEntry().getGloss())));
-			CheckBox label = new CheckBox("Correct Examples");
-			label.setValue(isExamplesCorrect(entry));
-			glossPanel.add(label);
-			synsetTable.setWidget(i, 1, glossPanel);
+			glossPanel.add(new HTML("<span style=\"color: green;\"><u><b> Examples: </b></u></span>"));
+			VerticalPanel vPanel = new VerticalPanel();
+			addExamples(vPanel, entry.getExamples());
+			
+			glossPanel.add(vPanel);
+			
+			final Button addExampleButton = new Button("Add Example");
+			
+			addExampleButton.setType(ButtonType.LINK);
+			
+			addExampleButton.addClickHandler(new ClickHandler() {
+				
+				@Override
+				public void onClick(ClickEvent event) {
+					// TODO Auto-generated method stub
+					showAddExamplePopUp(addExampleButton, entry.getEntry());
+				}
+			});
+			glossPanel.add(addExampleButton);
+			
+            final Button updateButton = new Button("Update this Synset");
+			
+			updateButton.setType(ButtonType.LINK);
+			
+			updateButton.addClickHandler(new ClickHandler() {
+				
+				@Override
+				public void onClick(ClickEvent event) {
+					// TODO Auto-generated method stub
+					showNewEntryPopUp(updateButton, entry);
+				}
+			});
+			
+			glossPanel.add(updateButton);
+			synsetTable.setWidget(i, 2, glossPanel);
 			String newAddedWords = newWordsToSynset.get(entry.getEntry().getId());
 			VerticalPanel temp = buildWordsTable(entry);
 
-			synsetTable.setWidget(i, 2, temp);
+			synsetTable.setWidget(i, 4, temp);
 
 			i++;
 		}
 	}
 	
+	protected void showAddExamplePopUp(Button addExampleButton, final SynsetEntry synsetEntry) {
+		// TODO Auto-generated method stub
+		VerticalPanel vPanel = new VerticalPanel();
+		final TextArea examplesTA = new TextArea();
+		examplesTA.setPlaceholder("Enter examples, one per line");
+		Button saveButton = new Button("Save");
+		Button cancelButton  = new Button("Cancel");
+		
+		vPanel.add(examplesTA);
+		vPanel.add(saveButton);
+		vPanel.add(cancelButton);
+		
+		final PopupPanel pPanel = new PopupPanel();
+		pPanel.add(vPanel);
+		
+		saveButton.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				String[] examples = examplesTA.getText().split("\n");
+				addExamples(synsetEntry, examples);
+				pPanel.hide();
+			}
+		});
+		
+		cancelButton.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				pPanel.hide();
+			}
+		});
+		pPanel.showRelativeTo(addExampleButton);
+				
+	}
+	
+	
+
+	protected void addExamples(final SynsetEntry synsetEntry, String[] examples) {
+		// TODO Auto-generated method stub
+		
+		if (examples.length > 0){
+			wordService.addExamples(synsetEntry, examples, new AsyncCallback<ArrayList<SynsetExample>>() {
+
+				@Override
+				public void onFailure(Throwable caught) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void onSuccess(ArrayList<SynsetExample> result) {
+					// TODO Auto-generated method stub
+					int i = 0;
+					for (SynsetEntryWithWords sew: entriesWithWords){
+						if (sew.getEntry().getId().equals(synsetEntry.getId())){
+							sew.getExamples().addAll(result);
+							break;
+						}
+						i++;
+					}
+					
+					VerticalPanel vPanel = (VerticalPanel)(((VerticalPanel)synsetTable.getWidget(i, 1)).getWidget(2));
+					addExamples(vPanel, result);
+				}
+			});
+		}
+		
+	}
+
+	private void addExamples(VerticalPanel glossPanel, ArrayList<SynsetExample> examples) {
+		// TODO Auto-generated method stub
+		
+		
+		if (examples.size() == 0){
+			return;
+		}
+		
+		
+		GWT.log("Number of Examples: "+examples.size());
+		for (int i = 0; i < examples.size(); i++){
+			SynsetExampleVerdict v = exampleVerdicts.get(examples.get(i).getId());
+			int verdict = (v == null)? 0: v.getVerdict();
+			PopupLabel pLabel = new PopupLabel(examples.get(i).getExample(), verdict, examples.get(i).getId());
+			examplesLabel.add(pLabel);
+			glossPanel.add(pLabel);
+		}
+		
+	}
+
 	boolean isExamplesCorrect(SynsetEntryWithWords entry){
 		for (CameoSelectedSynset e : selections) {
 			//GWT.log("Testing " + e.getIdSynsetEntry() + " " + entry.getEntry().getId());
@@ -505,15 +780,37 @@ public class SynsetDisplayPanel extends Composite {
 		return true;
 	}
 
-	private boolean isSelected(SynsetEntryWithWords entry) {
-		for (CameoSelectedSynset e : selections) {
-			GWT.log("Testing " + e.getIdSynsetEntry() + " " + entry.getEntry().getId());
-			if (e.getIdSynsetEntry().equals(entry.getEntry().getId())) {
-				return true;
-			}
-		}
 
-		return false;
+	
+	private VerticalPanel buildSynsetFeedbackForm(SynsetEntry entry){
+		VerticalPanel synsetVerdictPanel = new VerticalPanel();
+		Long entryId = entry.getId();
+		int temp = 0;
+		if (!synsetVerdicts.containsKey(entryId)){
+			temp = 0;
+			GWT.log("CORRECT __");
+		}
+		else if (synsetVerdicts.get(entryId).getVerdict().equals(SynsetVerdict.CORRECT)){
+		       temp = 0;
+		       GWT.log("CORRECT");
+		} else if (synsetVerdicts.get(entryId).getVerdict().equals(SynsetVerdict.INCORRECT)){
+			temp = 1;
+			GWT.log("INCORRECT");
+		} else {
+			temp = 2;
+			GWT.log("AMBIGUOUS");
+		}
+		RadioButton correctButton = new RadioButton("SynsetVerdict"+entryId, "Correct");
+		correctButton.setValue(temp==0);
+		RadioButton incorrectButton = new RadioButton("SynsetVerdict"+entryId, "Incorrect");
+		incorrectButton.setValue(temp==1);
+		RadioButton ambiguousButton = new RadioButton("SynsetVerdict"+entryId, "Ambiguous");
+		ambiguousButton.setValue(temp==2);
+		synsetVerdictPanel.add(correctButton);
+		synsetVerdictPanel.add(incorrectButton);
+		synsetVerdictPanel.add(ambiguousButton);
+		return synsetVerdictPanel;
+		
 	}
 
 	private VerticalPanel buildWordsTable(final SynsetEntryWithWords entry) {
@@ -539,7 +836,13 @@ public class SynsetDisplayPanel extends Composite {
 			for (int i = 0; i < entry.getWords().size(); i++) {
 				Radio radio = new Radio("Radio" + entry.getEntry().getId() + "_" + i);
 				radio.setValue(true);
-				table.setWidget(i + 1, 0, new HTML(entry.getWords().get(i).getWord()));
+				String textWord = entry.getWords().get(i).getWord();
+				try {
+					table.setWidget(i + 1, 0, new HTML(new String(textWord.getBytes(), "UTF-8")));
+				} catch (UnsupportedEncodingException e) {
+					// TODO Auto-generated catch block
+					table.setWidget(i + 1, 0, new HTML(textWord));
+				}
 				SynsetWord sw = entry.getWords().get(i);
 				FeedbackOnSynsetWord feedback = feedbacks.get(sw.getId());
 
@@ -648,9 +951,9 @@ public class SynsetDisplayPanel extends Composite {
 		String[] words = data.split("\"");
 		
 		StringBuilder sb = new StringBuilder(words[0]);
-		for (int i = 1; i < words.length; i+= 2){
-			sb.append("<br/>- \""+words[i].trim()+"\"");		       
-		}
+//		for (int i = 1; i < words.length; i+= 2){
+//			sb.append("<br/>- \""+words[i].trim()+"\"");		       
+//		}
 		return sb.toString();
 	}
 

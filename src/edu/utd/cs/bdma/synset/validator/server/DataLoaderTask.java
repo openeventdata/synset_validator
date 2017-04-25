@@ -26,6 +26,7 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class DataLoaderTask implements DeferredTask{
 
@@ -45,16 +46,15 @@ public class DataLoaderTask implements DeferredTask{
 	public void run() {
 		// TODO Auto-generated method stub
 		System.out.println("CALLED DEFFERED TASK");
-		try {
-			loadData();
-			loadCameoData();
-		} catch (JsonSyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//            loadSynsetWords();
+//		} catch (JsonSyntaxException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 	
 	private void loadCameoData(){
@@ -172,6 +172,23 @@ public class DataLoaderTask implements DeferredTask{
 		System.out.println("Number of Synset Words: "+ ofy().load().type(SynsetWord.class).count());
 		//System.out.println("Number of Cameo Entries: "+ ofy().load().type(CameoEntry.class).count());
 	}
+	
+	private void loadSynsetWords() throws JsonIOException, JsonSyntaxException, FileNotFoundException, UnsupportedEncodingException{
+		
+		Gson gson = new Gson();
+		Type type = new TypeToken<ArrayList<SynsetWord>>() {
+		}.getType();
+		ArrayList<SynsetWord> wordsList = gson.fromJson(new InputStreamReader(new FileInputStream("arabic_synset_words.json"), "UTF-8"), type );
+		List<SynsetWord> lst = ofy().load().type(SynsetWord.class).filter("languageCode", "ar").list();
+		ofy().delete().entities(lst).now();
+		
+//		log(lst.size()+" arabic words deleted.");
+		ofy().save().entities(wordsList).now();
+//		log("inserted data");
+        
+		
+	
+}
 
 	private static String getContentAsString(String filename) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));

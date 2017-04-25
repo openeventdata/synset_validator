@@ -1,7 +1,8 @@
 # Module synset_validator
 # RPC service class, partial path of RPC policy file
 edu.utd.cs.bdma.synset.validator.client.UserInfoService, C9711D44EA2F44667351595FEE9D5FB6.gwt.rpc
-edu.utd.cs.bdma.synset.validator.client.WordService, ED8A7DB1A80E972FB0C9C35FA003FB40.gwt.rpc
+edu.utd.cs.bdma.synset.validator.client.SubmissionService, 1E14DE723A0260FED10D80051A288CE5.gwt.rpc
+edu.utd.cs.bdma.synset.validator.client.WordService, 877FF8027CEF2735B0319911F6210428.gwt.rpc
 edu.utd.cs.bdma.synset.validator.client.HistoryService, 51675EBB4B6646739CEC51FA7C2F953D.gwt.rpc
-edu.utd.cs.bdma.synset.validator.client.CameoService, B426384A4CCCE2DA501FFA07C9463AA4.gwt.rpc
-edu.utd.cs.bdma.synset.validator.client.SubmissionService, 9B740AD7AF0D191BC8DA4E13EB0A8A71.gwt.rpc
+edu.utd.cs.bdma.synset.validator.client.CameoService, 25A5AAD7218DA0349DF0928250F5F168.gwt.rpc
+edu.utd.cs.bdma.synset.validator.client.ForumService, 80221DD8FE7BA8EA6E350DD0F8DB13AA.gwt.rpc

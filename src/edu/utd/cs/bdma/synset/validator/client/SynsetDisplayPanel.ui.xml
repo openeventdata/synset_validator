@@ -23,15 +23,15 @@
 	<g:HorizontalPanel>
 	<v:LoadingPanel message="Loading Synsets..." ui:field="lPanel"></v:LoadingPanel>
 	<b:Heading size="4" ui:field="synsetHeader">Synset Entries</b:Heading>
-	<b:Button type="LINK" styleName="{style.test}" ui:field="newEntryButton">Add new synonum set</b:Button>
+	<b:Button type="LINK" styleName="{style.test}" ui:field="newEntryButton">Add new synonym set</b:Button>
 	<g:HTML ui:field="infoMessage"></g:HTML>
 	</g:HorizontalPanel>
 	    
 		<g:FlexTable ui:field="synsetTable">
 		
 		</g:FlexTable>
-		<b:Heading size="5" ui:field="commentHeader">Overall Comment about the Submission:</b:Heading>
-		<b:TextArea width="inherit" ui:field="overallComment"></b:TextArea>
+		<b:Heading size="5" ui:field="commentHeader" visible="false">Overall Comment about the Submission:</b:Heading>
+		<b:TextArea width="" ui:field="overallComment" visible="false"></b:TextArea>
 		
 	</g:VerticalPanel>
 </ui:UiBinder> 

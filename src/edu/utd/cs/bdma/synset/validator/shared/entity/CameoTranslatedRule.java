@@ -15,6 +15,7 @@ public class CameoTranslatedRule implements Serializable{
     @Index Long ruleID;
     @Index String languageCode;
 	String text;
+	private String comment;
 	String source;
 	boolean verified;
 	
@@ -65,6 +66,14 @@ public class CameoTranslatedRule implements Serializable{
 	}
 	public void setVerified(boolean verified) {
 		this.verified = verified;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 	
 	

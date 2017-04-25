@@ -14,16 +14,25 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
+import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.Event.NativePreviewEvent;
+import com.google.gwt.user.client.Event.NativePreviewHandler;
 import com.google.gwt.user.client.Window.ClosingEvent;
 import com.google.gwt.user.client.Window.ClosingHandler;
+import com.google.gwt.user.client.Window.ScrollEvent;
+import com.google.gwt.user.client.Window.ScrollHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.PopupPanel.AnimationType;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.ScrollListener;
+import com.google.gwt.user.client.ui.Widget;
 
 import edu.utd.cs.bdma.synset.validator.shared.customevents.CameoCodeSelectedEvent;
 import edu.utd.cs.bdma.synset.validator.shared.customevents.CameoCodeSelectedEventHandler;
@@ -46,6 +55,7 @@ public class CameoDevelopment implements EntryPoint, CameoCodeSelectedEventHandl
 	private ResponsiveNavbar navBar = new ResponsiveNavbar();
 	private SynsetDisplayPanel synsetPanel;
 	private CameoRulesPanel rulesPanel;
+	private CameoSummeryPanel panel;
 	private Button saveButton ;
 	@Override
 	public void onModuleLoad() {
@@ -72,9 +82,18 @@ public class CameoDevelopment implements EntryPoint, CameoCodeSelectedEventHandl
 		logoutButton.setType(ButtonType.LINK);
 		final HTML userLabel = new HTML();
 		
+		Button tutorialLink = new Button("Tutorial", new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				Window.open(GWT.getHostPageBaseURL()+"/tutorial.html", "_blank", "");
+			}
+		});
+		
 		final HistoryPanel historyPanel = new HistoryPanel();
 		
-		final CameoSummeryPanel panel = new CameoSummeryPanel();
+		panel = new CameoSummeryPanel();
 		//final LogInPanel logInPanel = new LogInPanel();
         logoutButton.addClickHandler(new ClickHandler() {
 			
@@ -102,16 +121,22 @@ public class CameoDevelopment implements EntryPoint, CameoCodeSelectedEventHandl
 		logInPanel.setAnimationEnabled(true);
 		logInPanel.setAnimationType(AnimationType.ROLL_DOWN);
 		//logInPanel.center();
-		
+		HorizontalPanel hPanel = new HorizontalPanel();
+		hPanel.add(tutorialLink);
+		hPanel.add(logoutButton);
+		//hPanel.setStyleName("rightAlign");
 		//ResponsiveNavbar navBar = new ResponsiveNavbar();
 		
 		navBar.add(new Brand("Cameo Development"));
 		navBar.add(button);
 		navBar.add(historyButton);
 		navBar.add(userLabel);
+		//navBar.add(hPanel);
 	    navBar.add(logoutButton);
+	    navBar.add(tutorialLink);
 	    userLabel.setStyleName("rightAlign");
 	    logoutButton.setStyleName("rightAlign");
+	    //tutorialLink.setStyleName("rightAlign");
 		//AlertBlock alertBlock = new AlertBlock("User login successful");
 		synsetPanel = new SynsetDisplayPanel();
 		
@@ -152,6 +177,7 @@ public class CameoDevelopment implements EntryPoint, CameoCodeSelectedEventHandl
 				GWT.log(e.getCode()+" "+e.getWord());
 				synsetPanel.setCameoCode(e.getCode());
 				synsetPanel.setWord(e.getWord());
+				synsetPanel.setCameoEntry(headerPanel.getEntry());
 				saveButton.setVisible(true);
 			}
 		}, CameoWordSelectedEvent.TYPE);
@@ -224,6 +250,8 @@ public class CameoDevelopment implements EntryPoint, CameoCodeSelectedEventHandl
 	    
 	    RootPanel.get("Header").add(headerPanel);
 	    RootPanel.get("CameoRules").add(rulesPanel);
+	    HTML html = new HTML("<hr  style=\"width:100%; height:3px\" />");
+	    RootPanel.get("CameoRules").add(html);
 	    RootPanel.get("Synset").add(synsetPanel);
 	    RootPanel.get("Footer").add(saveButton);
 	    
@@ -260,20 +288,60 @@ public class CameoDevelopment implements EntryPoint, CameoCodeSelectedEventHandl
 
 		}
 	    
+	    Window.addWindowScrollHandler(new ScrollHandler() {
+			
+			@Override
+			public void onWindowScroll(ScrollEvent event) {
+				// TODO Auto-generated method stub
+				if (event.getScrollTop() > 100){
+					headerPanel.addStyleName("fixedDiv");
+					headerPanel.setVisibilityOfWordPanel(false);
+					rulesPanel.addStyleName("topMargin");
+				} else {
+					headerPanel.removeStyleName("fixedDiv");
+					headerPanel.setVisibilityOfWordPanel(true);
+					rulesPanel.removeStyleName("topMargin");
+					
+				}
+				
+			}
+		});
+	    
+	    Event.addNativePreviewHandler(new NativePreviewHandler() {
+			
+			@Override
+			public void onPreviewNativeEvent(NativePreviewEvent event) {
+				// TODO Auto-generated method stub
+				logoutTimer.cancel();
+				
+				logoutTimer.schedule(600000);
+			}
+		});
 	    
    }
 
+    Timer logoutTimer = new Timer() {
+		
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			logInPanel.logout();
+		}
+	};
+	
 	public void saveChanges(){
 		UpdatedInfo info = new UpdatedInfo();
 		saveButton.setEnabled(false);
 		synsetPanel.onSave();
 		//info.setFeedbackSWNewEntry(synsetPanel.getFeedbackForNESynWord());
-		info.setCameoSelectedSynsets(synsetPanel.getSelections());
+		info.setSynsetFeedbacks(synsetPanel.getSynsetVerdicts());
 		GWT.log("Success retrieving data");
 		info.setFeedbackOnSynsetWords(synsetPanel.getSelFeedbacks());
 		info.setNewWords(synsetPanel.getNewWords());
-		info.setSynsetEntryWithWords(synsetPanel.getNewSynsets());
+		//info.setSynsetEntryWithWords(synsetPanel.getNewSynsets());
 		info.setComment(synsetPanel.getComment());
+		GWT.log("Number of example verdicts : "+synsetPanel.getExampleVerdicts().size());
+		info.setExampleVerdicts(synsetPanel.getExampleVerdicts());
 		
 		GWT.log(synsetPanel.getSelFeedbacks().toString());
 		info.setVerdictsOnRules(rulesPanel.getVerdicts());

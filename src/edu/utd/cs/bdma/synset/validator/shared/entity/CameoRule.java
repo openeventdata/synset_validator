@@ -64,4 +64,26 @@ public class CameoRule implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return cameoCode+" "+word+" "+ruleText;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if (obj == null){
+			return false;
+			
+		} else if (obj instanceof CameoRule){
+			CameoRule oRule = (CameoRule) obj;
+			return cameoCode.equals(oRule.cameoCode) 
+					&& ruleText.equals(oRule.ruleText)
+					&& word.equals(oRule.word);
+		} else {
+			return false;
+		}
+	}
+	
 }

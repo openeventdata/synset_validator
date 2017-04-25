@@ -10,6 +10,8 @@
 	.padding {
 		padding-left: 10px;
 	}
+	
+	
 	</ui:style>
 	<g:VerticalPanel>
 		<g:HorizontalPanel ui:field="horizontalPanel"
@@ -23,11 +25,22 @@
 			<b:Button ui:field="saveButton" type="PRIMARY" enabled="false"
 				visible="false"> Save Changes </b:Button>
 		</g:HorizontalPanel>
-
-
-		<g:Label ui:field="summeryLabel"></g:Label>
-
-
+       
+        <g:HorizontalPanel>
+        <g:Label ui:field="summeryLabel"></g:Label>
+        <b:Button type="PRIMARY" ui:field="forumButton">Show Forum Messages</b:Button>
+        </g:HorizontalPanel>
+		
+		<b:Button ui:field="showPanelButton" type="LINK" visible="false">Add a related word</b:Button>
+		<g:HorizontalPanel ui:field="newWordPanel">
+		<b:TextBox placeholder="Add a related word" ui:field="addWordText"></b:TextBox>
+        <b:TextArea placeholder="Add CAMEO rules, one per line" ui:field="addRulesTextArea"></b:TextArea>
+        <b:Button ui:field="addWordButton">Add Word</b:Button>
+        <g:HTML ui:field="issueLabel" visible="false"></g:HTML>    
+		
+		</g:HorizontalPanel>
+		
+                   
 	</g:VerticalPanel>
 
 </ui:UiBinder> 

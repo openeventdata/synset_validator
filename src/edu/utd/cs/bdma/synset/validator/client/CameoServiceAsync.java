@@ -26,6 +26,14 @@ public interface CameoServiceAsync {
 
 	void addVerdictsOnRule(ArrayList<VerdictOnRule> verdicts, AsyncCallback<Integer> callback);
 
+	void addRelatedWord(String newWord, String[] cameoRules, String cameoCode, AsyncCallback<String> callback);
+
+	void addCameoRule(CameoRule rule, AsyncCallback<CameoRule> callback);
+
+	void summeryTree(AsyncCallback<ArrayList<String>> callback);
+
+	void addTranslatedRule(CameoTranslatedRule rule, AsyncCallback<CameoTranslatedRule> callback);
+
 
 	
 

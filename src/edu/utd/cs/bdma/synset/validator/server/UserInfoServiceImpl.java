@@ -1,33 +1,8 @@
 package edu.utd.cs.bdma.synset.validator.server;
 
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.Entity;
-import com.google.appengine.api.datastore.FetchOptions;
-import com.google.appengine.api.datastore.KeyFactory;
-import com.google.appengine.api.datastore.PreparedQuery;
-import com.google.appengine.api.datastore.Query;
-import com.google.appengine.api.datastore.Query.FilterOperator;
-import com.google.appengine.api.datastore.Query.FilterPredicate;
-import com.google.appengine.api.mail.MailService.Message;
-import com.google.appengine.api.utils.SystemProperty;
-import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
-import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import com.googlecode.objectify.ObjectifyService;
-import com.googlecode.objectify.VoidWork;
-import com.googlecode.objectify.cache.CachingDatastoreServiceFactory;
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.WebResource;
-import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
-import com.sun.jersey.core.util.MultivaluedMapImpl;
-
-import edu.utd.cs.bdma.synset.validator.client.UserInfoService;
-import edu.utd.cs.bdma.synset.validator.shared.entity.UserInfo;
-
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -38,6 +13,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
@@ -48,10 +24,21 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.ws.rs.core.MediaType;
 
-import org.apache.tools.ant.types.CommandlineJava.SysProperties;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.FetchOptions;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.FilterOperator;
+import com.google.appengine.api.datastore.Query.FilterPredicate;
+import com.google.appengine.api.utils.SystemProperty;
+import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import com.googlecode.objectify.ObjectifyService;
+import com.googlecode.objectify.cache.CachingDatastoreServiceFactory;
+
+import edu.utd.cs.bdma.synset.validator.client.UserInfoService;
+import edu.utd.cs.bdma.synset.validator.shared.entity.UserInfo;
 
 public class UserInfoServiceImpl extends RemoteServiceServlet implements UserInfoService {
 
@@ -63,6 +50,7 @@ public class UserInfoServiceImpl extends RemoteServiceServlet implements UserInf
 		ObjectifyService.register(UserInfo.class);
 	}
 	
+	static HashMap<String, String> languageMap = new HashMap<String, String>();
 	
 	static ArrayList<String> countries = new ArrayList<>();
 	
@@ -73,6 +61,10 @@ public class UserInfoServiceImpl extends RemoteServiceServlet implements UserInf
 				countries.add(br.readLine().split("\t")[0].trim());
 			}
 			Collections.sort(countries);
+			
+			languageMap.put("Spanish", "es");
+			languageMap.put("Arabic", "ar");
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -106,6 +98,7 @@ public class UserInfoServiceImpl extends RemoteServiceServlet implements UserInf
 	public boolean signup(UserInfo info) {
 		// TODO Auto-generated method stub
 		log(info.getEmailAddress());
+		info.setLanguage(languageMap.get(info.getLanguage()));
 		info.setEncryptedPassword(encrypt(info.getEncryptedPassword()));
 		UserInfo storedInfo = ofy().load().type(UserInfo.class).filter("emailAddress", info.getEmailAddress()).first()
 				.now();

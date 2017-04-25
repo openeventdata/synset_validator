@@ -48,6 +48,10 @@ public class SynsetEntry implements Serializable{
 		return source;
 	}
 	
+	public String getDescription(){
+		return gloss.substring(0, gloss.indexOf("\""));
+	}
+	
 	public void setSource(String source) {
 		this.source = source;
 	}
