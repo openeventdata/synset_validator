@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Random;
 
 import org.gwtbootstrap3.client.ui.CheckBox;
@@ -24,6 +25,7 @@ import com.google.gwt.storage.client.Storage;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlexTable;
@@ -80,6 +82,8 @@ public class SynsetDisplayPanel extends Composite {
 	ArrayList<PopupLabel> examplesLabel = new ArrayList<>();
 	
 	HashMap<Long, SynsetExampleVerdict> exampleVerdicts = new HashMap<>();
+	
+	HashMap<String, ArrayList<SynsetWord>> wordsToSW = new HashMap<>();
 
 	interface SynsetDisplayPanelUiBinder extends UiBinder<Widget, SynsetDisplayPanel> {
 	}
@@ -101,8 +105,7 @@ public class SynsetDisplayPanel extends Composite {
 	}
 
 	private void init() {
-		if (localDB == null)
-			localDB = Storage.getLocalStorageIfSupported();
+		GWT.log("Inside init() method");
 		newWordsToSynset.clear();
 		newWords.clear();
 		feedbacks.clear();
@@ -111,7 +114,8 @@ public class SynsetDisplayPanel extends Composite {
 		newSynsets.clear();
 		synsetTable.clear();
 		examplesLabel.clear();
-		GWT.log(localDB.getItem("country"));
+		GWT.log("Initialization Complete");
+		
 		if (countries == null){
 		wordService.getCountries("es", new AsyncCallback<ArrayList<String>>() {
 
@@ -125,6 +129,7 @@ public class SynsetDisplayPanel extends Composite {
 			public void onSuccess(ArrayList<String> result) {
 				// TODO Auto-generated method stub
 				countries = result;
+				GWT.log("Initialization Complete");
 			}
 		});
 		}
@@ -170,11 +175,12 @@ public class SynsetDisplayPanel extends Composite {
 		if (this.word == null || !this.word.equals(w))
 			this.word = w;
 		lPanel.show();
-		wordService.getAll(word, "es", new AsyncCallback<ArrayList<SynsetEntryWithWords>>() {
+		wordService.getAll(word, cameoCode, "es", new AsyncCallback<ArrayList<SynsetEntryWithWords>>() {
 
 			@Override
 			public void onSuccess(ArrayList<SynsetEntryWithWords> result) {
 				// TODO Auto-generated method stub
+				GWT.log("Result is " + (result == null));
 				entriesWithWords = result;
 				shuffle(entriesWithWords);
 				for (SynsetEntryWithWords synent: entriesWithWords){
@@ -218,10 +224,11 @@ public class SynsetDisplayPanel extends Composite {
 						}
 						GWT.log("Success Fetching Submission");
 						lPanel.hide();
-						designUI();
+						//Window.alert("Data Collection Complete.");
+						designUIArabic();
 					}
 				});
-				// designUI();
+				
 
 			}
 
@@ -296,6 +303,101 @@ public class SynsetDisplayPanel extends Composite {
 	}
 
 	public void onSave() {
+		
+		/**
+		 * For Arabic
+		 */
+		selFeedbacks.clear();
+		newVerdicts.clear();
+		//Window.alert("On save method starts");
+		if (wordTables.size() > 0)
+		{
+			FlexTable table = wordTables.get(0);
+			//Window.alert("On save method");
+			//GWT.log("Iterating for insertion 2");
+			
+			for (int j = 1; j < table.getRowCount(); j++) {
+				
+				TextArea commentTA = (TextArea) table.getWidget(j, 4);
+				
+				GWT.log(commentTA.getText());
+				FeedbackOnSynsetWord fb = new FeedbackOnSynsetWord(FeedbackOnSynsetWord.CORRECT,
+						commentTA.getText());
+				GWT.log("" + ((Radio) table.getWidget(j, 2)).getValue());
+				if (((Radio) table.getWidget(j, 2)).getValue()) {
+					GWT.log("Incorrect");
+					fb.setVerdict(FeedbackOnSynsetWord.INCORRECT);
+				} else if (((Radio) table.getWidget(j, 3)).getValue()) {
+					GWT.log("Ambiguous");
+					fb.setVerdict(FeedbackOnSynsetWord.AMBIGUOUS);
+				}
+				String name = ((Radio) table.getWidget(j, 2)).getName();
+				
+				ArrayList<SynsetWord> sws = wordsToSW.get(name.substring(5));
+				ArrayList<FeedbackOnSynsetWord> tempList = new ArrayList<>();
+				
+				for (SynsetWord sw: sws){
+					FeedbackOnSynsetWord tempFB = new FeedbackOnSynsetWord();
+					tempFB.setComment(fb.getComment());
+					tempFB.setCountry(fb.getCountry());
+					tempFB.setIdWord(sw.getId());
+					tempFB.setVerdict(fb.getVerdict());
+					tempList.add(tempFB);
+					GWT.log(tempFB.getVerdict());
+				}
+				
+				selFeedbacks.addAll(tempList);
+				GWT.log(fb.toString());
+				
+			}
+		}
+		//Window.alert("On save method ends");
+		
+		if (entriesWithWords.get(0) != null){
+	       this.newWords.addAll(getAddedArabicWords(newWordTextBoxes.get(0), entriesWithWords.get(0)));
+		} else {
+			SynsetEntry entry = new SynsetEntry("", null);
+			ArrayList<SynsetWord> words = new ArrayList<>();
+
+			String[] newSynWords = newWordTextBoxes.get(0).getText().split(",");
+			for (String w : newSynWords) {
+				SynsetWord synWord = new SynsetWord(w.trim(), "ar");
+
+				words.add(synWord);
+			}
+			ArrayList<SynsetExample> exms = new ArrayList<>();
+						
+			SynsetEntryWithWords newInfo = new SynsetEntryWithWords(entry);
+			newInfo.addAllWords(words);
+			newInfo.setExamples(exms);
+			ArrayList<SynsetEntryWithWords> sew = new ArrayList<>();
+			sew.add(newInfo);
+			
+			wordService.addSynset(sew, cameoCode, word, new AsyncCallback<ArrayList<SynsetEntryWithWords>>() {
+
+				@Override
+				public void onFailure(Throwable caught) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void onSuccess(ArrayList<SynsetEntryWithWords> result) {
+					// TODO Auto-generated method stub
+					GWT.log("New words added Sucessfully");
+				}
+			});
+			
+			
+		}
+
+		//Window.alert("On save method ends");
+		
+		/**
+		 * for spanish
+		 * 
+		 */
+		/*
 		selFeedbacks.clear();
 		newVerdicts.clear();
 		ArrayList<FeedbackOnSynsetWord> feedbacks = new ArrayList<>();
@@ -364,6 +466,7 @@ public class SynsetDisplayPanel extends Composite {
 		}
 
 		newSynsets = tempSynsets;
+		*/
 		displayContents(false);
 
 	}
@@ -386,8 +489,8 @@ public class SynsetDisplayPanel extends Composite {
 	
 	
 
-	private ArrayList<SynsetWordWithFeedback> getAddedWords(int rowId, SynsetEntryWithWords entry) {
-		FlexTable ftable = (FlexTable) ((VerticalPanel) ((VerticalPanel) synsetTable.getWidget(rowId, 4)).getWidget(1))
+	private ArrayList<SynsetWordWithFeedback> getAddedWords(int rowId, int columnNo, SynsetEntryWithWords entry) {
+		FlexTable ftable = (FlexTable) ((VerticalPanel) ((VerticalPanel) synsetTable.getWidget(rowId, columnNo)).getWidget(1))
 				.getWidget(0);
 		GWT.log("Iterating for insertion 4");
 		ArrayList<SynsetWordWithFeedback> addedWords = new ArrayList<SynsetWordWithFeedback>();
@@ -410,7 +513,34 @@ public class SynsetDisplayPanel extends Composite {
 				addedWords.add(sbf);
 			}
 		}
+        //Window.alert("New Words COllected");
+		return addedWords;
+	}
+	
+	private ArrayList<SynsetWordWithFeedback> getAddedArabicWords(TextBox wordBox, SynsetEntryWithWords entry) {
+		
+		GWT.log("Iterating for insertion 4");
+		ArrayList<SynsetWordWithFeedback> addedWords = new ArrayList<SynsetWordWithFeedback>();
+		String[] words = wordBox.getText().split(",");
+		for (int j = 0; j < words.length; j++) {
+			String word = words[j].trim();
+			if (word.length() > 0) {
+				SynsetWord synsetWord = new SynsetWord();
+				synsetWord.setWord(word);
+				synsetWord.setLanguageCode("ar");
+				if (entry != null) synsetWord.setIdSynsetEntry(entry.getEntry().getId());
 
+				FeedbackOnSynsetWord feedback = new FeedbackOnSynsetWord();
+				feedback.setVerdict(FeedbackOnSynsetWord.CORRECT);
+				
+				SynsetWordWithFeedback sbf = new SynsetWordWithFeedback();
+				sbf.setFeedback(feedback);
+				sbf.setSynsetWord(synsetWord);
+
+				addedWords.add(sbf);
+			}
+		}
+        //Window.alert("New Words COllected");
 		return addedWords;
 	}
 
@@ -493,8 +623,9 @@ public class SynsetDisplayPanel extends Composite {
 						public void onSuccess(ArrayList<SynsetEntryWithWords> result) {
 							// TODO Auto-generated method stub
 							//newSynsets.addAll(result);
+							GWT.log("Size of Synsets: "+result.size());
 							newSynsets.addAll(0, result);
-							designUI();
+							designUIArabic();
 							popUpPanel.hide();
 						}
 					});
@@ -550,9 +681,9 @@ public class SynsetDisplayPanel extends Composite {
 	void displayContents(boolean visible) {
 		synsetTable.setVisible(visible);
 		synsetHeader.setVisible(visible);
-		infoMessage.setVisible(visible);
+		//infoMessage.setVisible(visible);
 		// lPanel.setVisible(!visible);
-		newEntryButton.setVisible(visible);
+		//newEntryButton.setVisible(visible);
 		//commentHeader.setVisible(visible);
 		//overallComment.setVisible(visible);
 		
@@ -676,6 +807,137 @@ public class SynsetDisplayPanel extends Composite {
 			i++;
 		}
 	}
+	
+	protected void designUIArabic() {
+		// TODO Auto-generated method stub
+		displayContents(true);
+//		
+		
+		GWT.log("Synset Length" + entriesWithWords.size());
+		synsetTable.setBorderWidth(1);
+		synsetTable.clear();
+		synsetTable.removeAllRows();
+		//Window.alert("Table Cleared");
+		//synsetHeader.setText("Synset Entries for " + word);
+		// synsetTable = new FlexTable();
+        SynsetEntryWithWords tempSE = new SynsetEntryWithWords();
+        //wordTables.clear();
+		        
+		for (final SynsetEntryWithWords entry : entriesWithWords) {
+			tempSE.addAllWords(entry.getWords());
+		}
+		
+		wordTables.clear();
+		//Window.alert("Number of words: "+tempSE.getWords().size());
+		VerticalPanel mainPanel = new VerticalPanel();
+		final FlexTable table = new FlexTable();
+		wordTables.add(table);
+		TextBox newWordTextBox = new TextBox();
+		if (tempSE.getWords().size() == 0) {
+			infoMessage.setHTML("<span style=\"color: green;\">  0 arabic word(s) found.</span>");
+
+			table.setWidget(0, 0, new HTML("<h5>No word in record</h5>"));
+		}
+
+		else {
+			
+			table.setWidget(0, 0, new HTML("<b>Translated Word</b>"));
+			table.setWidget(0, 1, new HTML("<b>Correct</b>"));
+			table.setWidget(0, 2, new HTML("<b>Incorrect</b>"));
+			table.setWidget(0, 3, new HTML("<b>Ambiguous</b>"));
+			table.setWidget(0, 4, new HTML("<b>Notes</b>"));
+
+			// table.setWidget(0, 5, new HTML("<b>Country</b>"));
+			table.setBorderWidth(1);
+            ArrayList<SynsetWord> words = tempSE.getWords();
+            wordsToSW.clear();
+            for (SynsetWord sw: words){
+            	if (!wordsToSW.containsKey(sw.getWord())){
+            		ArrayList<SynsetWord> arr = new ArrayList<>();
+            		arr.add(sw);
+            		wordsToSW.put(sw.getWord(), arr);
+            	} else {
+            	   ArrayList<SynsetWord> arr = wordsToSW.get(sw.getWord());
+            	   arr.add(sw);
+            	   wordsToSW.put(sw.getWord(), arr);
+            	}
+            }
+            
+            ArrayList<String> wordlist = new ArrayList<>(wordsToSW.keySet());
+            infoMessage.setHTML("<span style=\"color: green;\"> " + wordlist.size() + " arabic word(s) found.</span>");
+
+            for (int i = 0; i < wordlist.size(); i++) {
+				Radio radio = new Radio("Radio" + wordlist.get(i));
+				radio.setValue(true);
+				String textWord = wordlist.get(i);
+				try {
+					table.setWidget(i + 1, 0, new HTML(new String(textWord.getBytes(), "UTF-8")));
+				} catch (UnsupportedEncodingException e) {
+					// TODO Auto-generated catch block
+					table.setWidget(i + 1, 0, new HTML(textWord));
+				}
+				SynsetWord sw = wordsToSW.get(textWord).get(0);
+				FeedbackOnSynsetWord feedback = feedbacks.get(sw.getId());
+
+				String comment = "";
+
+				String country = "";
+
+				if (feedback == null) {
+					GWT.log("Feedback is NULL");
+					table.setWidget(i + 1, 2, radio);
+					table.setWidget(i + 1, 1, new Radio("Radio" + wordlist.get(i)));
+					table.setWidget(i + 1, 3, new Radio("Radio" + wordlist.get(i)));
+				} else {
+					GWT.log("Feedback is: "+feedback.getVerdict());
+					if (feedback.getVerdict().equals(FeedbackOnSynsetWord.CORRECT)) {
+						table.setWidget(i + 1, 1, radio);
+						table.setWidget(i + 1, 2, new Radio("Radio" + wordlist.get(i)));
+						table.setWidget(i + 1, 3, new Radio("Radio" + wordlist.get(i)));
+					} else if (feedback.getVerdict().equals(FeedbackOnSynsetWord.INCORRECT)) {
+						table.setWidget(i + 1, 2, radio);
+						table.setWidget(i + 1, 1, new Radio("Radio" + wordlist.get(i)));
+						table.setWidget(i + 1, 3, new Radio("Radio" + wordlist.get(i)));
+					} else {
+						table.setWidget(i + 1, 3, radio);
+						table.setWidget(i + 1, 1, new Radio("Radio" + wordlist.get(i)));
+						table.setWidget(i + 1, 2, new Radio("Radio" + wordlist.get(i)));
+					}
+					if (feedback.getComment() != null)
+						comment = feedback.getComment();
+
+				}
+
+				TextArea commentTA = new TextArea();
+				commentTA.setText(comment);
+
+				table.setWidget(i + 1, 4, commentTA);
+				// SuggestBox sbox = new SuggestBox(countrySuggestions);
+
+			}
+			//Window.alert("Table Created");
+//			String words = (newWordsToSynset.get(entry.getEntry().getId()) == null) ? ""
+//					: newWordsToSynset.get(entry.getEntry().getId());
+//			newWordTextBox.setText(words);
+            
+		}
+		wordTables.add(table);
+		HTML newWordHTML = new HTML("<b>Add new words(comma seperated)</b>");
+
+		mainPanel.add(table);
+		mainPanel.add(newWordHTML);
+		
+		mainPanel.add(newWordTextBox);
+		synsetTable.setWidget(0,0,mainPanel);
+		newWordTextBoxes.clear();
+		newWordTextBoxes.add(newWordTextBox);
+
+		
+
+	}
+	
+	
+
 	
 	protected void showAddExamplePopUp(Button addExampleButton, final SynsetEntry synsetEntry) {
 		// TODO Auto-generated method stub
@@ -829,7 +1091,7 @@ public class SynsetDisplayPanel extends Composite {
 			table.setWidget(0, 2, new HTML("<b>Incorrect</b>"));
 			table.setWidget(0, 3, new HTML("<b>Ambiguous</b>"));
 			table.setWidget(0, 4, new HTML("<b>Notes</b>"));
-			table.setWidget(0, 5, new HTML("<b>Country</b>"));
+
 			// table.setWidget(0, 5, new HTML("<b>Country</b>"));
 			table.setBorderWidth(1);
 
@@ -880,23 +1142,22 @@ public class SynsetDisplayPanel extends Composite {
 
 				table.setWidget(i + 1, 4, commentTA);
 				// SuggestBox sbox = new SuggestBox(countrySuggestions);
-				table.setWidget(i + 1, 5, this.prepareCountryListBox(country));
 
 			}
-			String words = (newWordsToSynset.get(entry.getEntry().getId()) == null) ? ""
-					: newWordsToSynset.get(entry.getEntry().getId());
-			newWordTextBox.setText(words);
+//			String words = (newWordsToSynset.get(entry.getEntry().getId()) == null) ? ""
+//					: newWordsToSynset.get(entry.getEntry().getId());
+//			newWordTextBox.setText(words);
 		}
 
 		HTML newWordHTML = new HTML("<b>Add new words(comma seperated)</b>");
 
 		mainPanel.add(table);
-		// mainPanel.add(newWordHTML);
-		//
-		// mainPanel.add(newWordTextBox);
-		// newWordTextBoxes.add(newWordTextBox);
+		 mainPanel.add(newWordHTML);
+		
+		 mainPanel.add(newWordTextBox);
+		 newWordTextBoxes.add(newWordTextBox);
 
-		mainPanel.add(makeNewWordTable());
+		//mainPanel.add(makeNewWordTable());
 
 		return mainPanel;
 

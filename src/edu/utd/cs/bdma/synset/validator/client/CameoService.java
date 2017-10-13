@@ -35,5 +35,7 @@ public interface CameoService extends RemoteService{
 	public CameoTranslatedRule addTranslatedRule(CameoTranslatedRule  rule);
 	
 	public ArrayList<String> summeryTree();
+	
+	public CameoTranslatedRule editTranslation(CameoTranslatedRule newRule);
 
 }

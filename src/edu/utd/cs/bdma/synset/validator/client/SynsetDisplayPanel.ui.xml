@@ -22,8 +22,8 @@
 	<g:VerticalPanel ui:field="mainPanel">
 	<g:HorizontalPanel>
 	<v:LoadingPanel message="Loading Synsets..." ui:field="lPanel"></v:LoadingPanel>
-	<b:Heading size="4" ui:field="synsetHeader">Synset Entries</b:Heading>
-	<b:Button type="LINK" styleName="{style.test}" ui:field="newEntryButton">Add new synonym set</b:Button>
+	<b:Heading size="4" ui:field="synsetHeader">Translations in Arabic</b:Heading>
+	<b:Button type="LINK" styleName="{style.test}" ui:field="newEntryButton" visible="false">Add new synonym set</b:Button>
 	<g:HTML ui:field="infoMessage"></g:HTML>
 	</g:HorizontalPanel>
 	    

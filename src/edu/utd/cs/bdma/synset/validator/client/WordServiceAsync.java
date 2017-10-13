@@ -17,7 +17,7 @@ public interface WordServiceAsync {
 
 	void getWords(SynsetEntry entry, String langCode, AsyncCallback<ArrayList<SynsetWord>> callback);
 
-	void getAll(String word, String langCode, AsyncCallback<ArrayList<SynsetEntryWithWords>> callback);
+	void getAll(String word, String cameoCode, String langCode, AsyncCallback<ArrayList<SynsetEntryWithWords>> callback);
 
 	void addSynsetSelections(ArrayList<CameoSelectedSynset> selections, String cameoCode,
 			AsyncCallback<Integer> callback);
@@ -34,5 +34,8 @@ public interface WordServiceAsync {
 
 	void addExamples(SynsetEntry entry, String[] examples, AsyncCallback<ArrayList<SynsetExample>> callback);
 
+	void getCodingLanguage(AsyncCallback<String> callback);
+
+	
 	
 }

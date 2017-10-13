@@ -16,8 +16,9 @@ public class CameoRule implements Serializable{
 	String ruleText;
 	@Index String cameoCode;
 	@Index String word;
+	@Index String langCode;
 	
-	String source;
+	@Index String source;
 	
 	
 	public Long getId() {
@@ -58,6 +59,15 @@ public class CameoRule implements Serializable{
 		this.ruleText = ruleText;
 		
 		this.source = source;
+	}
+	
+	public void setLangCode(String langCode) {
+		this.langCode = langCode;
+	}
+	
+	public String getLangCode() {
+		if (langCode == null) return "";
+		return langCode;
 	}
 	
 	public CameoRule() {

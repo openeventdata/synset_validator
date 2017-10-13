@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -31,6 +32,7 @@ import edu.utd.cs.bdma.synset.validator.shared.entity.CameoEntry;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoEntrySummery;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoRule;
 import edu.utd.cs.bdma.synset.validator.shared.entity.CameoTranslatedRule;
+import edu.utd.cs.bdma.synset.validator.shared.entity.RuleTranslationHistory;
 import edu.utd.cs.bdma.synset.validator.shared.entity.Submission;
 import edu.utd.cs.bdma.synset.validator.shared.entity.UserInfo;
 import edu.utd.cs.bdma.synset.validator.shared.entity.VerdictOnRule;
@@ -51,6 +53,7 @@ public class CameoServiceImpl extends RemoteServiceServlet implements CameoServi
         ObjectifyService.register(Word.class);
         ObjectifyService.register(VerdictOnRule.class);
         ObjectifyService.register(Submission.class);
+        ObjectifyService.register(RuleTranslationHistory.class);
 	}
 	
 	private static void loadRootCodes(){
@@ -85,9 +88,14 @@ public class CameoServiceImpl extends RemoteServiceServlet implements CameoServi
 					                    .load()
 					                     .type(CameoRule.class)
 					                     .filter("cameoCode", entry.getCode())
-					                     .filter("word", word).list();
-			
-			return new ArrayList<>(rules);
+					                     .filter("word", word)
+					                     .list();
+			ArrayList<CameoRule> filteredRules = new ArrayList<>();
+			for (CameoRule rule: rules){
+				if (rule.getSource().equalsIgnoreCase("CAMEO2")) filteredRules.add(rule);
+				else if (rule.getLangCode().equalsIgnoreCase("en")) filteredRules.add(rule);
+			}
+			return filteredRules;
 		}
 		
 		return null;
@@ -224,6 +232,7 @@ public class CameoServiceImpl extends RemoteServiceServlet implements CameoServi
 			}
 		}
 		rule.setSource(""+userID);
+		rule.setLangCode("en");
 		ofy().save().entity(rule).now();
 		return rule;
 	}
@@ -262,16 +271,32 @@ public class CameoServiceImpl extends RemoteServiceServlet implements CameoServi
 				                   .filter("source", ""+userID)
 				                   .filter("languageCode", langCode).first().now();
 		
-		if (tRule == null){
-			rule.setSource(""+userID);
-			rule.setLanguageCode(langCode);
-			ofy().save().entity(rule).now();
-		}  else {
-			tRule.setText(rule.getText());
-		}
-		return null;
+		rule.setSource(""+userID);
+		rule.setLanguageCode(langCode);
+		ofy().save().entity(rule).now();
+		tRule = rule;
+	
+		return tRule;
 	}
 
+	@Override
+	public CameoTranslatedRule editTranslation(CameoTranslatedRule newRule) {
+		// TODO Auto-generated method stub
+		UserInfo user = ((UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user"));
+		CameoTranslatedRule tRule = ofy().load().type(CameoTranslatedRule.class).filterKey(Key.create(CameoTranslatedRule.class, newRule.getId())).first().now();
+		tRule.setText(newRule.getText());
+		ofy().save().entity(tRule).now();
+		RuleTranslationHistory history = new RuleTranslationHistory();
+		history.setRuleText(tRule.getText());
+		history.setTime(new Date(System.currentTimeMillis()));
+		history.setTranslatedRuleId(tRule.getId());
+		history.setUserId(user.getId());
+		ofy().save().entity(history).now();
+		return tRule;
+		
+	}
+
+	
 	
 
 }

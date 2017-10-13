@@ -265,4 +265,14 @@ public class UserInfoServiceImpl extends RemoteServiceServlet implements UserInf
 		sendVerificationEmail(email, passwordRecMsg, "PasswordVerificationInfo");
 	}
 
+	@Override
+	public UserInfo getUserInfo() {
+		// TODO Auto-generated method stub
+		UserInfo info = ((UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user"));
+		if (info != null){
+			info.setEncryptedPassword("");
+		}
+		return info;
+	}
+
 }

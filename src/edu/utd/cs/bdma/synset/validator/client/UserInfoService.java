@@ -31,4 +31,6 @@ public interface UserInfoService extends RemoteService{
 	public ArrayList<String> listCountries();
 	
 	public void sendRecoveryRequest(String emailAddress);
+	
+	public UserInfo getUserInfo();
 }

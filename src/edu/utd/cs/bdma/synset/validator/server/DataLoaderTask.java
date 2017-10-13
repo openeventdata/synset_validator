@@ -45,16 +45,23 @@ public class DataLoaderTask implements DeferredTask{
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		System.out.println("CALLED DEFFERED TASK");
+//		System.out.println("CALLED DEFFERED TASK");
 //		try {
 //            loadSynsetWords();
+//            System.out.println("TASK Completed");
 //		} catch (JsonSyntaxException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
-//		} catch (IOException e) {
+//		} catch (JsonIOException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
-//		}
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (UnsupportedEncodingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} 
 	}
 	
 	private void loadCameoData(){
@@ -179,9 +186,12 @@ public class DataLoaderTask implements DeferredTask{
 		Type type = new TypeToken<ArrayList<SynsetWord>>() {
 		}.getType();
 		ArrayList<SynsetWord> wordsList = gson.fromJson(new InputStreamReader(new FileInputStream("arabic_synset_words.json"), "UTF-8"), type );
-		List<SynsetWord> lst = ofy().load().type(SynsetWord.class).filter("languageCode", "ar").list();
+		List<SynsetWord> lst = null;
+		do{
+		lst = ofy().load().type(SynsetWord.class).filter("languageCode", "ar").limit(3000).list();
 		ofy().delete().entities(lst).now();
-		
+		} while(lst.size()>0);
+		System.out.println(lst.size()+" words deleted.");
 //		log(lst.size()+" arabic words deleted.");
 		ofy().save().entities(wordsList).now();
 //		log("inserted data");

@@ -18,5 +18,7 @@
 	       <b:TextBox ui:field="codeTextBox"></b:TextBox>
 	       <b:Button type="PRIMARY" ui:field="addRuleButton">Add this rule</b:Button>
 	    </g:HorizontalPanel>
+	    
+	    
 	</g:VerticalPanel>
 </ui:UiBinder> 

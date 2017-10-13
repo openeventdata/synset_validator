@@ -31,6 +31,7 @@ import edu.utd.cs.bdma.synset.validator.shared.entity.Submission;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntry;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetEntryWithWords;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetExample;
+import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetStatistics;
 import edu.utd.cs.bdma.synset.validator.shared.entity.SynsetWord;
 import edu.utd.cs.bdma.synset.validator.shared.entity.UserInfo;
 import edu.utd.cs.bdma.synset.validator.shared.entity.Word;
@@ -38,6 +39,8 @@ import edu.utd.cs.bdma.synset.validator.shared.entity.Word;
 public class WordServiceImpl extends RemoteServiceServlet implements WordService {
 
     static HashMap<String, ArrayList<String>> countriesMap = new HashMap<>();
+    
+    static HashMap<Long, HashMap<Long, SynsetStatistics>> cameoToSynsetStat = new HashMap<>();
 	
 	static {
 		try {
@@ -56,10 +59,25 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 			}
 			br.close();
 			
+			SynsetStatistics[] stats = new Gson().fromJson(new FileReader("SynsetStatistics.json"), SynsetStatistics[].class);
+			
+			for (SynsetStatistics s: stats){
+				if (!cameoToSynsetStat.containsKey(s.getCameoId())){
+					cameoToSynsetStat.put(s.getCameoId(), new HashMap<Long, SynsetStatistics>());
+				} 
+				
+				HashMap<Long, SynsetStatistics> synsetToStat = cameoToSynsetStat.get(s.getCameoId());
+				
+				synsetToStat.put(s.getSynsetId(), s);
+			}
+			
+			System.out.println("Loaded the synset validation information.");
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 	
 	@Override
@@ -178,14 +196,20 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 	}
 	
 	@Override
-	public ArrayList<SynsetEntryWithWords> getAll(String word, String langCode) {
+	public ArrayList<SynsetEntryWithWords> getAll(String word, String cameoCode, String langCode) {
 		// TODO Auto-generated method stub
 		Long userID = ((UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user")).getId();
 		ArrayList<SynsetEntry> entries = getSynsets(word);
+		String userLang = ((UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user")).getLanguage();
+		
 		if (entries != null)
 			log("Synset Entry length " + entries.size());
+		
+		
+		
 		ArrayList<SynsetEntryWithWords> entriesWithWords = new ArrayList<>();
 		if (entries != null) {
+			if (userLang != "es") entries = filter(entries, cameoCode);
 			for (SynsetEntry entry : entries) {
 				SynsetEntryWithWords entryWithWord = new SynsetEntryWithWords(entry);
 				entryWithWord.addAllWords(getWords(entry, langCode));
@@ -200,6 +224,32 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 			}
 		}
 		return entriesWithWords;
+	}
+
+	private ArrayList<SynsetEntry> filter(ArrayList<SynsetEntry> entries, String cameoCode) {
+		// TODO Auto-generated method stub
+		//return entries;
+		CameoEntry cameoEntry = ofy().load().type(CameoEntry.class).filter("code", cameoCode).first().now();
+		ArrayList<SynsetEntry> filteredList = new ArrayList<>();
+		if (cameoEntry != null){
+			HashMap<Long, SynsetStatistics> synsetToStat = cameoToSynsetStat.get(cameoEntry.getId());
+			if (synsetToStat != null){
+			for (SynsetEntry se: entries){
+				if (!synsetToStat.containsKey(se.getId())){
+					SynsetStatistics st = synsetToStat.get(se.getId());
+					if (st.getCountCorrect() >= st.getCountAmbiguous()+st.getCountInCorrect()){
+						filteredList.add(se);
+					}
+				} else {
+					filteredList.add(se);
+				}
+			}
+			}else{
+				filteredList.addAll(entries);
+			}
+		}
+		
+		return filteredList;
 	}
 
 	@Override
@@ -342,6 +392,12 @@ public class WordServiceImpl extends RemoteServiceServlet implements WordService
 		ofy().save().entities(newExamples).now();
 		
 		return newExamples;
+	}
+
+	@Override
+	public String getCodingLanguage() {
+		// TODO Auto-generated method stub
+		return ((UserInfo) this.getThreadLocalRequest().getSession().getAttribute("user")).getLanguage();
 	}
 
 	

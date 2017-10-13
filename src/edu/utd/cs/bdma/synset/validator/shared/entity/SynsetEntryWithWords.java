@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public class SynsetEntryWithWords implements Serializable{
 	
 	SynsetEntry entry;
-	ArrayList<SynsetExample> examples;
+	ArrayList<SynsetExample> examples = new ArrayList<>();
 	
-	ArrayList<SynsetWord> words;
+	ArrayList<SynsetWord> words = new ArrayList<>();
 	
 	private boolean readOnly;
 	

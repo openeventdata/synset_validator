@@ -25,7 +25,7 @@ public interface WordService extends RemoteService{
 	
 	ArrayList<SynsetWord> getWords(SynsetEntry entry, String langCode);
 	
-	ArrayList<SynsetEntryWithWords> getAll(String word, String langCode);
+	ArrayList<SynsetEntryWithWords> getAll(String word, String cameoCode, String langCode);
 	
 	int addSynsetSelections(ArrayList<CameoSelectedSynset> selections, String cameoCode);
 	
@@ -39,5 +39,6 @@ public interface WordService extends RemoteService{
 	
 	public ArrayList<SynsetExample> addExamples(SynsetEntry entry, String[] examples);
 	
+	public String getCodingLanguage();
 	
 }

@@ -23,6 +23,8 @@ public interface UserInfoServiceAsync {
 	void listCountries(AsyncCallback<ArrayList<String>> callback);
 
 	void sendRecoveryRequest(String emailAddress, AsyncCallback<Void> callback);
+
+	void getUserInfo(AsyncCallback<UserInfo> callback);
 	
 	
 

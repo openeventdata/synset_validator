@@ -87,6 +87,16 @@
     <url-pattern>/synset_validator/update</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  <servlet-name>UpdateStatisticsServlet</servlet-name>
+  <servlet-class>edu.utd.cs.bdma.synset.validator.server.UpdateStatisticsServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>UpdateStatisticsServlet</servlet-name>
+  <url-pattern>/synset_validator/updatestat</url-pattern>
+  </servlet-mapping>
+  
   <filter>
     <filter-name>ObjectifyFilter</filter-name>
     <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
@@ -160,7 +170,7 @@
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>maintainance.html</welcome-file>
+    <welcome-file>Synset_Validator.html</welcome-file>
   </welcome-file-list>
   
   <security-constraint>

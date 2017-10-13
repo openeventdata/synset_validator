@@ -34,6 +34,8 @@ public interface CameoServiceAsync {
 
 	void addTranslatedRule(CameoTranslatedRule rule, AsyncCallback<CameoTranslatedRule> callback);
 
+	void editTranslation(CameoTranslatedRule newRule, AsyncCallback<CameoTranslatedRule> callback);
+
 
 	
 

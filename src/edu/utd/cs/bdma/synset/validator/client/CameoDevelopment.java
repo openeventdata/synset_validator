@@ -8,6 +8,7 @@ import com.github.gwtbootstrap.client.ui.Label;
 import com.github.gwtbootstrap.client.ui.ResponsiveNavbar;
 import com.github.gwtbootstrap.client.ui.constants.AlertType;
 import com.github.gwtbootstrap.client.ui.constants.ButtonType;
+import com.github.gwtbootstrap.client.ui.constants.IconType;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -61,7 +62,7 @@ public class CameoDevelopment implements EntryPoint, CameoCodeSelectedEventHandl
 	public void onModuleLoad() {
 		
 		final Button button = new Button("Cameo List");
-		saveButton = new Button("Save Changes");
+		saveButton = new Button("Save Changes", IconType.SAVE);
 		saveButton.setType(ButtonType.PRIMARY);
 		saveButton.setBlock(true);
 		saveButton.addClickHandler(new ClickHandler() {
@@ -333,6 +334,7 @@ public class CameoDevelopment implements EntryPoint, CameoCodeSelectedEventHandl
 		UpdatedInfo info = new UpdatedInfo();
 		saveButton.setEnabled(false);
 		synsetPanel.onSave();
+		//Window.alert("Saved Data");
 		//info.setFeedbackSWNewEntry(synsetPanel.getFeedbackForNESynWord());
 		info.setSynsetFeedbacks(synsetPanel.getSynsetVerdicts());
 		GWT.log("Success retrieving data");
@@ -342,11 +344,12 @@ public class CameoDevelopment implements EntryPoint, CameoCodeSelectedEventHandl
 		info.setComment(synsetPanel.getComment());
 		GWT.log("Number of example verdicts : "+synsetPanel.getExampleVerdicts().size());
 		info.setExampleVerdicts(synsetPanel.getExampleVerdicts());
-		
+		//Window.alert("Success 1");
 		GWT.log(synsetPanel.getSelFeedbacks().toString());
 		info.setVerdictsOnRules(rulesPanel.getVerdicts());
 		final String cameoCode = headerPanel.getCameoCode();
 		final String word = synsetPanel.getWord();
+		//Window.alert("Success 2");
 		submitter.submit(info, headerPanel.getCameoCode(), synsetPanel.getWord(), new AsyncCallback<Void>() {
 			
 			@Override
