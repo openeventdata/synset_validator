@@ -1,0 +1,18 @@
+<datastore-indexes autoGenerate="true">
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="SynsetWord" ancestor="false" source="auto">
+        <property name="idSynsetEntry" direction="asc"/>
+        <property name="languageCode" direction="asc"/>
+    </datastore-index>
+    <datastore-index kind="CameoRule" ancestor="false" source="auto">
+        <property name="cameoCode" direction="asc"/>
+        <property name="word" direction="asc"/>
+        <property name="source" direction="asc"/>
+    </datastore-index>
+    <datastore-index kind="CameoTranslatedRule" ancestor="false" source="auto">
+        <property name="ruleId" direction="asc"/>
+        <property name="languageCode" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>
