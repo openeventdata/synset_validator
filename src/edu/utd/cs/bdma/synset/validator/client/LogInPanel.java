@@ -2,7 +2,7 @@ package edu.utd.cs.bdma.synset.validator.client;
 
 import java.util.ArrayList;
 
-import com.gargoylesoftware.htmlunit.javascript.host.Text;
+
 import com.github.gwtbootstrap.client.ui.Button;
 import com.github.gwtbootstrap.client.ui.CheckBox;
 import com.github.gwtbootstrap.client.ui.ControlGroup;

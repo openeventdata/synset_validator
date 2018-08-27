@@ -397,76 +397,76 @@ public class SynsetDisplayPanel extends Composite {
 		 * for spanish
 		 * 
 		 */
-		/*
-		selFeedbacks.clear();
-		newVerdicts.clear();
-		ArrayList<FeedbackOnSynsetWord> feedbacks = new ArrayList<>();
-		
-		for (int i = 0; i < entriesWithWords.size(); i++) {
-			GWT.log("Iterating for insertion");
-			VerticalPanel synsetFeedbackPanel = (VerticalPanel) synsetTable.getWidget(i + newSynsets.size(), 3);
-			int result = feedbackFromSynsetPanel(synsetFeedbackPanel);
-			SynsetVerdict synsetVerdict = new SynsetVerdict();
-			synsetVerdict.setSynsetId(entriesWithWords.get(i).getEntry().getId());
-			
-			if (result == 0) {
-				GWT.log("Iterating for insertion 1");
-				synsetVerdict.setVerdict(SynsetVerdict.CORRECT);
-				
-				FlexTable table = wordTables.get(i);
-				GWT.log("Iterating for insertion 2");
-				for (int j = 1; j < table.getRowCount(); j++) {
-					TextArea commentTA = (TextArea) table.getWidget(j, 4);
-					GWT.log(commentTA.getText());
-					FeedbackOnSynsetWord fb = new FeedbackOnSynsetWord(FeedbackOnSynsetWord.CORRECT,
-							commentTA.getText());
-					GWT.log("" + ((Radio) table.getWidget(j, 2)).getValue());
-					if (((Radio) table.getWidget(j, 2)).getValue()) {
-						GWT.log("Incorrect");
-						fb.setVerdict(FeedbackOnSynsetWord.INCORRECT);
-					} else if (((Radio) table.getWidget(j, 3)).getValue()) {
-						GWT.log("Ambiguous");
-						fb.setVerdict(FeedbackOnSynsetWord.AMBIGUOUS);
-					}
-					fb.setIdWord(entriesWithWords.get(i).getWords().get(j - 1).getId());
-					// fb.setCountry(((ListBox)table.getWidget(j,
-					// 5)).getSelectedItemText());
-					feedbacks.add(fb);
-					fb.setCountry(((MultipleSelectListBox) table.getWidget(j, 5)).getSelectedItemsAsStr(","));
-					selFeedbacks.add(fb);
-					GWT.log(fb.toString());
-					
-				}
-
-				GWT.log("Iterating for insertion 3");
-				this.newWords.addAll(getAddedWords(i + newSynsets.size(), entriesWithWords.get(i)));
-				GWT.log("Iterating for insertion 4");
-			}
-
-			else if (result == 1){
-				synsetVerdict.setVerdict(SynsetVerdict.INCORRECT);
-			}
-			
-			else if (result == 2){
-				synsetVerdict.setVerdict(SynsetVerdict.AMBIGUOUS);
-
-			}
-			newVerdicts.add(synsetVerdict);
-			synsetVerdicts.put(synsetVerdict.getId(), synsetVerdict);
-		}
-		ArrayList<SynsetEntryWithWords> tempSynsets = new ArrayList<>();
-
-		
-		
-		for (PopupLabel pLabel: examplesLabel){
-			SynsetExampleVerdict sev = new SynsetExampleVerdict();
-			sev.setSynsetExampleId(pLabel.getId());
-			sev.setVerdict(pLabel.getVerdict());
-			exampleVerdicts.put(pLabel.getId(), sev);
-		}
-
-		newSynsets = tempSynsets;
-		*/
+//		/*
+//		selFeedbacks.clear();
+//		newVerdicts.clear();
+//		ArrayList<FeedbackOnSynsetWord> feedbacks = new ArrayList<>();
+//		
+//		for (int i = 0; i < entriesWithWords.size(); i++) {
+//			GWT.log("Iterating for insertion");
+//			VerticalPanel synsetFeedbackPanel = (VerticalPanel) synsetTable.getWidget(i + newSynsets.size(), 3);
+//			int result = feedbackFromSynsetPanel(synsetFeedbackPanel);
+//			SynsetVerdict synsetVerdict = new SynsetVerdict();
+//			synsetVerdict.setSynsetId(entriesWithWords.get(i).getEntry().getId());
+//			
+//			if (result == 0) {
+//				GWT.log("Iterating for insertion 1");
+//				synsetVerdict.setVerdict(SynsetVerdict.CORRECT);
+//				
+//				FlexTable table = wordTables.get(i);
+//				GWT.log("Iterating for insertion 2");
+//				for (int j = 1; j < table.getRowCount(); j++) {
+//					TextArea commentTA = (TextArea) table.getWidget(j, 4);
+//					GWT.log(commentTA.getText());
+//					FeedbackOnSynsetWord fb = new FeedbackOnSynsetWord(FeedbackOnSynsetWord.CORRECT,
+//							commentTA.getText());
+//					GWT.log("" + ((Radio) table.getWidget(j, 2)).getValue());
+//					if (((Radio) table.getWidget(j, 2)).getValue()) {
+//						GWT.log("Incorrect");
+//						fb.setVerdict(FeedbackOnSynsetWord.INCORRECT);
+//					} else if (((Radio) table.getWidget(j, 3)).getValue()) {
+//						GWT.log("Ambiguous");
+//						fb.setVerdict(FeedbackOnSynsetWord.AMBIGUOUS);
+//					}
+//					fb.setIdWord(entriesWithWords.get(i).getWords().get(j - 1).getId());
+//					// fb.setCountry(((ListBox)table.getWidget(j,
+//					// 5)).getSelectedItemText());
+//					feedbacks.add(fb);
+//					fb.setCountry(((MultipleSelectListBox) table.getWidget(j, 5)).getSelectedItemsAsStr(","));
+//					selFeedbacks.add(fb);
+//					GWT.log(fb.toString());
+//					
+//				}
+//
+//				GWT.log("Iterating for insertion 3");
+//				this.newWords.addAll(getAddedWords(i + newSynsets.size(), entriesWithWords.get(i)));
+//				GWT.log("Iterating for insertion 4");
+//			}
+//
+//			else if (result == 1){
+//				synsetVerdict.setVerdict(SynsetVerdict.INCORRECT);
+//			}
+//			
+//			else if (result == 2){
+//				synsetVerdict.setVerdict(SynsetVerdict.AMBIGUOUS);
+//
+//			}
+//			newVerdicts.add(synsetVerdict);
+//			synsetVerdicts.put(synsetVerdict.getId(), synsetVerdict);
+//		}
+//		ArrayList<SynsetEntryWithWords> tempSynsets = new ArrayList<>();
+//
+//		
+//		
+//		for (PopupLabel pLabel: examplesLabel){
+//			SynsetExampleVerdict sev = new SynsetExampleVerdict();
+//			sev.setSynsetExampleId(pLabel.getId());
+//			sev.setVerdict(pLabel.getVerdict());
+//			exampleVerdicts.put(pLabel.getId(), sev);
+//		}
+//
+//		newSynsets = tempSynsets;
+//		*/
 		displayContents(false);
 
 	}
